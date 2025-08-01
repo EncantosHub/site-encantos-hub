@@ -4,6 +4,7 @@ import Footer from "@/components/layout/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useNavigate } from "react-router-dom";
 import { 
   BarChart3, 
   MessageSquare, 
@@ -14,6 +15,8 @@ import {
 } from "lucide-react";
 
 const Ferramentas = () => {
+  const navigate = useNavigate();
+  
   const tools = [
     {
       icon: BarChart3,
@@ -23,10 +26,11 @@ const Ferramentas = () => {
         "Análise de perfil completo",
         "Auditoria de fotos e posts",
         "Verificação de avaliações",
-        "Relatório em PDF"
+        "Relatório personalizado"
       ],
-      status: "Em Desenvolvimento",
-      comingSoon: true
+      status: "Disponível",
+      comingSoon: false,
+      path: "/ferramentas/diagnostico-gmn"
     },
     {
       icon: MessageSquare,
@@ -142,6 +146,11 @@ const Ferramentas = () => {
                       <Button 
                         variant="outline"
                         disabled={tool.comingSoon}
+                        onClick={() => {
+                          if (!tool.comingSoon && tool.path) {
+                            navigate(tool.path);
+                          }
+                        }}
                         className={`w-full ${
                           tool.comingSoon 
                             ? "opacity-50 cursor-not-allowed" 
