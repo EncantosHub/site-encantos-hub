@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Zap, Users, FileText, MessageCircle, Wrench } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
@@ -21,11 +21,11 @@ const Header = () => {
   };
 
   const menuItems = [
-    { label: "Nossas Soluções", action: () => scrollToSection("solucoes") },
-    { label: "Quem Somos", action: () => scrollToSection("equipe") },
-    { label: "Blog", href: "/blog" },
-    { label: "Ferramentas", href: "/ferramentas" },
-    { label: "Contatos", action: () => scrollToSection("contato") }
+    { label: "Nossas Soluções", action: () => scrollToSection("solucoes"), icon: Zap },
+    { label: "Quem Somos", action: () => scrollToSection("equipe"), icon: Users },
+    { label: "Blog", href: "/blog", icon: FileText },
+    { label: "Ferramentas", href: "/ferramentas", icon: Wrench },
+    { label: "Contatos", action: () => scrollToSection("contato"), icon: MessageCircle }
   ];
 
   return (
@@ -47,25 +47,30 @@ const Header = () => {
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex items-center space-x-8">
-            {menuItems.map((item, index) => (
-              <div key={index}>
-                {item.href ? (
-                  <Link
-                    to={item.href}
-                    className="text-brand-black hover:text-brand-gold transition-smooth font-medium"
-                  >
-                    {item.label}
-                  </Link>
-                ) : (
-                  <button
-                    onClick={item.action}
-                    className="text-brand-black hover:text-brand-gold transition-smooth font-medium"
-                  >
-                    {item.label}
-                  </button>
-                )}
-              </div>
-            ))}
+            {menuItems.map((item, index) => {
+              const IconComponent = item.icon;
+              return (
+                <div key={index}>
+                  {item.href ? (
+                    <Link
+                      to={item.href}
+                      className="flex items-center space-x-2 text-brand-black hover:text-brand-gold transition-smooth font-medium"
+                    >
+                      <IconComponent size={18} />
+                      <span>{item.label}</span>
+                    </Link>
+                  ) : (
+                    <button
+                      onClick={item.action}
+                      className="flex items-center space-x-2 text-brand-black hover:text-brand-gold transition-smooth font-medium"
+                    >
+                      <IconComponent size={18} />
+                      <span>{item.label}</span>
+                    </button>
+                  )}
+                </div>
+              );
+            })}
           </nav>
 
           {/* Mobile Menu Button */}
@@ -83,26 +88,31 @@ const Header = () => {
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t border-border">
             <div className="flex flex-col space-y-4 pt-4">
-              {menuItems.map((item, index) => (
-                <div key={index}>
-                  {item.href ? (
-                    <Link
-                      to={item.href}
-                      className="text-brand-black hover:text-brand-gold transition-smooth font-medium block py-2"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  ) : (
-                    <button
-                      onClick={item.action}
-                      className="text-brand-black hover:text-brand-gold transition-smooth font-medium text-left w-full py-2"
-                    >
-                      {item.label}
-                    </button>
-                  )}
-                </div>
-              ))}
+              {menuItems.map((item, index) => {
+                const IconComponent = item.icon;
+                return (
+                  <div key={index}>
+                    {item.href ? (
+                      <Link
+                        to={item.href}
+                        className="flex items-center space-x-3 text-brand-black hover:text-brand-gold transition-smooth font-medium block py-2"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        <IconComponent size={18} />
+                        <span>{item.label}</span>
+                      </Link>
+                    ) : (
+                      <button
+                        onClick={item.action}
+                        className="flex items-center space-x-3 text-brand-black hover:text-brand-gold transition-smooth font-medium text-left w-full py-2"
+                      >
+                        <IconComponent size={18} />
+                        <span>{item.label}</span>
+                      </button>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </nav>
         )}

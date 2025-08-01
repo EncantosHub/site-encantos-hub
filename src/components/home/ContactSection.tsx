@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, Instagram, Linkedin, Youtube, ArrowRight } from "lucide-react";
+import { Phone, Mail, Instagram, Linkedin, Youtube } from "lucide-react";
 
 const ContactSection = () => {
   const contactLinks = [
@@ -58,49 +58,57 @@ const ContactSection = () => {
           
           <p className="text-xl text-gray-300 mb-12 leading-relaxed max-w-3xl mx-auto">
             Transforme sua presença digital com estratégias que realmente funcionam. 
-            Nossa equipe está pronta para acelerar seus resultados online e 
-            levar seu negócio ao próximo nível.
+            Entre em contato e descubra como podemos ajudar seu negócio a crescer de 
+            forma orgânica e sustentável.
           </p>
 
-          {/* Main CTA */}
-          <div className="mb-16">
+          {/* Contact Options - WhatsApp and Email */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-12">
+            <div className="flex items-center space-x-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg px-6 py-4">
+              <div className="bg-brand-gold/20 p-3 rounded-full">
+                <Phone className="w-6 h-6 text-brand-gold" />
+              </div>
+              <div>
+                <p className="text-brand-gold font-medium">WhatsApp</p>
+                <p className="text-white text-sm">(11) 96472-1143</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center space-x-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg px-6 py-4">
+              <div className="bg-brand-gold/20 p-3 rounded-full">
+                <Mail className="w-6 h-6 text-brand-gold" />
+              </div>
+              <div>
+                <p className="text-brand-gold font-medium">Email</p>
+                <p className="text-white text-sm">contato@encantoshub.com</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Main CTA Button */}
+          <div className="mb-12">
             <Button 
               onClick={() => window.open("https://wa.me/5511964721143?text=Vim do site e gostaria de algumas informações.", "_blank")}
-              className="bg-brand-gold hover:bg-brand-gold/90 text-brand-black font-semibold px-12 py-4 text-lg rounded-lg shadow-gold transition-smooth group"
+              className="bg-brand-gold hover:bg-brand-gold/90 text-brand-black font-semibold px-12 py-4 text-lg rounded-lg shadow-gold transition-smooth"
             >
-              Começar Agora
-              <ArrowRight size={24} className="ml-3 group-hover:translate-x-1 transition-transform" />
+              Vamos conversar!
             </Button>
           </div>
 
-          {/* Contact Options */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-            {contactLinks.map((contact, index) => {
-              const IconComponent = contact.icon;
-              return (
-                <a
-                  key={index}
-                  href={contact.href}
-                  target={contact.href.startsWith("http") ? "_blank" : undefined}
-                  rel={contact.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover:bg-white/10 hover:border-brand-gold/50 transition-all duration-300 hover:scale-105"
-                >
-                  <div className="flex flex-col items-center space-y-3">
-                    <div className="bg-brand-gold/20 p-3 rounded-full group-hover:bg-brand-gold/30 transition-colors">
-                      <IconComponent className="w-6 h-6 text-brand-gold" />
-                    </div>
-                    <div className="text-center">
-                      <p className="text-brand-gold font-medium text-sm mb-1">
-                        {contact.label}
-                      </p>
-                      <p className="text-gray-300 text-xs group-hover:text-white transition-colors">
-                        {contact.value}
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              );
-            })}
+          {/* Social Media */}
+          <div className="mb-8">
+            <p className="text-gray-300 mb-4">Nos siga em nossas redes sociais:</p>
+            <div className="flex justify-center space-x-6">
+              <a href="#" className="text-gray-300 hover:text-brand-gold transition-colors">
+                <Instagram size={24} />
+              </a>
+              <a href="#" className="text-gray-300 hover:text-brand-gold transition-colors">
+                <Linkedin size={24} />
+              </a>
+              <a href="#" className="text-gray-300 hover:text-brand-gold transition-colors">
+                <Youtube size={24} />
+              </a>
+            </div>
           </div>
 
           {/* Additional Info */}

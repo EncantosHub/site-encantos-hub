@@ -9,21 +9,21 @@ const TeamSection = () => {
       role: "Especialista em SEO",
       description: "Expert em estratégias de otimização para motores de busca com foco em resultados mensuráveis e crescimento orgânico sustentável.",
       linkedin: "https://linkedin.com/in/isabella-brilha",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b5cc?w=400&h=400&fit=crop&crop=face"
+      image: "/lovable-uploads/4d188d48-8565-4213-9c4f-5ac9f7266315.png"
     },
     {
       name: "PALOMA",
       role: "Estrategista Digital",
       description: "Especialista em marketing digital com expertise em presença online e estratégias personalizadas para diferentes segmentos de mercado.",
       linkedin: "https://linkedin.com/in/paloma-nogueira",
-      image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=400&fit=crop&crop=face"
+      image: "/lovable-uploads/ed97faef-c79c-4b0a-b4cc-c1ed87230ea4.png"
     },
     {
       name: "BRUNO",
       role: "Consultor Técnico",
       description: "Especialista técnico em SEO e análise de performance, focado em implementações avançadas e otimizações que geram impacto real.",
       linkedin: "https://linkedin.com/in/bruno-brilha",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
+      image: "/lovable-uploads/b69ba3dd-f377-48e5-ae09-d7278e9bc0b7.png"
     }
   ];
 
