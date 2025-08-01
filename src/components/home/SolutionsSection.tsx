@@ -63,7 +63,7 @@ const SolutionsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-brand-black mb-4">
-            Nossas <span className="text-brand-gold">Soluções</span>
+            Soluções para acelerar sua <span className="text-brand-gold">visibilidade digital</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Estratégias personalizadas para cada tipo de negócio, 
