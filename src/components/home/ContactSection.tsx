@@ -1,52 +1,43 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, Instagram, Linkedin, Youtube } from "lucide-react";
-
 const ContactSection = () => {
-  const contactLinks = [
-    {
-      icon: Phone,
-      label: "WhatsApp",
-      value: "(11) 96472-1143",
-      href: "https://wa.me/5511964721143",
-      color: "text-green-600"
-    },
-    {
-      icon: Mail,
-      label: "E-mail",
-      value: "contato@encantoshub.com",
-      href: "mailto:contato@encantoshub.com",
-      color: "text-blue-600"
-    },
-    {
-      icon: Instagram,
-      label: "Instagram",
-      value: "@encantoshub",
-      href: "#",
-      color: "text-pink-600"
-    },
-    {
-      icon: Linkedin,
-      label: "LinkedIn",
-      value: "EncantosHub",
-      href: "#",
-      color: "text-blue-700"
-    },
-    {
-      icon: Youtube,
-      label: "YouTube",
-      value: "EncantosHub",
-      href: "#",
-      color: "text-red-600"
-    }
-  ];
-
-  return (
-    <section id="contato" className="py-20 bg-gradient-hero relative overflow-hidden">
+  const contactLinks = [{
+    icon: Phone,
+    label: "WhatsApp",
+    value: "(11) 96472-1143",
+    href: "https://wa.me/5511964721143",
+    color: "text-green-600"
+  }, {
+    icon: Mail,
+    label: "E-mail",
+    value: "contato@encantoshub.com",
+    href: "mailto:contato@encantoshub.com",
+    color: "text-blue-600"
+  }, {
+    icon: Instagram,
+    label: "Instagram",
+    value: "@encantoshub",
+    href: "#",
+    color: "text-pink-600"
+  }, {
+    icon: Linkedin,
+    label: "LinkedIn",
+    value: "EncantosHub",
+    href: "#",
+    color: "text-blue-700"
+  }, {
+    icon: Youtube,
+    label: "YouTube",
+    value: "EncantosHub",
+    href: "#",
+    color: "text-red-600"
+  }];
+  return <section id="contato" className="py-20 bg-gradient-hero relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFD700' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }} />
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFD700' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+      }} />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -87,10 +78,7 @@ const ContactSection = () => {
 
           {/* Main CTA Button */}
           <div className="mb-12">
-            <Button 
-              onClick={() => window.open("https://wa.me/5511964721143?text=Vim do site e gostaria de algumas informações.", "_blank")}
-              className="bg-brand-gold hover:bg-brand-gold/90 text-brand-black font-semibold px-12 py-4 text-lg rounded-lg shadow-gold transition-smooth"
-            >
+            <Button onClick={() => window.open("https://wa.me/5511964721143?text=Vim do site e gostaria de algumas informações.", "_blank")} className="bg-brand-gold hover:bg-brand-gold/90 text-brand-black font-semibold px-12 py-4 text-lg rounded-lg shadow-gold transition-smooth">
               Vamos conversar!
             </Button>
           </div>
@@ -112,15 +100,9 @@ const ContactSection = () => {
           </div>
 
           {/* Additional Info */}
-          <div className="mt-12 pt-8 border-t border-gray-700">
-            <p className="text-gray-400 text-sm">
-              Resposta em até 2 horas úteis • Consultoria gratuita de 15 minutos
-            </p>
-          </div>
+          
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ContactSection;

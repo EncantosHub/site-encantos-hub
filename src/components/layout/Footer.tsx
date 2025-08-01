@@ -1,29 +1,20 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, Instagram, Linkedin, Youtube } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="bg-brand-black text-brand-white py-12">
+  return <footer className="bg-brand-black text-brand-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo + Institucional */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <img 
-                src="/lovable-uploads/f150988c-c4ce-4335-b382-f2baac310d21.png" 
-                alt="EncantosHub" 
-                className="h-8 w-8"
-              />
+              <img src="/lovable-uploads/f150988c-c4ce-4335-b382-f2baac310d21.png" alt="EncantosHub" className="h-8 w-8" />
               <span className="text-xl font-bold">
                 <span className="text-brand-gold">Encantos</span>
                 <span className="text-brand-white">Hub</span>
               </span>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Consultoria especializada em marketing digital e SEO. 
-              Transformamos sua presença online com estratégias personalizadas, 
-              técnicas e sustentáveis para crescimento orgânico e duradouro.
-            </p>
+          </p>
           </div>
 
           {/* Serviços */}
@@ -53,44 +44,24 @@ const Footer = () => {
           <div>
             <h3 className="text-brand-gold font-semibold mb-4">Contatos</h3>
             <div className="space-y-3">
-              <a 
-                href="https://wa.me/5511964721143" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-gray-300 hover:text-brand-gold transition-smooth text-sm"
-              >
+              <a href="https://wa.me/5511964721143" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-300 hover:text-brand-gold transition-smooth text-sm">
                 <Phone size={16} />
                 <span>(11) 96472-1143</span>
               </a>
-              <a 
-                href="mailto:contato@encantoshub.com"
-                className="flex items-center space-x-2 text-gray-300 hover:text-brand-gold transition-smooth text-sm"
-              >
+              <a href="mailto:contato@encantoshub.com" className="flex items-center space-x-2 text-gray-300 hover:text-brand-gold transition-smooth text-sm">
                 <Mail size={16} />
                 <span>contato@encantoshub.com</span>
               </a>
               
               {/* Social Media */}
               <div className="flex space-x-3 pt-2">
-                <a 
-                  href="#" 
-                  className="text-gray-300 hover:text-brand-gold transition-smooth"
-                  aria-label="Instagram"
-                >
+                <a href="#" className="text-gray-300 hover:text-brand-gold transition-smooth" aria-label="Instagram">
                   <Instagram size={20} />
                 </a>
-                <a 
-                  href="#" 
-                  className="text-gray-300 hover:text-brand-gold transition-smooth"
-                  aria-label="LinkedIn"
-                >
+                <a href="#" className="text-gray-300 hover:text-brand-gold transition-smooth" aria-label="LinkedIn">
                   <Linkedin size={20} />
                 </a>
-                <a 
-                  href="#" 
-                  className="text-gray-300 hover:text-brand-gold transition-smooth"
-                  aria-label="YouTube"
-                >
+                <a href="#" className="text-gray-300 hover:text-brand-gold transition-smooth" aria-label="YouTube">
                   <Youtube size={20} />
                 </a>
               </div>
@@ -105,8 +76,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
