@@ -33,16 +33,12 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center">
             <img 
-              src="/lovable-uploads/f150988c-c4ce-4335-b382-f2baac310d21.png" 
+              src="/lovable-uploads/ba022268-7c88-4c04-b730-d261a3f9d07f.png" 
               alt="EncantosHub" 
-              className="h-8 w-8"
+              className="h-10 w-auto"
             />
-            <span className="text-xl font-bold">
-              <span className="text-brand-gold">Encantos</span>
-              <span className="text-brand-black">Hub</span>
-            </span>
           </Link>
 
           {/* Desktop Menu */}
