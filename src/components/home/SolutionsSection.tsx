@@ -4,33 +4,39 @@ import { Search, MapPin, Building2, GraduationCap, Users, BarChart3, ArrowRight 
 const SolutionsSection = () => {
   const solutions = [{
     icon: Search,
-    title: "Gestão de SEO para Sites",
-    description: "Estratégias completas de otimização para motores de busca, aumentando sua visibilidade orgânica e atraindo mais clientes qualificados.",
+    title: "Gestão de SEO para sites",
+    description: "Serviço personalizado para grandes empresas que desejam aumentar sua visibilidade orgânica no site e mídias sociais. Incluindo diagnóstico completo, plano estratégico semestral e gestão de conteúdo.",
+    details: ["Diagnóstico completo", "Plano de ação semestral", "Gestão de conteúdo, técnica e de backlinks", "Relatórios e alinhamentos"],
     cta: "whatsapp"
   }, {
     icon: MapPin,
     title: "Gestão Local para Franquias",
-    description: "Soluções especializadas para franquias com foco em SEO local, garantindo destaque em buscas regionais e GMB otimizado.",
+    description: "Projeto dedicado a aumentar visibilidade, performance e autoridade local de franquias com 10+ unidades. Estratégias para Site, Google Meu Negócio e YouTube com produção de conteúdo semanal.",
+    details: ["Plano estratégico semestral", "Produção semanal de conteúdo local", "Gestão de canais, avaliações e menções locais", "Gestão estratégica do site e youtube da Franqueadora"],
     cta: "whatsapp"
   }, {
     icon: Building2,
     title: "Presença Digital para PME's",
-    description: "Pacotes personalizados para pequenas e médias empresas, com estratégias acessíveis e eficazes para crescimento digital.",
+    description: "Implementamos estratégias digitais completas para pequenas e médias empresas, criando canais de vendas eficientes. Análise, otimização do GMN, criação de site e campanhas publicitárias.",
+    details: ["Análise de presença digital", "Criação e otimização do Google Meu Negócio", "Criação de site", "Gerenciamento de campanhas e anúncios patrocinados"],
     cta: "whatsapp"
   }, {
     icon: GraduationCap,
-    title: "Mentoria de SEO para Autônomos",
-    description: "Capacitação individual para profissionais autônomos dominarem SEO e aplicarem em seus próprios negócios.",
+    title: "Mentoria de SEO para autônomos",
+    description: "Aprenda na prática como gerir um projeto de SEO completo em sessões flexíveis. Conteúdo personalizado de acordo com suas demandas e clientes atuais, com materiais de apoio inclusos.",
+    details: ["4 a 8 sessões online", "50 minutos de duração cada sessão", "Materiais de apoio"],
     cta: "whatsapp"
   }, {
     icon: Users,
     title: "Consultoria de SEO",
-    description: "Consultoria estratégica personalizada com análise profunda, diagnóstico completo e plano de ação detalhado.",
+    description: "Montamos um diagnóstico estratégico para seu negócio com plano detalhado personalizado. Reunião pontual de até 2h com apresentação completa de oportunidades e estratégias recomendadas.",
+    details: ["Diagnóstico completo do seu site", "Estratégias personalizadas de SEO", "Relatório detalhado com plano de ação"],
     cta: "whatsapp"
   }, {
     icon: BarChart3,
     title: "Diagnóstico do GMN",
-    description: "Análise completa do seu Google Meu Negócio com relatório detalhado de otimizações e oportunidades de melhoria.",
+    description: "Análise técnica completa do seu Google Meu Negócio com plano de otimização detalhado. Relatório em PDF com insights práticos para maximizar sua visibilidade local e atrair mais clientes.",
+    details: ["Análise completa do perfil GMN", "Relatório detalhado em PDF", "Plano de otimização personalizado"],
     cta: "ferramentas"
   }];
   const handleCTA = (type: string) => {
@@ -62,9 +68,18 @@ const SolutionsSection = () => {
                     {solution.title}
                   </h3>
                   
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
                     {solution.description}
                   </p>
+                  
+                  <ul className="text-sm text-muted-foreground mb-6 space-y-2">
+                    {solution.details.map((detail, detailIndex) => (
+                      <li key={detailIndex} className="flex items-start">
+                        <span className="text-brand-gold mr-2">•</span>
+                        {detail}
+                      </li>
+                    ))}
+                  </ul>
                   
                   <Button onClick={() => handleCTA(solution.cta)} variant="outline" className="w-full group-hover:bg-brand-gold group-hover:text-brand-black group-hover:border-brand-gold transition-all">
                     {solution.cta === "whatsapp" ? "Solicitar Orçamento" : "Saiba Mais"}
