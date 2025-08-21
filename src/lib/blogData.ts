@@ -393,7 +393,122 @@ export const blogPosts: BlogPost[] = [
   
   `
 },
+{
+  slug: "seo-para-imagens",
+  title: "SEO para imagens: práticas para subir arquivos otimizados",
+  summary: "Aprenda a otimizar nomes, alt text, peso e estrutura de imagens no CMS para melhorar ranqueamento, acessibilidade e desempenho do site.",
+  date: "2025-08-12",
+  category: "SEO",
+  thumbnail: "/images/blog/seo-imagens-otimizacao.jpg",
+  author: "Isabella Brilha",
+  authorLinkedIn: "https://linkedin.com/in/isabella-brilha",
+  content: `
 
+    <p>O SEO para imagens é uma das práticas mais negligenciadas, mas fundamentais para melhorar o desempenho orgânico de um site. Ao otimizar corretamente os arquivos visuais, você garante:</p>
+    <ul>
+      <li>Melhor ranqueamento no Google Imagens</li>
+      <li>Carregamento mais rápido das páginas</li>
+      <li>Acessibilidade para todos os públicos</li>
+      <li>Conteúdo mais compreendido pelos mecanismos de busca</li>
+    </ul>
+
+    <p>Este guia foi criado para ajudar equipes de conteúdo, design ou qualquer pessoa que publique no CMS a aplicar SEO técnico e estratégico em imagens e documentos.</p>
+
+    <h2>Sumário</h2>
+    <ul>
+      <li><a href="#porque-aplicar">Por que aplicar SEO para imagens?</a></li>
+      <li><a href="#nome-do-arquivo">Nome do arquivo (file name)</a></li>
+      <li><a href="#texto-alt">Texto alternativo (atributo alt)</a></li>
+      <li><a href="#legenda-contexto">Legenda e contextualização</a></li>
+      <li><a href="#tamanho-peso">Tamanho e peso do arquivo</a></li>
+      <li><a href="#dimensoes">Dimensões adequadas</a></li>
+      <li><a href="#responsividade">Responsividade</a></li>
+      <li><a href="#estrutura">Estrutura e organização</a></li>
+      <li><a href="#contexto">Contexto semântico</a></li>
+      <li><a href="#sitemap">Sitemap de imagens</a></li>
+      <li><a href="#acessibilidade">Acessibilidade</a></li>
+      <li><a href="#arquivos-nao-visuais">Arquivos não visuais (PDF, DOC, etc.)</a></li>
+      <li><a href="#boas-praticas">Boas práticas finais</a></li>
+      <li><a href="#conclusao">Conclusão</a></li>
+    </ul>
+
+    <h2 id="porque-aplicar">1. Por que aplicar SEO para imagens?</h2>
+    <p>O SEO para imagens melhora indexação, velocidade, acessibilidade e experiência do usuário. É uma parte essencial da estratégia de otimização de qualquer site.</p>
+
+    <h2 id="nome-do-arquivo">2. Nome do arquivo (file name)</h2>
+    <ul>
+      <li>Use nomes descritivos separados por hífen</li>
+      <li>Sem acentos, espaços ou caracteres especiais</li>
+      <li>Evite: <code>IMG_123.jpg</code></li>
+      <li>Prefira: <code>seo-para-imagens-cms.jpg</code></li>
+    </ul>
+
+    <h2 id="texto-alt">3. Texto alternativo (atributo alt)</h2>
+    <p>O alt deve descrever literalmente o conteúdo da imagem, de forma objetiva.</p>
+    <pre><code>alt="Pessoa usando notebook em mesa de madeira com café ao lado"</code></pre>
+
+    <h2 id="legenda-contexto">4. Legenda e contextualização</h2>
+    <p>Se fizer sentido no conteúdo, insira legendas para enriquecer a experiência e reforçar o SEO.</p>
+
+    <h2 id="tamanho-peso">5. Tamanho e peso do arquivo</h2>
+    <ul>
+      <li>Comprima com TinyPNG, Squoosh ou Compressor.io</li>
+      <li>Evite arquivos acima de 200 KB quando possível</li>
+      <li>Prefira formato <code>.webp</code> para web</li>
+    </ul>
+
+    <h2 id="dimensoes">6. Dimensões adequadas</h2>
+    <p>Redimensione antes do upload. Exemplo: não envie 4000x3000px se será exibida em 800x600px.</p>
+
+    <h2 id="responsividade">7. Responsividade</h2>
+    <p>Use imagens que se adaptem a diferentes telas. Se possível, utilize o atributo <code>srcset</code>.</p>
+
+    <h2 id="estrutura">8. Estrutura e organização</h2>
+    <p>Organize as imagens no CMS com pastas claras, como:</p>
+    <pre><code>/imagens/produtos/
+/downloads/guias/
+/banners/home/</code></pre>
+    <p>Ao subir no CMS, confirme se sua plataforma dá controle total de metadados e URLs. Saiba <a href="https://encantoshub.com.br/blog/cms-seo" target="_blank" rel="noopener">como o CMS impacta o SEO</a> e configure tudo com o nosso <a href="https://encantoshub.com.br/blog/checklist-para-cms" target="_blank" rel="noopener">checklist para CMS</a>.</p>
+
+
+    <h2 id="contexto">9. Contexto semântico</h2>
+    <p>O Google analisa o texto próximo à imagem para entender o contexto. Coloque imagens próximas a conteúdo relevante.</p>
+    <p>Além do texto ao redor, distribua <a href="https://encantoshub.com.br/blog/guia-hiperlink" target="_blank" rel="noopener">links internos contextuais</a> para reforçar relevância por tópico.</p>
+
+
+    <h2 id="sitemap">10. Sitemap de imagens</h2>
+    <p>Inclua as imagens no <code>sitemap.xml</code> para facilitar a indexação pelo Google Imagens.</p>
+
+    <h2 id="acessibilidade">11. Acessibilidade</h2>
+    <ul>
+      <li>Imagens decorativas → <code>alt=""</code></li>
+      <li>Imagens informativas → alt descritivo preenchido</li>
+    </ul>
+
+    <h2 id="arquivos-nao-visuais">12. Arquivos não visuais (PDF, DOC, etc.)</h2>
+    <p>Otimize também esses arquivos:</p>
+    <ul>
+      <li>Nomeie com palavras-chave relevantes</li>
+      <li>URLs amigáveis</li>
+      <li>Adicione título na tag de link</li>
+    </ul>
+    <pre><code>&lt;a href="/downloads/seo-para-imagens.pdf" title="Download do guia SEO para imagens"&gt;Baixar guia completo&lt;/a&gt;</code></pre>
+
+    <h2 id="boas-praticas">13. Boas práticas finais</h2>
+    <ul>
+      <li>Não duplique imagens com nomes diferentes</li>
+      <li>Classifique cada imagem: decorativa, ilustrativa ou informativa</li>
+      <li>Mantenha consistência de nomes, pastas e alt</li>
+    </ul>
+
+    <h2 id="conclusao">Conclusão</h2>
+    <p>O SEO para imagens vai além de renomear arquivos: ele impacta desempenho, indexação, acessibilidade e experiência do usuário. Aplicando essas práticas no CMS, você garante um site mais rápido, acessível e com maior potencial de ranqueamento.</p>
+
+<hr />
+<p>Acesse a <a href="https://encantoshub.com.br/blog" title="Acesse o blog da EncantosHub">página central do nosso Blog</a> e descubra mais conteúdos exclusivos.</p>
+  
+  `
+},
   {
     slug: "guia-completo-seo-iniciantes",
     title: "Guia Completo de SEO para Iniciantes",
