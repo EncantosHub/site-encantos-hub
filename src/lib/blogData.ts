@@ -698,7 +698,9 @@ export const blogPosts: BlogPost[] = [
   summary: "Você já deve ter ouvido que conteúdo é rei, mas sem um CMS alinhado ao SEO, até o melhor conteúdo pode ser invisível nos resultados de busca.",
   date: "2025-07-17",
   category: "SEO",
-  thumbnail: "/images/cms-selection-checklist.jpg",
+  thumbnail: "/images/blog/cms-selection-checklist.jpg",
+  author: "Paloma Nogueira",
+  authorLinkedIn: "https://www.linkedin.com/in/paloma-nogueira",
   content: `
   <h2>Sumário:</h2>
 <ul>
@@ -774,16 +776,17 @@ export const blogPosts: BlogPost[] = [
 <p>Acesse a <a href="https://encantoshub.com.br/blog" title="Acesse o blog da EncantosHub">página central do nosso Blog</a> e descubra mais conteúdos exclusivos.</p>
   
   `
-},
-  
+},  
     {
   slug: "analise-concorrencia-digital",
   title: "Análise de concorrência no digital",
   summary: "Aprenda como analisar seus concorrentes digitais e identificar oportunidades estratégicas no mercado online para melhorar seu posicionamento competitivo.",
   date: "2024-11-25",
   category: "Análise",
-  thumbnail: "/images/analise-concorrencia-digital.jpg",
-      content: `
+  thumbnail: "/images/blog/analise-concorrencia-digital.jpg",
+  author: "Paloma Nogueira",
+  authorLinkedIn: "https://www.linkedin.com/in/paloma-nogueira",
+  content: `
 <p>Conhecer seus concorrentes é fundamental para uma estratégia digital eficaz. A análise competitiva permite identificar oportunidades e melhorar seu posicionamento no mercado.</p>
 
 <h2>Por que analisar a concorrência?</h2>
@@ -878,7 +881,8 @@ export const blogPosts: BlogPost[] = [
     date: "15-01-2024",
     category: "SEO",
     thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop",
-    author: "Isabella",
+    author: "Paloma Nogueira",
+    authorLinkedIn: "https://www.linkedin.com/in/paloma-nogueira",
     content: `
       <div class="prose prose-lg max-w-none">
         <h1>Guia Completo de SEO para Iniciantes</h1>
@@ -930,7 +934,8 @@ export const blogPosts: BlogPost[] = [
     date: "12-01-2024",
     category: "GMN",
     thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
-    author: "Paloma",
+    author: "Paloma Nogueira",
+    authorLinkedIn: "https://www.linkedin.com/in/paloma-nogueira",
     content: `
       <div class="prose prose-lg max-w-none">
         <h1>Como Otimizar seu Google Meu Negócio</h1>
@@ -971,7 +976,8 @@ export const blogPosts: BlogPost[] = [
     date: "08-01-2024",
     category: "Marketing",
     thumbnail: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=800&h=400&fit=crop",
-    author: "Bruno",
+    author: "Paloma Nogueira",
+    authorLinkedIn: "https://www.linkedin.com/in/paloma-nogueira",
     content: `
       <div class="prose prose-lg max-w-none">
         <h1>Tendências de Marketing Digital para 2024</h1>
@@ -1010,7 +1016,8 @@ export const blogPosts: BlogPost[] = [
     date: "05-01-2024",
     category: "SEO",
     thumbnail: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=800&h=400&fit=crop",
-    author: "Isabella",
+    author: "Paloma Nogueira",
+    authorLinkedIn: "https://www.linkedin.com/in/paloma-nogueira",
     content: `
       <div class="prose prose-lg max-w-none">
         <h1>Estratégias de Conteúdo para SEO</h1>
@@ -1051,7 +1058,8 @@ export const blogPosts: BlogPost[] = [
     date: "02-01-2024",
     category: "Marketing",
     thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
-    author: "Bruno",
+    author: "Paloma Nogueira",
+    authorLinkedIn: "https://www.linkedin.com/in/paloma-nogueira",
     content: `
       <div class="prose prose-lg max-w-none">
         <h1>Métricas Importantes no Marketing Digital</h1>
@@ -1094,7 +1102,8 @@ export const blogPosts: BlogPost[] = [
     date: "28-12-2023",
     category: "SEO",
     thumbnail: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&h=400&fit=crop",
-    author: "Paloma",
+    author: "Paloma Nogueira",
+    authorLinkedIn: "https://www.linkedin.com/in/paloma-nogueira",
     content: `
       <div class="prose prose-lg max-w-none">
         <h1>Otimização de Velocidade do Site</h1>
