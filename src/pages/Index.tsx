@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/home/HeroSection";
@@ -9,16 +8,14 @@ import CompaniesSection from "@/components/home/CompaniesSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import BlogPreviewSection from "@/components/home/BlogPreviewSection";
 import ContactSection from "@/components/home/ContactSection";
+import { useSEO } from "@/hooks/useSEO";
 
 const Index = () => {
-  useEffect(() => {
-    document.title = "Consultoria de Marketing Digital e SEO | Encantos Hub";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Descubra como nossa consultoria de marketing digital pode impulsionar sua presença online. Serviços especializados em SEO, conteúdo e mais.');
-    }
-  }, []);
+  useSEO({
+    title: "Consultoria de Marketing Digital e SEO | Encantos Hub",
+    description: "Descubra como nossa consultoria de marketing digital pode impulsionar sua presença online. Serviços especializados em SEO, conteúdo e mais.",
+    canonical: "https://www.encantoshub.com.br/"
+  });
 
   return (
     <div className="min-h-screen">

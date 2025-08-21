@@ -7,6 +7,7 @@ import { LeadCapture } from "@/components/gmn/LeadCapture";
 import { DiagnosticResult } from "@/components/gmn/DiagnosticResult";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 
 export interface FormData {
   identity: Record<string, string>;
@@ -35,14 +36,11 @@ const DiagnosticoGMN = () => {
   });
   const [leadData, setLeadData] = useState<LeadData | null>(null);
 
-  useEffect(() => {
-    document.title = "Diagnóstico GMN - Análise Completa do Google Meu Negócio | Encantos Hub";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Faça uma análise completa do seu perfil do Google Meu Negócio e receba um diagnóstico personalizado com recomendações práticas.');
-    }
-  }, []);
+  useSEO({
+    title: "Diagnóstico GMN - Análise Completa do Google Meu Negócio | Encantos Hub",
+    description: "Faça uma análise completa do seu perfil do Google Meu Negócio e receba um diagnóstico personalizado com recomendações práticas.",
+    canonical: "https://www.encantoshub.com.br/ferramentas/diagnostico-gmn"
+  });
 
   const handleFormComplete = (data: FormData) => {
     setFormData(data);

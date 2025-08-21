@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Calendar, User, Share2, Heart } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { getPostBySlug, type BlogPost as BlogPostType } from "@/lib/blogData";
+import { useSEO } from "@/hooks/useSEO";
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -18,16 +19,15 @@ const BlogPost = () => {
     const foundPost = getPostBySlug(slug || "");
     if (foundPost) {
       setPost(foundPost);
-      document.title = `${foundPost.title} | Blog Encantos Hub`;
-      
-      const metaDescription = document.querySelector('meta[name="description"]');
-      if (metaDescription) {
-        metaDescription.setAttribute('content', foundPost.summary);
-      }
-    } else {
-      document.title = "Post não encontrado | Blog Encantos Hub";
     }
   }, [slug]);
+
+  useSEO({
+    title: post ? `${post.title} | Encantos Hub` : "Artigo não encontrado | Encantos Hub",
+    description: post ? post.summary : "O artigo que você procura não foi encontrado.",
+    canonical: post ? `https://www.encantoshub.com.br/blog/${post.slug}` : undefined,
+    ogImage: post?.thumbnail ? `https://www.encantoshub.com.br${post.thumbnail}` : undefined
+  });
 
   const handleShare = () => {
     if (navigator.share && post) {

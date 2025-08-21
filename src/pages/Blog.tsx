@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, User, Search, ArrowRight } from "lucide-react";
 import { blogPosts, categories, type BlogPost } from "@/lib/blogData";
+import { useSEO } from "@/hooks/useSEO";
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -20,14 +21,11 @@ const Blog = () => {
     return matchesSearch && matchesCategory;
   });
 
-  useEffect(() => {
-    document.title = "Blog de Marketing Digital e SEO | Encantos Hub";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Explore estratégias e dicas sobre marketing digital e SEO. Conteúdo especializado para impulsionar sua presença online.');
-    }
-  }, []);
+  useSEO({
+    title: "Blog de Marketing Digital e SEO | Encantos Hub",
+    description: "Explore estratégias e dicas sobre marketing digital e SEO. Conteúdo especializado para impulsionar sua presença online.",
+    canonical: "https://www.encantoshub.com.br/blog"
+  });
 
   return (
     <div className="min-h-screen bg-background">

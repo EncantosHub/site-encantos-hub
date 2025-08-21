@@ -1,26 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://site-encantos-hub.lovable.app/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <loc>https://www.encantoshub.com.br/</loc>
+    <lastmod>2025-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://site-encantos-hub.lovable.app/blog</loc>
-    <lastmod>2025-01-15</lastmod>
+    <loc>https://www.encantoshub.com.br/blog</loc>
+    <lastmod>2025-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://site-encantos-hub.lovable.app/ferramentas</loc>
-    <lastmod>2025-01-15</lastmod>
+    <loc>https://www.encantoshub.com.br/ferramentas</loc>
+    <lastmod>2025-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://site-encantos-hub.lovable.app/ferramentas/diagnostico-gmn</loc>
-    <lastmod>2025-01-15</lastmod>
+    <loc>https://www.encantoshub.com.br/ferramentas/diagnostico-gmn</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.encantoshub.com.br/blog/importancia-presenca-digital</loc>
+    <lastmod>2025-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.encantoshub.com.br/blog/qrcode-avaliacoes</loc>
+    <lastmod>2025-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.encantoshub.com.br/blog/guia-hiperlink</loc>
+    <lastmod>2025-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.encantoshub.com.br/blog/seo-para-imagens</loc>
+    <lastmod>2025-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.encantoshub.com.br/blog/otimizar-gmn</loc>
+    <lastmod>2025-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.encantoshub.com.br/blog/analise-concorrencia-digital</loc>
+    <lastmod>2025-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.encantoshub.com.br/blog/cms-selection-checklist</loc>
+    <lastmod>2025-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.encantoshub.com.br/blog/cms-seo-integration</loc>
+    <lastmod>2025-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

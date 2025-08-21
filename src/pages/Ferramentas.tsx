@@ -13,9 +13,16 @@ import {
   Clock,
   Sparkles
 } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 
 const Ferramentas = () => {
   const navigate = useNavigate();
+  
+  useSEO({
+    title: "Ferramentas de SEO e Marketing Digital | Encantos Hub",
+    description: "Acesse ferramentas profissionais de SEO e marketing digital. Diagnóstico GMN, gerador de mensagens e validador de SEO.",
+    canonical: "https://www.encantoshub.com.br/ferramentas"
+  });
   
   const tools = [
     {
@@ -59,15 +66,6 @@ const Ferramentas = () => {
       comingSoon: true
     }
   ];
-
-  useEffect(() => {
-    document.title = "Ferramentas de SEO e Marketing Digital | Encantos Hub";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Acesse ferramentas profissionais de SEO e marketing digital. Diagnóstico GMN, gerador de mensagens e validador de SEO.');
-    }
-  }, []);
 
   return (
     <div className="min-h-screen bg-background">
