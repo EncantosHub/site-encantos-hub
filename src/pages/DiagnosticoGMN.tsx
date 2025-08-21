@@ -61,7 +61,7 @@ const DiagnosticoGMN = () => {
       case 'form':
         return <DiagnosticForm onComplete={handleFormComplete} />;
       case 'lead':
-        return <LeadCapture onSubmit={handleLeadSubmit} />;
+        return <LeadCapture onSubmit={handleLeadSubmit} diagnosticFormData={formData} />;
       case 'result':
         return <DiagnosticResult formData={formData} leadData={leadData!} />;
       default:

@@ -5,14 +5,18 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Lock, Gift, FileText } from "lucide-react";
-import { LeadData } from "@/pages/DiagnosticoGMN";
+import { LeadData, FormData } from "@/pages/DiagnosticoGMN";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 interface LeadCaptureProps {
   onSubmit: (data: LeadData) => void;
+  diagnosticFormData: FormData;
 }
 
-export const LeadCapture = ({ onSubmit }: LeadCaptureProps) => {
-  const [formData, setFormData] = useState({
+export const LeadCapture = ({ onSubmit, diagnosticFormData }: LeadCaptureProps) => {
+  const { toast } = useToast();
+  const [leadFormData, setLeadFormData] = useState({
     name: '',
     email: '',
     phone: '',
@@ -20,25 +24,113 @@ export const LeadCapture = ({ onSubmit }: LeadCaptureProps) => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Helper function to calculate scores (copied from DiagnosticResult)
+  const calculateScore = (sectionData: Record<string, string>) => {
+    const values = Object.values(sectionData);
+    if (values.length === 0) return 0;
+    
+    const points = values.reduce((acc, value) => {
+      switch (value) {
+        case 'yes': return acc + 100;
+        case 'partial': return acc + 50;
+        case 'no': return acc + 0;
+        default: return acc;
+      }
+    }, 0);
+    
+    return Math.round(points / values.length);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    onSubmit(formData);
-    setIsSubmitting(false);
+    try {
+      // Calculate scores for the email
+      const sectionScores = Object.entries(diagnosticFormData).reduce((acc, [section, data]) => ({
+        ...acc,
+        [section]: calculateScore(data)
+      }), {});
+      
+      const overallScore = Math.round(
+        Object.values(sectionScores as Record<string, number>).reduce((acc: number, score: number) => acc + score, 0) / 
+        Object.values(sectionScores).length
+      );
+
+      // Save lead data to Supabase
+      const leadDataWithMapping = {
+        full_name: leadFormData.name,
+        email: leadFormData.email,
+        whatsapp: leadFormData.phone,
+        company_name: leadFormData.company || 'Não informado',
+        form_data: diagnosticFormData as any // This is the entire diagnostic form data
+      };
+
+      const { data: leadRecord, error: dbError } = await supabase
+        .from('gmn_leads')
+        .insert(leadDataWithMapping)
+        .select()
+        .single();
+
+      if (dbError) {
+        console.error('Database error:', dbError);
+        throw new Error('Erro ao salvar os dados. Tente novamente.');
+      }
+
+      // Send email with report
+      const { data: emailResponse, error: emailError } = await supabase.functions.invoke('send-gmn-report', {
+        body: {
+          leadData: leadDataWithMapping,
+          formData: diagnosticFormData,
+          overallScore,
+          sectionScores
+        }
+      });
+
+      if (emailError) {
+        console.error('Email error:', emailError);
+        toast({
+          title: "Dados salvos com sucesso!",
+          description: "Houve um problema no envio do email, mas seus dados foram salvos. Entraremos em contato em breve.",
+          variant: "default",
+        });
+      } else {
+        toast({
+          title: "Diagnóstico enviado!",
+          description: "Seu relatório foi enviado para seu e-mail. Verifique sua caixa de entrada.",
+          variant: "default",
+        });
+      }
+
+      // Pass the lead data back to parent component
+      const leadDataForParent: LeadData = {
+        name: leadFormData.name,
+        email: leadFormData.email,
+        phone: leadFormData.phone,
+        company: leadFormData.company
+      };
+      
+      onSubmit(leadDataForParent);
+    } catch (error: any) {
+      console.error('Submission error:', error);
+      toast({
+        title: "Erro ao processar",
+        description: error.message || "Ocorreu um erro. Tente novamente.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({
+    setLeadFormData(prev => ({
       ...prev,
       [field]: value
     }));
   };
 
-  const isFormValid = formData.name && formData.email && formData.phone;
+  const isFormValid = leadFormData.name && leadFormData.email && leadFormData.phone;
 
   return (
     <div className="max-w-2xl mx-auto">
@@ -99,7 +191,7 @@ export const LeadCapture = ({ onSubmit }: LeadCaptureProps) => {
                 </Label>
                 <Input
                   id="name"
-                  value={formData.name}
+                  value={leadFormData.name}
                   onChange={(e) => handleInputChange('name', e.target.value)}
                   placeholder="Seu nome completo"
                   required
@@ -113,7 +205,7 @@ export const LeadCapture = ({ onSubmit }: LeadCaptureProps) => {
                 <Input
                   id="email"
                   type="email"
-                  value={formData.email}
+                  value={leadFormData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
                   placeholder="seu@email.com"
                   required
@@ -128,7 +220,7 @@ export const LeadCapture = ({ onSubmit }: LeadCaptureProps) => {
                 </Label>
                 <Input
                   id="phone"
-                  value={formData.phone}
+                  value={leadFormData.phone}
                   onChange={(e) => handleInputChange('phone', e.target.value)}
                   placeholder="(11) 99999-9999"
                   required
@@ -141,7 +233,7 @@ export const LeadCapture = ({ onSubmit }: LeadCaptureProps) => {
                 </Label>
                 <Input
                   id="company"
-                  value={formData.company}
+                  value={leadFormData.company}
                   onChange={(e) => handleInputChange('company', e.target.value)}
                   placeholder="Nome da sua empresa"
                 />
