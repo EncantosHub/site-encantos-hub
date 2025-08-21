@@ -50,7 +50,7 @@ export const blogPosts: BlogPost[] = [
     <p><strong>Dica bônus:</strong> baixe nossa <a href="https://docs.google.com/spreadsheets/d/1YwbdDgZtIWoV1DWjk9YqgqY4wJX7vtSOHIE5lho9Lo4/edit?gid=1887531653#gid=1887531653" target="_blank">planilha de gestão local</a> para acompanhar e otimizar seu perfil com mais eficiência.</p>
   </div>
   <div style="flex: 1; min-width: 250px;">
-    <img src="/images/google-business-form.jpg" alt="Formulário de cadastro no Google Meu Negócio" style="max-width: 100%; height: auto;">
+    <img src="/images/blog/google-business-form.jpg" alt="Formulário de cadastro no Google Meu Negócio" style="max-width: 100%; height: auto;">
   </div>
 </div>
 
@@ -66,7 +66,7 @@ export const blogPosts: BlogPost[] = [
     <p>Quer acelerar sua reputação? Veja modelos prontos e um fluxo simples com QR Code em <a href="https://encantoshub.com.br/blog/qrcode-avaliacoes" target="_blank" rel="noopener">como pedir avaliações no Google com QR Code</a>.</p>
 
     <p>Se o empreendedor quiser uma visão mais completa, oferecemos um <strong>diagnóstico visual</strong>, com um termômetro que indica o que está bom, razoável ou precisa ser melhorado.</p>
-    <img src="/images/termometro.jpg" alt="Termômetro de avaliação do perfil" style="max-width: 100%; height: auto; display: block; margin: 1rem auto;">
+    <img src="/images/blog/termometro.jpg" alt="Termômetro de avaliação do perfil" style="max-width: 100%; height: auto; display: block; margin: 1rem auto;">
     <p>Com esse panorama, partimos para o <strong>alinhamento estratégico</strong>.</p>
 
     <h2>Etapas do alinhamento estratégico para melhorar a presença local</h2>
