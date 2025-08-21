@@ -2,16 +2,14 @@ import { useEffect, useState } from "react";
 
 const CompaniesSection = () => {
   const companies = [
-    "Casas Bahia",
-    "Banco PAN", 
-    "Net Claro",
-    "Insper Educação",
-    "Eucatex",
-    "Thyssenkrupp",
-    "ABCripto",
-    "Loggi",
-    "Conceito Vestibulares",
-    "Sociedade da Mesa"
+    { name: "Casas Bahia", logo: "/lovable-uploads/ca6602c6-c889-4e89-b21b-716519e24d0e.png" },
+    { name: "Banco PAN", logo: "/lovable-uploads/cff71401-fd35-40c1-bbcd-a3fc51227ca9.png" },
+    { name: "Net Claro", logo: "/lovable-uploads/f3f492b8-3bb9-428a-a469-ea23b4012cd5.png" },
+    { name: "Insper Educação", logo: "/lovable-uploads/d230c809-9e77-48fb-bfdb-5663d9fe0879.png" },
+    { name: "Eucatex", logo: "/lovable-uploads/e64f6bdd-a69c-4508-b5ec-358df714bcc6.png" },
+    { name: "Thyssenkrupp", logo: "/lovable-uploads/3bef535f-a7ac-4b6b-a8ac-cd1c4b808a94.png" },
+    { name: "ABCripto", logo: "/lovable-uploads/ded77ad8-ce59-4c04-ae52-17a660f3d553.png" },
+    { name: "Loggi", logo: "/lovable-uploads/70c151c5-efec-48fa-a43e-a90943e75b85.png" }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -52,9 +50,16 @@ const CompaniesSection = () => {
                 style={{ width: `${100 / Math.min(companies.length, 5)}%` }}
               >
                 <div className="bg-white border border-border rounded-lg p-6 h-24 flex items-center justify-center shadow-sm hover:shadow-elegant transition-shadow group">
-                  <span className="text-brand-black font-semibold text-center group-hover:text-brand-gold transition-colors">
-                    {company}
-                  </span>
+                  <div className="flex items-center space-x-3">
+                    <img 
+                      src={company.logo} 
+                      alt={`${company.name} logo`}
+                      className="h-8 w-auto object-contain"
+                    />
+                    <span className="text-brand-black font-semibold text-center group-hover:text-brand-gold transition-colors">
+                      {company.name}
+                    </span>
+                  </div>
                 </div>
               </div>
             ))}

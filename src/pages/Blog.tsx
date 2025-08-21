@@ -35,14 +35,35 @@ const Blog = () => {
       
       <main className="pt-8">
         {/* Hero Section */}
-        <section className="bg-gradient-hero py-16">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl lg:text-5xl font-bold text-brand-white mb-4">
-              Blog <span className="text-brand-gold">Encantos</span>
-            </h1>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Estratégias e dicas sobre marketing digital e SEO para impulsionar sua presença online
-            </p>
+        <section className="relative bg-brand-black py-20 lg:py-32 overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0">
+            <div className="absolute inset-0" style={{
+              backgroundImage: `url("/lovable-uploads/f080db56-f2da-46b1-8475-f9e86ca135b9.png")`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }} />
+          </div>
+          
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-brand-black/60"></div>
+
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-4xl mx-auto text-center">
+              {/* Main Heading */}
+              <h1 className="text-5xl lg:text-7xl font-bold text-brand-white mb-6 leading-tight">
+                Blog <span className="text-brand-gold">Encantos</span>Hub
+              </h1>
+
+              {/* Subtitle */}
+              <p className="text-xl lg:text-2xl text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto">
+                Estratégias e dicas sobre marketing digital e SEO para impulsionar sua presença online
+              </p>
+              
+              {/* Divider */}
+              <div className="w-24 h-1 bg-brand-gold mx-auto mb-8"></div>
+            </div>
           </div>
         </section>
 
