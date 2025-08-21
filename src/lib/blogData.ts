@@ -9,7 +9,6 @@ export interface BlogPost {
   authorLinkedIn?: string;
   content: string;
 }
-
 export const blogPosts: BlogPost[] = [
   {
   slug: "importancia-presenca-digital",
@@ -134,6 +133,113 @@ export const blogPosts: BlogPost[] = [
     <p>Conte com a EncantosHub para estruturar e otimizar a presença digital da sua empresa. Entre em contato pelo <a href="https://wa.me/5511964721143" target="_blank" rel="noopener"><strong>WhatsApp</strong></a> e vamos criar sua estratégia personalizada.</p>
 
 <hr />
+<p>Acesse a <a href="https://encantoshub.com.br/blog" title="Acesse o blog da EncantosHub">página central do nosso Blog</a> e descubra mais conteúdos exclusivos.</p>
+  
+  `
+},
+{
+  slug: "qrcode-avaliacoes",
+  title: "Pedir avaliações no Google Meu Negócio com QR Code prático",
+  summary: "Veja como pedir avaliações de forma ética, criar QR Codes personalizados com foto e acompanhar sua reputação online com eficiência e confiança.",
+  date: "2025-08-12",
+  category: "GMN",
+  thumbnail: "/images/blog/qr-code-avaliacoes.jpg",
+  author: "Isabella Brilha",
+  authorLinkedIn: "https://linkedin.com/in/isabella-brilha",
+      content: `
+
+    <p>As avaliações no Google têm papel central na reputação local de qualquer negócio. Elas aumentam a visibilidade no Google Maps, fortalecem a confiança de novos clientes e influenciam decisões de compra de maneira espontânea. A seguir, veja como pedir avaliações com ética e estratégia — incluindo o uso de QR Code e imagens.</p>
+    <p>Se você está estruturando sua presença local, veja também as <a href="https://encantoshub.com.br/blog/otimizar-gmn" target="_blank" rel="noopener">melhores práticas para otimizar o Perfil da Empresa no Google</a> e o panorama de <a href="https://encantoshub.com.br/blog/importancia-presenca-digital" target="_blank" rel="noopener">por que a presença digital importa</a> para atrair mais clientes.</p>
+
+    <h2>Por que avaliações no Google são importantes</h2>
+    <ul>
+      <li><strong>Mais visibilidade:</strong> ajudam no ranqueamento local e no Google Maps.</li>
+      <li><strong>Mais confiança:</strong> funcionam como prova social acessível.</li>
+      <li><strong>Mais conversão:</strong> reduzem dúvidas e aceleram a decisão de compra.</li>
+    </ul>
+    <p>Quando bem trabalhadas, as avaliações se tornam um verdadeiro motor de autoridade e conversão local.</p>
+
+    <h2>Como ver minhas avaliações no Google?</h2>
+    <ol>
+      <li>Acesse <a href="https://www.google.com/maps" target="_blank" rel="noopener">google.com/maps</a> ou pesquise o nome da sua empresa no Google.</li>
+      <li>Clique no nome do negócio ou utilize o painel lateral.</li>
+      <li>Vá até a aba <strong>Avaliações</strong>.</li>
+      <li>Leia os comentários, veja as notas e responda com atenção.</li>
+    </ol>
+    <p>Esse monitoramento contínuo é essencial para gerenciar sua reputação e identificar oportunidades de melhoria.</p>
+    <p>Ao organizar sua página de avaliações e depoimentos, cuide também dos <a href="https://encantoshub.com.br/blog/guia-hiperlink" target="_blank" rel="noopener">links internos</a> e da qualidade visual com <a href="https://encantoshub.com.br/blog/seo-para-imagens" target="_blank" rel="noopener">SEO para imagens</a>.</p>
+
+
+    <h2>5 frases para pedir avaliação do cliente</h2>
+    <p>Adapte os modelos para WhatsApp, e-mail, Instagram ou abordagem presencial. O ideal é manter um tom respeitoso, natural e coerente com o momento da jornada do cliente.</p>
+
+    <h3>1. Abordagem amigável e personalizada</h3>
+    <blockquote>
+      "Olá, [Nome do Cliente]! Sua opinião é muito importante para nós. Se você teve uma boa experiência na [Nome da Empresa], que tal compartilhar sua avaliação?<br>
+      💬 Avalie aqui: [Link da Avaliação]<br>
+      Agradecemos muito o seu tempo!"
+    </blockquote>
+
+    <h3>2. Mensagem com benefício (com ressalvas)</h3>
+    <p>Use apenas como agradecimento, sem condicionar a avaliação a uma nota específica.</p>
+    <blockquote>
+      "Adoramos ter você na [Nome da Empresa]! Como forma de agradecimento, oferecemos [benefício].<br>
+      Se quiser compartilhar sua opinião, ficaremos muito felizes com sua avaliação: [Link da Avaliação]"
+    </blockquote>
+
+    <h3>3. Foco na reputação e melhoria contínua</h3>
+    <blockquote>
+      "Estamos sempre buscando melhorar nosso serviço. Se já teve uma boa experiência com a [Nome da Empresa], sua avaliação pode ajudar novos clientes a nos conhecerem.<br>
+      👉 Avalie aqui: [Link da Avaliação]"
+    </blockquote>
+
+    <h3>4. Solicitação com foto da experiência</h3>
+    <p>Funciona muito bem para negócios com apelo visual (restaurantes, clínicas, lojas físicas).</p>
+    <blockquote>
+      "Que tal compartilhar sua experiência com uma foto?<br>
+      1) Tire uma foto do seu produto ou do nosso espaço<br>
+      2) Acesse este link: [Link da Avaliação]<br>
+      3) Deixe sua opinião e adicione a imagem<br><br>
+      Adoramos ver nossos clientes felizes — sua imagem pode inspirar outros!"
+    </blockquote>
+
+    <h3>5. Abordagem para clientes novos</h3>
+    <blockquote>
+      "Olá, [Nome]! Foi um prazer receber você pela primeira vez. Esperamos que sua experiência tenha sido incrível.<br>
+      Que tal nos contar o que achou? Sua avaliação ajuda outros clientes e fortalece nosso trabalho.<br>
+      💬 Avalie aqui: [Link da Avaliação]<br>
+      Seja sempre bem-vindo(a)!"
+    </blockquote>
+
+    <h2>Dicas práticas com QR Code e imagem</h2>
+    <p>Uma das formas mais simples e eficazes de estimular avaliações presenciais é usar um QR Code com imagem visual atrativa. Isso funciona especialmente em balcões, caixas ou mesas.</p>
+    <ul>
+      <li><strong>Cartazes com QR Code:</strong> posicione em pontos de alto fluxo com link direto para a avaliação.</li>
+      <li><strong>Cartões físicos:</strong> inclua QR Code em cartões de visita, fidelidade ou no verso do recibo.</li>
+      <li><strong>Timing é tudo:</strong> peça logo após uma experiência positiva.</li>
+      <li><strong>Treine a equipe:</strong> todos devem saber como pedir avaliações de forma natural.</li>
+      <li><strong>Use o nome do cliente:</strong> mensagens personalizadas aumentam a taxa de resposta.</li>
+    </ul>
+
+    <h2>Atenção às diretrizes do Google</h2>
+    <p>Respeite as políticas do Google ao solicitar avaliações. Evite:</p>
+    <ul>
+      <li>Oferecer recompensas por avaliações positivas.</li>
+      <li>Condicionar brindes a 5 estrelas.</li>
+      <li>Forçar ou influenciar o cliente a deixar um comentário específico.</li>
+      <li>Criar avaliações falsas ou automatizadas.</li>
+    </ul>
+    <p>É permitido:</p>
+    <ul>
+      <li>Proporcionar uma boa experiência.</li>
+      <li>Pedir a avaliação com naturalidade.</li>
+      <li>Ser transparente sobre o valor da opinião do cliente.</li>
+    </ul>
+    <p>A chave está em inspirar, não forçar.</p>
+
+    <h2>Conclusão</h2>
+    <p>Pedir avaliações no Google de forma estratégica e ética é um dos caminhos mais diretos para fortalecer sua autoridade digital e atrair novos clientes. Ao combinar boas práticas com um processo simples — QR Codes com foto, mensagens personalizadas e acompanhamento periódico — você constrói uma reputação sólida e relevante para quem realmente importa: seus futuros clientes.</p>
+
 <p>Acesse a <a href="https://encantoshub.com.br/blog" title="Acesse o blog da EncantosHub">página central do nosso Blog</a> e descubra mais conteúdos exclusivos.</p>
   
   `
