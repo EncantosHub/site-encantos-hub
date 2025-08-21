@@ -244,6 +244,156 @@ export const blogPosts: BlogPost[] = [
   
   `
 },
+{
+  slug: "guia-hiperlink",
+  title: "O que é hiperlink: guia prático com exemplos em HTML",
+  summary: "Aprenda o que é hiperlink, como criar links em HTML e descubra boas práticas de SEO com exemplos, atributos essenciais e dicas de acessibilidade.",
+  date: "2025-08-12",
+  category: "Conteúdo",
+  thumbnail: "/images/blog/html-hiperlinks.jpg",
+  author: "Isabella Brilha",
+  authorLinkedIn: "https://linkedin.com/in/isabella-brilha",
+  content: `
+    <p>Se você está começando no mundo do SEO, marketing digital ou criação de sites, entender o que é um hiperlink e como fazer corretamente no HTML é essencial.</p>
+
+    <p>Hiperlinks são a base da web: eles conectam páginas, ajudam os buscadores a entender seu site e são cruciais para estratégias de SEO. Neste guia, vamos te mostrar de forma simples e prática como criar um link HTML e aplicar boas práticas para ter mais resultados online.</p>
+
+    <h2>Sumário</h2>
+    <ul>
+      <li><a href="#o-que-e-um-hiperlink">O que é um hiperlink?</a></li>
+      <li><a href="#estrutura-basica">Como fazer um link HTML: estrutura básica</a></li>
+      <li><a href="#tipos-de-hiperlink">Tipos de hiperlink com exemplos práticos</a></li>
+      <li><a href="#link-absoluto-vs-relativo">Link absoluto vs link relativo</a></li>
+      <li><a href="#atributo-rel">Atributo rel e SEO</a></li>
+      <li><a href="#boas-praticas">Boas práticas de links para SEO</a></li>
+      <li><a href="#conclusao">Conclusão</a></li>
+    </ul>
+
+    <h2 id="o-que-e-um-hiperlink">O que é um hiperlink?</h2>
+    <p>Um hiperlink (ou simplesmente “link”) é um elemento clicável que leva o usuário de uma página para outra — dentro do mesmo site ou para um site externo. Na linguagem HTML, ele é representado pela tag <code>&lt;a&gt;</code>, chamada de âncora.</p>
+
+    <p><strong>Exemplo básico de link HTML:</strong></p>
+    <pre><code>&lt;a href="https://www.seuexemplo.com"&gt;Visite nosso site&lt;/a&gt;</code></pre>
+
+    <h2 id="estrutura-basica">Como fazer um link HTML: estrutura básica</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Elemento</th>
+          <th>Função</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&lt;a&gt;</td>
+          <td>Define o link (âncora)</td>
+        </tr>
+        <tr>
+          <td>href</td>
+          <td>URL de destino do link</td>
+        </tr>
+        <tr>
+          <td>target</td>
+          <td>Define onde abrir (mesma aba, nova aba etc.)</td>
+        </tr>
+        <tr>
+          <td>title</td>
+          <td>Mostra uma dica ao passar o mouse</td>
+        </tr>
+        <tr>
+          <td>rel</td>
+          <td>Informa ao Google a relação entre páginas (SEO)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="tipos-de-hiperlink">Tipos de hiperlink com exemplos práticos</h2>
+    <h3>1. Link com texto âncora (ideal para SEO)</h3>
+    <pre><code>&lt;a href="https://www.seusite.com"&gt;Acesse nossa página inicial&lt;/a&gt;</code></pre>
+    <p>Use palavras-chave no texto âncora sempre que possível.</p>
+
+    <h3>2. Link que abre na mesma aba</h3>
+    <pre><code>&lt;a href="https://www.seusite.com" target="_self"&gt;Clique aqui&lt;/a&gt;</code></pre>
+
+    <h3>3. Link que abre em nova aba (ótimo para externos)</h3>
+    <pre><code>&lt;a href="https://www.seusite.com" target="_blank"&gt;Abrir em nova guia&lt;/a&gt;</code></pre>
+    <p>Mantém o usuário no seu site e é indicado para links externos.</p>
+
+    <h3>4. Link com legenda (title)</h3>
+    <pre><code>&lt;a href="https://www.seusite.com" title="Ir para o site principal"&gt;Visite o site&lt;/a&gt;</code></pre>
+
+    <h3>5. Link em imagem</h3>
+    <pre><code>&lt;a href="https://www.seusite.com"&gt;
+  &lt;img src="logo.png" alt="Logo da empresa" /&gt;
+&lt;/a&gt;</code></pre>
+
+    <h3>6. Link em botão (com JavaScript)</h3>
+    <pre><code>&lt;button onclick="window.location.href='https://www.seusite.com'"&gt;Visitar&lt;/button&gt;</code></pre>
+
+    <h3>7. Link para e-mail</h3>
+    <pre><code>&lt;a href="mailto:contato@seusite.com"&gt;Enviar e-mail&lt;/a&gt;</code></pre>
+
+    <h3>8. Link para telefone</h3>
+    <pre><code>&lt;a href="tel:+559999999999"&gt;Ligar agora&lt;/a&gt;</code></pre>
+
+    <h2 id="link-absoluto-vs-relativo">Link absoluto vs link relativo</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Tipo</th>
+          <th>Exemplo</th>
+          <th>Quando usar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Absoluto</td>
+          <td>https://www.seusite.com/contato</td>
+          <td>Para links externos ou completos</td>
+        </tr>
+        <tr>
+          <td>Relativo</td>
+          <td>/contato</td>
+          <td>Para links internos no mesmo domínio</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="atributo-rel">Atributo rel e SEO</h2>
+    <p>O atributo <code>rel</code> ajuda o Google a entender a natureza do link. Principais valores:</p>
+    <ul>
+      <li><code>rel="nofollow"</code> → Não transfere autoridade (ex: links pagos)</li>
+      <li><code>rel="sponsored"</code> → Indica publicidade</li>
+      <li><code>rel="ugc"</code> → Conteúdo gerado por usuários (ex: comentários)</li>
+      <li><code>rel="follow"</code> → Implícito, transfere autoridade</li>
+    </ul>
+
+    <p><strong>Exemplo ideal para SEO:</strong></p>
+    <pre><code>&lt;a href="https://parceiro.com" rel="nofollow" title="Conheça nosso parceiro" target="_blank"&gt;Visite o parceiro&lt;/a&gt;</code></pre>
+
+    <h2 id="boas-praticas">Boas práticas de links para SEO</h2>
+    <ul>
+      <li>Use texto âncora claro e descritivo (ex: "saiba mais sobre nossos serviços" em vez de "clique aqui").</li>
+      <li>Priorize links internos estratégicos para distribuir autoridade.</li>
+      <li>Abra links externos em nova aba e use <code>rel="nofollow"</code> quando necessário.</li>
+      <li>Evite links apenas em botões com JavaScript.</li>
+      <li>Mantenha URLs limpas e legíveis (ex: /servicos/consultoria-seo).</li>
+    </ul>
+    <p>Para potencializar seu interlinking, publique com imagens otimizadas (nome de arquivo, alt, peso) seguindo este guia de <a href="https://encantoshub.com.br/blog/seo-para-imagens" target="_blank" rel="noopener">SEO para imagens</a> e mantenha um hub de conteúdos atualizado na <a href="https://encantoshub.com.br/blog" target="_blank" rel="noopener">página do Blog</a>.</p>
+
+    <h3>💡 Material de apoio</h3>
+    <p>Para facilitar a implementação dessas práticas, disponibilizamos uma <a href="https://docs.google.com/spreadsheets/d/1gpuCYeZmnw_CZfUsO2uU_LLQWyP4QYM5XMZJPp5chio/edit?gid=1231688682#gid=1231688682" target="_blank" rel="noopener">planilha de controle de links internos</a> com exemplos práticos para organizar sua estratégia de interlinking.</p>
+
+    <h2 id="conclusao">Conclusão</h2>
+    <p>Saber o que é um hiperlink e como criar corretamente é fundamental para estruturar um site otimizado, com boa navegabilidade e potencial de ranqueamento no Google.</p>
+    <p>Ao aplicar essas boas práticas com consistência, você melhora acessibilidade, experiência do usuário e performance SEO.</p>
+
+<hr />
+<p>Acesse a <a href="https://encantoshub.com.br/blog" title="Acesse o blog da EncantosHub">página central do nosso Blog</a> e descubra mais conteúdos exclusivos.</p>
+  
+  `
+},
+
   {
     slug: "guia-completo-seo-iniciantes",
     title: "Guia Completo de SEO para Iniciantes",
