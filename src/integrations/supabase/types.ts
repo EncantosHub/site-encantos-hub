@@ -14,7 +14,39 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      gmn_leads: {
+        Row: {
+          company_name: string
+          created_at: string
+          email: string
+          form_data: Json
+          full_name: string
+          id: string
+          updated_at: string
+          whatsapp: string
+        }
+        Insert: {
+          company_name: string
+          created_at?: string
+          email: string
+          form_data: Json
+          full_name: string
+          id?: string
+          updated_at?: string
+          whatsapp: string
+        }
+        Update: {
+          company_name?: string
+          created_at?: string
+          email?: string
+          form_data?: Json
+          full_name?: string
+          id?: string
+          updated_at?: string
+          whatsapp?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
