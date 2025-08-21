@@ -273,7 +273,7 @@ export const blogPosts: BlogPost[] = [
   }
 ];
 
-export const categories = ["Todos", "SEO", "GMN", "Marketing"];
+export const categories = ["Todos", "SEO", "Marketing", "Ferramentas", "GMN", "Conteúdo", "Análise"];
 
 export const getPostBySlug = (slug: string): BlogPost | undefined => {
   return blogPosts.find(post => post.slug === slug);
