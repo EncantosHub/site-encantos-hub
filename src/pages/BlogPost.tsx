@@ -101,7 +101,18 @@ const BlogPost = () => {
               <div className="flex items-center space-x-6 text-muted-foreground mb-6">
                 <div className="flex items-center space-x-2">
                   <User size={16} />
-                  <span>{post.author}</span>
+                  {post.authorLinkedIn ? (
+                    <a 
+                      href={post.authorLinkedIn} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-brand-gold hover:text-brand-gold/80 transition-colors"
+                    >
+                      {post.author}
+                    </a>
+                  ) : (
+                    <span>{post.author}</span>
+                  )}
                 </div>
                 <div className="flex items-center space-x-2">
                   <Calendar size={16} />

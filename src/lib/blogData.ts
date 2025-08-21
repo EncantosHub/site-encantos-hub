@@ -6,6 +6,7 @@ export interface BlogPost {
   category: string;
   thumbnail: string;
   author: string;
+  authorLinkedIn?: string;
   content: string;
 }
 
@@ -16,9 +17,9 @@ export const blogPosts: BlogPost[] = [
   summary: "Descubra por que investir na presença digital é essencial e como o Google Meu Negócio pode ser o primeiro passo para atrair clientes e crescer online.",
   date: "2025-08-12",
   category: "GMN",
-  thumbnail: "/images/presenca-digital-empresas.jpg",
-  author: "Isabella Brilha" <a href="https://linkedin.com/in/isabella-brilha" target="_blank" rel="noopener noreferrer" style="color: #eab308; text-decoration: none;">
-  </a>,
+  thumbnail: "/images/blog/presenca-digital-empresas.jpg",
+  author: "Isabella Brilha",
+  authorLinkedIn: "https://linkedin.com/in/isabella-brilha",
   content: `
 
     <p>Estar presente no digital deixou de ser um diferencial — é uma exigência para empresas que desejam crescer de forma sustentável. Para empreendedores e profissionais de marketing, entender onde investir primeiro, de acordo com o momento do negócio, é o ponto de partida para uma presença digital estratégica.</p>
