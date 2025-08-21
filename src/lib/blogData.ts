@@ -17,7 +17,9 @@ export const blogPosts: BlogPost[] = [
   date: "2025-08-12",
   category: "GMN",
   thumbnail: "/images/presenca-digital-empresas.jpg",
-      content: `
+  author: "Isabella Brilha" <a href="https://linkedin.com/in/isabella-brilha" target="_blank" rel="noopener noreferrer" style="color: #eab308; text-decoration: none;">
+  </a>,
+  content: `
 
     <p>Estar presente no digital deixou de ser um diferencial — é uma exigência para empresas que desejam crescer de forma sustentável. Para empreendedores e profissionais de marketing, entender onde investir primeiro, de acordo com o momento do negócio, é o ponto de partida para uma presença digital estratégica.</p>
 
@@ -129,16 +131,6 @@ export const blogPosts: BlogPost[] = [
     
     <h3>Quer iniciar agora?</h3>
     <p>Conte com a EncantosHub para estruturar e otimizar a presença digital da sua empresa. Entre em contato pelo <a href="https://wa.me/5511964721143" target="_blank" rel="noopener"><strong>WhatsApp</strong></a> e vamos criar sua estratégia personalizada.</p>
-
-<hr />
-  <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee;">
-    <p style="font-size: 0.95rem; color: #555;">
-      Artigo escrito por 
-      <a href="https://linkedin.com/in/isabella-brilha" target="_blank" rel="noopener noreferrer" style="color: #eab308; text-decoration: none;">
-        Isabella Brilha
-      </a>, especialista em SEO e presença digital local.
-    </p>
-  </div>
 
 <hr />
 <p>Acesse a <a href="https://encantoshub.com.br/blog" title="Acesse o blog da EncantosHub">página central do nosso Blog</a> e descubra mais conteúdos exclusivos.</p>
