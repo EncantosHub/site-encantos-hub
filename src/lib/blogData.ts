@@ -509,6 +509,199 @@ export const blogPosts: BlogPost[] = [
   
   `
 },
+
+{
+  slug: "otimizar-gmn",
+  title: "Google Meu Negócio: Como Atrair Clientes com SEO Local",
+  summary: "Aprenda como otimizar seu Google Meu Negócio com SEO local e destaque sua empresa no Google Maps. Atraia mais clientes e aumente sua visibilidade online.",
+  date: "2025-07-17",
+  category: "GMN",
+  thumbnail: "/images/blog/presenca-digital-empresas.jpg",
+  author: "Paloma Nogueira",
+  authorLinkedIn: "https://www.linkedin.com/in/paloma-nogueira",
+  content: `
+  <h2>Sumário:</h2>
+<ul>
+  <li><a href="#o-que-e-gmb">O que é o Google Meu Negócio e por que ele é essencial?</a></li>
+  <li><a href="#configurar-perfil">Como configurar corretamente seu perfil empresarial</a></li>
+  <li><a href="#estrategias-seo">Estratégias de SEO local para seu GMB</a></li>
+  <li><a href="#avaliacoes">Gerenciamento de avaliações e reputação online</a></li>
+  <li><a href="#publicacoes">Publicações frequentes: como e por que usar</a></li>
+  <li><a href="#metricas">Métricas e insights: analisando os resultados do seu perfil</a></li>
+  <li><a href="#dicas-maps">Dicas extras para se destacar no Google Maps</a></li>
+  <li><a href="#conclusao">Transforme sua visibilidade com a Encantos Hub</a></li>
+</ul>
+
+<h2 id="o-que-e-gmb">O que é o Google Meu Negócio e por que ele é essencial?</h2>
+<p>Se você é um empreendedor ou profissional que atua localmente, precisa estar onde seus clientes procuram por serviços: no Google. O Google Meu Negócio (GMB) é uma ferramenta gratuita que coloca seu perfil empresarial no centro das buscas e do Google Maps. Sinto que muitas empresas ainda subestimam o poder dessa vitrine digital.</p>
+<p>Com um perfil bem configurado, você aumenta sua presença no Google Maps, conquista confiança com avaliações positivas e melhora seu posicionamento na busca orgânica local.</p>
+
+<h2 id="configurar-perfil">Como configurar corretamente seu perfil empresarial</h2>
+<p>Criar um perfil no GMB é o primeiro passo, mas a configuração correta é o que realmente faz diferença. Abaixo, os principais pontos:</p>
+<ul>
+  <li><strong>Categoria correta:</strong> escolha uma categoria principal que represente exatamente seu serviço (ex: "clínica de fisioterapia").</li>
+  <li><strong>Informações completas:</strong> nome, endereço, telefone, horários, site e serviços devem estar atualizados.</li>
+  <li><strong>Descrição estratégica:</strong> inclua palavras-chave como SEO local, marketing local e atrair clientes locais de forma natural.</li>
+  <li><strong>Fotos reais e de qualidade:</strong> fachada, interior, equipe, produtos e serviços.</li>
+</ul>
+
+<h2 id="estrategias-seo">Estratégias de SEO local para seu GMB</h2>
+<p>Não basta estar presente: é preciso aparecer entre os primeiros resultados. Aqui estão técnicas de SEO local aplicadas ao Google Meu Negócio:</p>
+<ul>
+  <li><strong>Palavras-chave na descrição:</strong> posicione termos como perfil empresarial no Google e presença no Google Maps.</li>
+  <li><strong>Consistência em NAP:</strong> nome, endereço e telefone idênticos ao que está no seu site e em outros diretórios.</li>
+  <li><strong>Linkagem interna:</strong> inclua o link para sua página de serviços no site da Encantos Hub e para cursos sobre SEO local.</li>
+  <li><strong>Postagens semanais:</strong> com palavras-chave e promoções.</li>
+</ul>
+
+<h2 id="avaliacoes">Gerenciamento de avaliações e reputação online</h2>
+<p>As avaliações no Google impactam diretamente a decisão de compra. Mais que estrelas, elas mostram a confiança do seu público.</p>
+<ul>
+  <li>Incentive feedbacks autênticos após cada atendimento.</li>
+  <li>Responda com estratégia: agradeça elogios e trate críticas com empatia e soluções.</li>
+  <li>Palavras-chave nas respostas ajudam no SEO.</li>
+</ul>
+<p>Crie um fluxo simples para gerar reviews constantes usando QR Codes e mensagens prontas: <a href="https://encantoshub.com.br/blog/qrcode-avaliacoes" target="_blank" rel="noopener">como pedir avaliações no Google com QR Code</a>.</p>
+
+<h2 id="publicacoes">Publicações frequentes: como e por que usar</h2>
+<p>O GMB permite publicar posts com novidades, eventos, ofertas ou dicas.</p>
+<ul>
+  <li>Crie conteúdo educativo e atrativo, como mini-posts do seu blog ou curiosidades locais.</li>
+  <li>Use imagens e CTAs, como “agende agora” ou “saiba mais”.</li>
+  <li>Poste ao menos 1 vez por semana.</li>
+</ul>
+
+<h2 id="metricas">Métricas e insights: analisando os resultados do seu perfil</h2>
+<p>Dentro do GMB, você encontra dados valiosos sobre sua visibilidade:</p>
+<ul>
+  <li><strong>Visualizações:</strong> no Maps e na busca.</li>
+  <li><strong>Ações do cliente:</strong> cliques no site, chamadas, solicitações de rota.</li>
+  <li><strong>Termos de busca utilizados:</strong> veja como encontraram seu perfil.</li>
+</ul>
+<p>Use essas informações para aprimorar sua estratégia continuamente.</p>
+
+<h2 id="dicas-maps">Dicas extras para se destacar no Google Maps</h2>
+<ul>
+  <li>Tenha backlinks locais apontando para seu site.</li>
+  <li>Inclua uma FAQ com palavras-chave no seu site e nas respostas do GMB.</li>
+  <li>Participe de diretórios relevantes (como Apontador, GuiaMais, etc.).</li>
+  <li>Mantenha consistência nas redes sociais.</li>
+</ul>
+
+<h2 id="conclusao">Transforme sua visibilidade com a Encantos Hub</h2>
+<p>O Google Meu Negócio é mais que uma ficha cadastral: é um canal ativo para atrair clientes e construir autoridade. Aplicando boas práticas de SEO local, você se destaca entre os concorrentes e se torna referência na sua região.</p>
+
+<p>Quer aprender mais sobre SEO local e transformar seu negócio em uma referência regional? <a href="https://encantoshub.com.br">Conheça nossos cursos e mentorias</a> ou agende uma consultoria gratuita.</p>
+
+<hr />
+  <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee;">
+    <p style="font-size: 0.95rem; color: #555;">
+      Artigo escrito por 
+      <a href="https://www.linkedin.com/in/paloma-nogueira/" target="_blank" rel="noopener noreferrer" style="color: #eab308; text-decoration: none;">
+        Paloma Nogueira
+      </a>, especialista em SEO e presença digital local.
+    </p>
+  </div>  
+
+<hr />
+<p>Acesse a <a href="https://encantoshub.com.br/blog" title="Acesse o blog da EncantosHub">página central do nosso Blog</a> e descubra mais conteúdos exclusivos.</p>
+  
+  `   },
+    {
+  slug: "analise-concorrencia-digital",
+  title: "Análise de concorrência no digital",
+  summary: "Aprenda como analisar seus concorrentes digitais e identificar oportunidades estratégicas no mercado online para melhorar seu posicionamento competitivo.",
+  date: "2024-11-25",
+  category: "Análise",
+  thumbnail: "/images/analise-concorrencia-digital.jpg",
+      content: `
+<p>Conhecer seus concorrentes é fundamental para uma estratégia digital eficaz. A análise competitiva permite identificar oportunidades e melhorar seu posicionamento no mercado.</p>
+
+<h2>Por que analisar a concorrência?</h2>
+
+<ul>
+<li>Identificar gaps no mercado</li>
+<li>Benchmarking de melhores práticas</li>
+<li>Entender o comportamento do público</li>
+<li>Descobrir novas oportunidades</li>
+</ul>
+<p>Ao entender o cenário, estruture sua presença local com o guia de <a href="https://encantoshub.com.br/blog/importancia-presenca-digital" target="_blank" rel="noopener">presença digital estratégica</a> e otimize o <a href="https://encantoshub.com.br/blog/otimizar-gmn" target="_blank" rel="noopener">Perfil da Empresa no Google</a>.</p>
+
+
+<h2>Ferramentas essenciais</h2>
+
+<h3>Gratuitas</h3>
+<ul>
+<li>Google Alerts</li>
+<li>SimilarWeb (versão básica)</li>
+<li>Facebook Ad Library</li>
+<li>Google Trends</li>
+</ul>
+<p>No plano de conteúdo e ativos, publique com <a href="https://encantoshub.com.br/blog/seo-para-imagens" target="_blank" rel="noopener">imagens otimizadas</a> e fortaleça a arquitetura com <a href="https://encantoshub.com.br/blog/guia-hiperlink" target="_blank" rel="noopener">links internos estratégicos</a>.</p>
+
+<h3>Pagas</h3>
+<ul>
+<li>SEMrush</li>
+<li>Ahrefs</li>
+<li>SpyFu</li>
+<li>BuzzSumo</li>
+</ul>
+
+<h2>O que analisar</h2>
+
+<h3>Presença digital</h3>
+<ul>
+<li>Sites e blogs</li>
+<li>Redes sociais ativas</li>
+<li>Estratégias de SEO</li>
+<li>Campanhas pagas</li>
+</ul>
+
+<h3>Conteúdo</h3>
+<ul>
+<li>Tipos de conteúdo</li>
+<li>Frequência de publicação</li>
+<li>Engajamento</li>
+<li>Palavras-chave utilizadas</li>
+</ul>
+
+<h3>Performance</h3>
+<ul>
+<li>Tráfego estimado</li>
+<li>Rankings no Google</li>
+<li>Crescimento de seguidores</li>
+<li>Interação nas redes</li>
+</ul>
+
+<h2>Criando seu relatório</h2>
+
+<ol>
+<li><strong>Identifique concorrentes diretos e indiretos</strong></li>
+<li><strong>Colete dados sistematicamente</strong></li>
+<li><strong>Compare métricas relevantes</strong></li>
+<li><strong>Identifique oportunidades</strong></li>
+<li><strong>Defina estratégias baseadas nos insights</strong></li>
+</ol>
+
+<h2>Frequência da análise</h2>
+
+<ul>
+<li>Análise completa: trimestral</li>
+<li>Monitoramento: mensal</li>
+<li>Alertas: tempo real</li>
+<li>Relatórios: mensais</li>
+</ul>
+
+<h2>Conclusão</h2>
+
+<p>A análise de concorrência não é sobre copiar, mas sobre aprender e inovar. Use os insights para criar estratégias únicas que destacem seu negócio no mercado digital.</p>
+
+<hr />
+<p>Acesse a <a href="https://encantoshub.com.br/blog" title="Acesse o blog da EncantosHub">página central do nosso Blog</a> e descubra mais conteúdos exclusivos.</p>
+
+`      
+    },
+  
   {
     slug: "guia-completo-seo-iniciantes",
     title: "Guia Completo de SEO para Iniciantes",
