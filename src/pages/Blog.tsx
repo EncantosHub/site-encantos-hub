@@ -7,94 +7,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, User, Search, ArrowRight } from "lucide-react";
-
-// Blog post interface
-interface BlogPost {
-  slug: string;
-  title: string;
-  summary: string;
-  date: string;
-  category: string;
-  thumbnail: string;
-  author: string;
-  content: string;
-}
+import { blogPosts, categories, type BlogPost } from "@/lib/blogData";
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("Todos");
-
-  // Mock blog posts data
-  const blogPosts: BlogPost[] = [
-    {
-      slug: "guia-completo-seo-iniciantes",
-      title: "Guia Completo de SEO para Iniciantes",
-      summary: "Aprenda os fundamentos do SEO e como aplicar técnicas básicas para melhorar o posicionamento do seu site nos motores de busca.",
-      date: "15-01-2024",
-      category: "SEO",
-      thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
-      author: "Isabella",
-      content: `<h1>Guia Completo de SEO para Iniciantes</h1>
-        <p>O SEO (Search Engine Optimization) é fundamental para qualquer negócio que deseja ter visibilidade online...</p>`
-    },
-    {
-      slug: "otimizacao-google-meu-negocio",
-      title: "Como Otimizar seu Google Meu Negócio",
-      summary: "Estratégias práticas para maximizar a visibilidade local do seu negócio e atrair mais clientes da sua região.",
-      date: "12-01-2024",
-      category: "GMN",
-      thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
-      author: "Paloma",
-      content: `<h1>Como Otimizar seu Google Meu Negócio</h1>
-        <p>O Google Meu Negócio é uma ferramenta essencial para empresas locais...</p>`
-    },
-    {
-      slug: "tendencias-marketing-digital-2024",
-      title: "Tendências de Marketing Digital para 2024",
-      summary: "Descubra as principais tendências que vão dominar o marketing digital este ano e como se preparar para elas.",
-      date: "08-01-2024",
-      category: "Marketing",
-      thumbnail: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=400&h=250&fit=crop",
-      author: "Bruno",
-      content: `<h1>Tendências de Marketing Digital para 2024</h1>
-        <p>O mundo do marketing digital evolui constantemente...</p>`
-    },
-    {
-      slug: "estrategias-conteudo-seo",
-      title: "Estratégias de Conteúdo para SEO",
-      summary: "Como criar conteúdo que ranqueia bem nos buscadores e atrai seu público-alvo.",
-      date: "05-01-2024",
-      category: "SEO",
-      thumbnail: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=400&h=250&fit=crop",
-      author: "Isabella",
-      content: `<h1>Estratégias de Conteúdo para SEO</h1>
-        <p>Criar conteúdo que ranqueia bem requer estratégia...</p>`
-    },
-    {
-      slug: "métricas-importantes-marketing-digital",
-      title: "Métricas Importantes no Marketing Digital",
-      summary: "Quais indicadores você deve acompanhar para medir o sucesso das suas campanhas de marketing digital.",
-      date: "02-01-2024",
-      category: "Marketing",
-      thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
-      author: "Bruno",
-      content: `<h1>Métricas Importantes no Marketing Digital</h1>
-        <p>Medir resultados é essencial para o sucesso...</p>`
-    },
-    {
-      slug: "otimizacao-velocidade-site",
-      title: "Otimização de Velocidade do Site",
-      summary: "Técnicas práticas para acelerar seu site e melhorar a experiência do usuário e o SEO.",
-      date: "28-12-2023",
-      category: "SEO",
-      thumbnail: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&h=250&fit=crop",
-      author: "Paloma",
-      content: `<h1>Otimização de Velocidade do Site</h1>
-        <p>A velocidade do site é um fator crucial para SEO...</p>`
-    }
-  ];
-
-  const categories = ["Todos", "SEO", "GMN", "Marketing"];
 
   const filteredPosts = blogPosts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||

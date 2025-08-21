@@ -2,38 +2,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, ArrowRight, User } from "lucide-react";
 import { Link } from "react-router-dom";
+import { getRecentPosts } from "@/lib/blogData";
 
 const BlogPreviewSection = () => {
-  // Mock data for recent blog posts
-  const recentPosts = [
-    {
-      slug: "guia-completo-seo-iniciantes",
-      title: "Guia Completo de SEO para Iniciantes",
-      summary: "Aprenda os fundamentos do SEO e como aplicar técnicas básicas para melhorar o posicionamento do seu site nos motores de busca.",
-      date: "15-01-2024",
-      category: "SEO",
-      thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
-      author: "Isabella"
-    },
-    {
-      slug: "otimizacao-google-meu-negocio",
-      title: "Como Otimizar seu Google Meu Negócio",
-      summary: "Estratégias práticas para maximizar a visibilidade local do seu negócio e atrair mais clientes da sua região.",
-      date: "12-01-2024", 
-      category: "GMN",
-      thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
-      author: "Paloma"
-    },
-    {
-      slug: "tendencias-marketing-digital-2024",
-      title: "Tendências de Marketing Digital para 2024",
-      summary: "Descubra as principais tendências que vão dominar o marketing digital este ano e como se preparar para elas.",
-      date: "08-01-2024",
-      category: "Marketing",
-      thumbnail: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=400&h=250&fit=crop",
-      author: "Bruno"
-    }
-  ];
+  const recentPosts = getRecentPosts(3);
 
   return (
     <section className="py-20 bg-background">
