@@ -11,6 +11,141 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+  slug: "importancia-presenca-digital",
+  title: "Importância da presença digital para aparecer no Google",
+  summary: "Descubra por que investir na presença digital é essencial e como o Google Meu Negócio pode ser o primeiro passo para atrair clientes e crescer online.",
+  date: "2025-08-12",
+  category: "GMN",
+  thumbnail: "/images/presenca-digital-empresas.jpg",
+      content: `
+
+    <p>Estar presente no digital deixou de ser um diferencial — é uma exigência para empresas que desejam crescer de forma sustentável. Para empreendedores e profissionais de marketing, entender onde investir primeiro, de acordo com o momento do negócio, é o ponto de partida para uma presença digital estratégica.</p>
+
+    <h2>Como aparecer no Google gratuitamente?</h2>
+    <p>Se você quer que sua empresa seja encontrada com facilidade nas buscas do Google e no Google Maps, o melhor caminho é criar e manter um <strong>Perfil da Empresa no Google</strong> (antigo Google Meu Negócio).</p>
+    <p>Esse canal gratuito permite que seu negócio apareça nas pesquisas locais sempre que alguém buscar por produtos ou serviços na sua região. Além da visibilidade, o perfil oferece recursos para atrair e engajar potenciais clientes, como:</p>
+    <ul>
+      <li>Fotos da empresa</li>
+      <li>Avaliações de clientes</li>
+      <li>Horário de funcionamento</li>
+      <li>Publicações semanais</li>
+      <li>Informações comerciais</li>
+      <li>Botões de ação (WhatsApp, site, rota, telefone)</li>
+    </ul>
+    <p>Se você está montando sua base local, aprofunde nas ações de <a href="https://encantoshub.com.br/blog/otimizar-gmn" target="_blank" rel="noopener">otimização do Perfil da Empresa no Google</a> e garanta que suas fotos e banners estejam leves e bem descritos com este guia de <a href="https://encantoshub.com.br/blog/seo-para-imagens" target="_blank" rel="noopener">SEO para imagens</a>.</p>
+
+    <h3>Como cadastrar sua empresa</h3>
+  <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+  <div style="flex: 1; min-width: 250px;">
+    <ol>
+      <li>Acesse <a href="https://www.google.com/business" target="_blank">google.com/business</a></li>
+      <li>Faça login com uma conta Gmail</li>
+      <li>Preencha as informações corretamente</li>
+      <li>Valide o endereço</li>
+      <li>Verifique se a empresa já aparece nas buscas</li>
+    </ol>
+    <p><strong>Dica bônus:</strong> baixe nossa <a href="https://docs.google.com/spreadsheets/d/1YwbdDgZtIWoV1DWjk9YqgqY4wJX7vtSOHIE5lho9Lo4/edit?gid=1887531653#gid=1887531653" target="_blank">planilha de gestão local</a> para acompanhar e otimizar seu perfil com mais eficiência.</p>
+  </div>
+  <div style="flex: 1; min-width: 250px;">
+    <img src="/images/google-business-form.jpg" alt="Formulário de cadastro no Google Meu Negócio" style="max-width: 100%; height: auto;">
+  </div>
+</div>
+
+    <h2>Como gerenciamos o Google Meu Negócio</h2>
+    <p>Na EncantosHub, acreditamos que uma boa gestão de presença local começa com um diagnóstico estratégico. Antes de qualquer otimização, analisamos como a empresa aparece nas buscas e qual é sua reputação atual.</p>
+    <p>A forma mais prática de iniciar essa análise é pesquisando no próprio Google. Avaliamos:</p>
+    <ul>
+      <li>O que aparece ao buscar o nome da empresa</li>
+      <li>Como os concorrentes estão posicionados</li>
+      <li>Quais conteúdos e avaliações estão visíveis para o público</li>
+    </ul>
+
+    <p>Quer acelerar sua reputação? Veja modelos prontos e um fluxo simples com QR Code em <a href="https://encantoshub.com.br/blog/qrcode-avaliacoes" target="_blank" rel="noopener">como pedir avaliações no Google com QR Code</a>.</p>
+
+    <p>Se o empreendedor quiser uma visão mais completa, oferecemos um <strong>diagnóstico visual</strong>, com um termômetro que indica o que está bom, razoável ou precisa ser melhorado.</p>
+    <img src="/images/termometro.jpg" alt="Termômetro de avaliação do perfil" style="max-width: 100%; height: auto; display: block; margin: 1rem auto;">
+    <p>Com esse panorama, partimos para o <strong>alinhamento estratégico</strong>.</p>
+
+    <h2>Etapas do alinhamento estratégico para melhorar a presença local</h2>
+    <p>A seguir, apresentamos as etapas que utilizamos para estruturar e personalizar a gestão do Perfil da Empresa no Google:</p>
+
+    <h3>1. Acesso ao perfil do Google</h3>
+    <ul>
+      <li>Verificamos se o cliente é o proprietário do perfil</li>
+      <li>Confirmamos se é possível adicionar usuários com segurança</li>
+      <li>Avaliamos se existe um banco de imagens organizado da unidade</li>
+    </ul>
+
+    <h3>2. Informações básicas da unidade</h3>
+    <p>Validamos dados essenciais, que influenciam no ranqueamento e na confiabilidade do perfil:</p>
+    <ul>
+      <li>Nome oficial da empresa</li>
+      <li>Endereço completo com CEP</li>
+      <li>Área de atendimento (bairro, cidade, raio)</li>
+      <li>Telefones e WhatsApp comercial</li>
+      <li>Horário de funcionamento</li>
+      <li>Links do site e redes sociais</li>
+    </ul>
+
+    <h3>3. Posicionamento e público-alvo</h3>
+    <p>Compreendemos o posicionamento da marca para alinhar a comunicação do perfil:</p>
+    <ul>
+      <li>Quem são os concorrentes diretos</li>
+      <li>O que diferencia a empresa</li>
+      <li>Quem é o cliente ideal</li>
+      <li>Quais serviços ou produtos devem ter mais destaque</li>
+    </ul>
+
+    <h3>4. Reputação e relacionamento com clientes</h3>
+    <p>Avaliamos como a empresa lida com avaliações e como pode fortalecer sua autoridade local:</p>
+    <ul>
+      <li>O perfil responde às avaliações?</li>
+      <li>Quem será responsável pelas respostas?</li>
+      <li>Já houve campanhas para incentivar avaliações?</li>
+      <li>Em quais outras plataformas a empresa está presente? <em>(ex.: Google, TripAdvisor, iFood, marketplaces)</em></li>
+    </ul>
+
+    <h3>5. Conteúdo e identidade visual</h3>
+    <p>Verificamos a consistência da comunicação visual da marca:</p>
+    <ul>
+      <li>Há fotos e vídeos atualizados?</li>
+      <li>Existe uma pasta de mídia organizada?</li>
+      <li>Existem ações sazonais ou eventos locais planejados?</li>
+      <li>A identidade visual está definida e coerente?</li>
+    </ul>
+
+    <h3>6. Preferências de gestão e comunicação</h3>
+    <p>Por fim, alinhamos os detalhes operacionais do projeto:</p>
+    <ul>
+      <li>Canal de comunicação principal (WhatsApp, e-mail, Trello)</li>
+      <li>Frequência de postagens</li>
+      <li>Como serão enviados ajustes ou dúvidas</li>
+      <li>Periodicidade dos relatórios</li>
+      <li>Frequência das reuniões de acompanhamento</li>
+    </ul>
+
+    <h2>Conclusão</h2>
+    <p>Ter presença digital não significa estar em todos os lugares ao mesmo tempo, mas sim estar nos canais certos, com estratégia e constância. Com um bom alinhamento inicial e uma gestão ativa do Perfil da Empresa no Google, sua marca pode conquistar destaque local, atrair novos clientes e fortalecer sua reputação online.</p>
+    
+    <h3>Quer iniciar agora?</h3>
+    <p>Conte com a EncantosHub para estruturar e otimizar a presença digital da sua empresa. Entre em contato pelo <a href="https://wa.me/5511964721143" target="_blank" rel="noopener"><strong>WhatsApp</strong></a> e vamos criar sua estratégia personalizada.</p>
+
+<hr />
+  <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee;">
+    <p style="font-size: 0.95rem; color: #555;">
+      Artigo escrito por 
+      <a href="https://linkedin.com/in/isabella-brilha" target="_blank" rel="noopener noreferrer" style="color: #eab308; text-decoration: none;">
+        Isabella Brilha
+      </a>, especialista em SEO e presença digital local.
+    </p>
+  </div>
+
+<hr />
+<p>Acesse a <a href="https://encantoshub.com.br/blog" title="Acesse o blog da EncantosHub">página central do nosso Blog</a> e descubra mais conteúdos exclusivos.</p>
+  
+  `
+},
+  {
     slug: "guia-completo-seo-iniciantes",
     title: "Guia Completo de SEO para Iniciantes",
     summary: "Aprenda os fundamentos do SEO e como aplicar técnicas básicas para melhorar o posicionamento do seu site nos motores de busca.",
