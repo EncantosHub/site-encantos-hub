@@ -933,7 +933,7 @@ export const blogPosts: BlogPost[] = [
       <p>Esse planejamento traz consistência e relevância ao perfil da empresa no Google.</p>
 
       <h2 id="passo-4">4. Produza os conteúdos com ajuda do Chat GPT</h2>
-      <p>Com o planejamento pronto, o próximo passo é produzir os textos. Para facilitar essa etapa, você pode utilizar o Chat GPT. Solicite que ele crie um post para o Google Meu Negócio, usando o modelo a seguir (adapte os trechos em negrito para sua empresa):</p>
+      <p>Com o planejamento pronto, o próximo passo é produzir os textos. Para facilitar essa etapa, você pode utilizar o <a href="https://chatgpt.com/" target="_blank" rel="noopener">Chat GPT</a>. Solicite que ele crie um post para o Google Meu Negócio, usando o modelo a seguir (adapte os trechos em negrito para sua empresa):</p>
       <pre><code>Crie um post de 1.500 caracteres para o Google Meu Negócio da empresa **[Nome da Empresa]**, 
 focado em **[tema do post]**. Inclua a **[palavra‑chave principal]** para SEO local, 
 forneça uma breve descrição sobre o tema e finalize com uma **CTA clara** direcionando para **[canal: site/WhatsApp/outro]**. 
@@ -945,7 +945,7 @@ O post deve ser informativo, destacar os benefícios e ser atraente para o públ
       <ul>
         <li>Use imagens de boa qualidade, sem excesso de texto</li>
         <li>Siga a identidade visual da empresa</li>
-        <li>Crie suas postagens em um <em>template</em> padrão (ex.: Canva) para manter consistência</li>
+        <li>Crie suas postagens neste <a href="https://www.canva.com/design/DAGupsAj7Os/ufH4i3SQ6rjPK1FpLjvEAw/view?utm_content=DAGupsAj7Os&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank" rel="noopener">modelo do Canva</a> para manter consistência</li>
       </ul>
 
       <h2 id="passo-6">6. Agende as postagens</h2>
