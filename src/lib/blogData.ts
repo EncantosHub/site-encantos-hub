@@ -873,7 +873,96 @@ export const blogPosts: BlogPost[] = [
 
 `      
     },
-  
+{
+  slug: "plano-conteudo-gmn",
+  title: "Como postar no Google Meu Negócio: plano de conteúdo estratégico (passo a passo)",
+  summary: "Aprenda como criar e postar um plano de conteúdo estratégico no Google Meu Negócio para atrair mais clientes e melhorar o ranqueamento local.",
+  date: "2025-08-22",
+  category: "GMN",
+  thumbnail: "",
+  author: "Isabella Brilha",
+  authorLinkedIn: "https://linkedin.com/in/isabella-brilha",
+  content: `
+    <div style="max-width: 100%; overflow: hidden;">
+      <h1>Como postar no Google Meu Negócio: plano de conteúdo estratégico passo a passo</h1>
+
+      <h2>Sumário</h2>
+      <ul>
+        <li><a href="#por-que-plano">Por que criar um plano de conteúdo para o Google Meu Negócio</a></li>
+        <li><a href="#passo-1">1. Pesquise a palavra-chave principal do negócio</a></li>
+        <li><a href="#passo-2">2. Analise a intenção de busca</a></li>
+        <li><a href="#passo-3">3. Crie um calendário com mais de 52 pautas</a></li>
+        <li><a href="#passo-4">4. Produza os conteúdos com ajuda do Chat GPT</a></li>
+        <li><a href="#passo-5">5. Escolha e ajuste as imagens</a></li>
+        <li><a href="#passo-6">6. Agende as postagens</a></li>
+        <li><a href="#conclusao">Conclusão</a></li>
+      </ul>
+
+      <h2 id="por-que-plano">Por que criar um plano de conteúdo para o Google Meu Negócio</h2>
+      <p>Criar um plano de conteúdo para o Google Meu Negócio (GMN), agora chamado de <strong>Perfil da Empresa no Google</strong>, é uma das formas mais eficientes de fortalecer a visibilidade local de uma marca. Com postagens bem estruturadas, é possível atrair mais visitas ao perfil, gerar engajamento e até impulsionar conversões, principalmente para negócios físicos e regionais. A seguir, você confere um passo a passo prático para montar seu plano com estratégia e constância.</p>
+
+      <h2 id="passo-1">1. Pesquise a palavra-chave principal do negócio</h2>
+      <p>O primeiro passo é entender como as pessoas procuram pelo serviço ou produto que você oferece. Para isso, utilize o <a href="https://ads.google.com/home/tools/keyword-planner/" target="_blank" rel="noopener">Planejador de Palavras‑chave do Google Ads</a>.</p>
+      <p>Faça a busca pela palavra‑chave principal da empresa e registre os dados em uma planilha, separando:</p>
+      <ul>
+        <li>Volume de busca mensal</li>
+        <li>Nível de concorrência (dificuldade)</li>
+        <li>Relevância e conexão com o negócio (alta, média e baixa)</li>
+      </ul>
+      <p>Essa etapa ajuda a garantir que o conteúdo publicado tenha potencial de alcance e esteja alinhado com os interesses do público.</p>
+
+      <h2 id="passo-2">2. Analise a intenção de busca</h2>
+      <p>Depois de definir as palavras‑chave principais, busque por elas no Google para entender o comportamento do usuário. Observe:</p>
+      <ul>
+        <li>Que tipo de conteúdo aparece nos primeiros resultados?</li>
+        <li>Existem perguntas frequentes relacionadas?</li>
+        <li>Qual dúvida o usuário está tentando resolver?</li>
+      </ul>
+      <p>Com essas informações, monte pautas com os temas mais relevantes e alinhados ao seu público‑alvo.</p>
+
+      <h2 id="passo-3">3. Crie um calendário com mais de 52 pautas</h2>
+      <p>Organização é essencial. Ao definir pelo menos <strong>52 pautas</strong>, você garante conteúdo para o ano inteiro, com uma publicação por semana.</p>
+      <p><strong>Dicas para escolher boas pautas:</strong></p>
+      <ul>
+        <li>Alinhe temas com palavras‑chave principais e secundárias</li>
+        <li>Responda perguntas frequentes dos clientes</li>
+        <li>Destaque diferenciais da empresa e seus principais serviços</li>
+        <li>Inclua conteúdos sazonais (datas comemorativas, campanhas locais)</li>
+      </ul>
+      <p>Esse planejamento traz consistência e relevância ao perfil da empresa no Google.</p>
+
+      <h2 id="passo-4">4. Produza os conteúdos com ajuda do Chat GPT</h2>
+      <p>Com o planejamento pronto, o próximo passo é produzir os textos. Para facilitar essa etapa, você pode utilizar o Chat GPT. Solicite que ele crie um post para o Google Meu Negócio, usando o modelo a seguir (adapte os trechos em negrito para sua empresa):</p>
+      <pre><code>Crie um post de 1.500 caracteres para o Google Meu Negócio da empresa **[Nome da Empresa]**, 
+focado em **[tema do post]**. Inclua a **[palavra‑chave principal]** para SEO local, 
+forneça uma breve descrição sobre o tema e finalize com uma **CTA clara** direcionando para **[canal: site/WhatsApp/outro]**. 
+O post deve ser informativo, destacar os benefícios e ser atraente para o público local.</code></pre>
+
+      <h2 id="passo-5">5. Escolha e ajuste as imagens</h2>
+      <p>A imagem é o primeiro elemento que atrai o olhar do usuário no perfil da empresa. Por isso, é essencial que esteja nítida, bem enquadrada e conectada ao conteúdo.</p>
+      <ul>
+        <li>Use imagens de boa qualidade, sem excesso de texto</li>
+        <li>Siga a identidade visual da empresa</li>
+        <li>Crie suas postagens em um <em>template</em> padrão (ex.: Canva) para manter consistência</li>
+      </ul>
+
+      <h2 id="passo-6">6. Agende as postagens</h2>
+      <p>Com o conteúdo pronto, programe as postagens usando uma ferramenta de automação (ex.: GBP Check) ou poste manualmente.</p>
+      <p><strong>Boas práticas de agendamento:</strong></p>
+      <ul>
+        <li>Programe com pelo menos uma semana de antecedência</li>
+        <li>Mantenha regularidade nos dias e horários</li>
+        <li>Acompanhe o desempenho e ajuste a estratégia conforme necessário</li>
+      </ul>
+
+      <h2 id="conclusao">Conclusão</h2>
+      <p>Criar um plano de conteúdo estratégico para o Google Meu Negócio é uma forma acessível e eficaz de melhorar o posicionamento da marca nas buscas locais. Além de fortalecer a presença digital, o plano garante organização, frequência e foco nos resultados reais. Se sua empresa ainda não aposta nessa estratégia, este é o momento ideal para começar — especialmente se você deseja atrair mais clientes, gerar autoridade e crescer com consistência no ambiente digital.</p>
+
+      <hr />
+      <p>Acesse a <a href="https://encantoshub.com.br/blog" title="Acesse o blog da EncantosHub">página central do nosso Blog</a> e descubra mais conteúdos exclusivos.</p>
+    </div>
+  `
+},
   {
     slug: "guia-completo-seo-iniciantes",
     title: "Guia Completo de SEO para Iniciantes",
