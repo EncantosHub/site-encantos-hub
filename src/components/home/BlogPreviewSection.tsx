@@ -43,7 +43,7 @@ const BlogPreviewSection = () => {
                   {post.title}
                 </h3>
                 
-                <p className="text-muted-foreground mb-4 leading-relaxed line-clamp-3">
+                <p className="text-muted-foreground mb-4 leading-relaxed line-clamp-4 md:line-clamp-3">
                   {post.summary}
                 </p>
                 

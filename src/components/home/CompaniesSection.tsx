@@ -34,27 +34,46 @@ const CompaniesSection = () => {
           </p>
         </div>
 
-        {/* Carousel automático */}
-        <div className="relative overflow-hidden">
+        {/* Layout Responsivo - Grid no Mobile, Carousel no Desktop */}
+        <div className="block md:hidden">
+          {/* Grid para Mobile */}
+          <div className="grid grid-cols-2 gap-4">
+            {companies.map((company, index) => (
+              <div key={index} className="bg-white border border-border rounded-lg p-4 flex flex-col items-center justify-center shadow-sm hover:shadow-elegant transition-all group min-h-[100px]">
+                <img 
+                  src={company.logo} 
+                  alt={`${company.name} logo`}
+                  className="h-12 w-auto object-contain mb-2 max-w-full"
+                />
+                <span className="text-brand-black font-medium text-sm text-center group-hover:text-brand-gold transition-colors leading-tight">
+                  {company.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Carousel para Desktop */}
+        <div className="hidden md:block relative overflow-hidden">
           <div 
             className="flex transition-transform duration-1000 ease-in-out"
             style={{ 
-              transform: `translateX(-${currentIndex * (100 / Math.min(companies.length, 5))}%)`,
-              width: `${(companies.length / Math.min(companies.length, 5)) * 100}%`
+              transform: `translateX(-${currentIndex * (100 / Math.min(companies.length, 4))}%)`,
+              width: `${(companies.length / Math.min(companies.length, 4)) * 100}%`
             }}
           >
             {companies.map((company, index) => (
               <div 
                 key={index}
                 className="flex-shrink-0 px-4"
-                style={{ width: `${100 / Math.min(companies.length, 5)}%` }}
+                style={{ width: `${100 / Math.min(companies.length, 4)}%` }}
               >
-                <div className="bg-white border border-border rounded-lg p-6 h-24 flex items-center justify-center shadow-sm hover:shadow-elegant transition-shadow group">
-                  <div className="flex items-center space-x-3">
+                <div className="bg-white border border-border rounded-lg p-6 h-28 flex items-center justify-center shadow-sm hover:shadow-elegant transition-shadow group">
+                  <div className="flex flex-col items-center space-y-3">
                     <img 
                       src={company.logo} 
                       alt={`${company.name} logo`}
-                      className="h-8 w-auto object-contain"
+                      className="h-12 w-auto object-contain max-w-full"
                     />
                     <span className="text-brand-black font-semibold text-center group-hover:text-brand-gold transition-colors">
                       {company.name}
@@ -64,21 +83,21 @@ const CompaniesSection = () => {
               </div>
             ))}
           </div>
-        </div>
 
-        {/* Indicadores */}
-        <div className="flex justify-center mt-8 space-x-2">
-          {companies.map((_, index) => (
-            <button
-              key={index}
-              className={`w-3 h-3 rounded-full transition-all ${
-                index === currentIndex 
-                  ? "bg-brand-gold" 
-                  : "bg-gray-300 hover:bg-gray-400"
-              }`}
-              onClick={() => setCurrentIndex(index)}
-            />
-          ))}
+          {/* Indicadores apenas no Desktop */}
+          <div className="flex justify-center mt-8 space-x-2">
+            {companies.map((_, index) => (
+              <button
+                key={index}
+                className={`w-3 h-3 rounded-full transition-all ${
+                  index === currentIndex 
+                    ? "bg-brand-gold" 
+                    : "bg-gray-300 hover:bg-gray-400"
+                }`}
+                onClick={() => setCurrentIndex(index)}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
