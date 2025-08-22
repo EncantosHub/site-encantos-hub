@@ -1,3 +1,14 @@
 User-agent: *
 Allow: /
+Crawl-delay: 1
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+
+# Block certain directories (if needed)
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
 Sitemap: https://www.encantoshub.com.br/sitemap.xml
