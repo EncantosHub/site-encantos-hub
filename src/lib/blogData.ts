@@ -879,7 +879,7 @@ export const blogPosts: BlogPost[] = [
   summary: "Aprenda como criar e postar um plano de conteúdo estratégico no Google Meu Negócio para atrair mais clientes e melhorar o ranqueamento local.",
   date: "2025-08-22",
   category: "GMN",
-  thumbnail: "",
+  thumbnail: "/images/blog/plano-conteudo-gmn-cover.jpg",
   author: "Isabella Brilha",
   authorLinkedIn: "https://linkedin.com/in/isabella-brilha",
   content: `
@@ -903,6 +903,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2 id="passo-1">1. Pesquise a palavra-chave principal do negócio</h2>
       <p>O primeiro passo é entender como as pessoas procuram pelo serviço ou produto que você oferece. Para isso, utilize o <a href="https://ads.google.com/home/tools/keyword-planner/" target="_blank" rel="noopener">Planejador de Palavras‑chave do Google Ads</a>.</p>
+      <img src="/images/blog/plano-conteudo img 1.jpeg" alt="Interface do Planejador de Palavras-chave do Google Ads" style="max-width: 100%; height: auto; display: block; margin: 1rem auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
       <p>Faça a busca pela palavra‑chave principal da empresa e registre os dados em uma planilha, separando:</p>
       <ul>
         <li>Volume de busca mensal</li>
@@ -940,6 +941,7 @@ O post deve ser informativo, destacar os benefícios e ser atraente para o públ
 
       <h2 id="passo-5">5. Escolha e ajuste as imagens</h2>
       <p>A imagem é o primeiro elemento que atrai o olhar do usuário no perfil da empresa. Por isso, é essencial que esteja nítida, bem enquadrada e conectada ao conteúdo.</p>
+      <img src="/images/blog/plano-conteudo imagem 5.jpeg" alt="Exemplo de imagem atrativa para postagem no Google Meu Negócio" style="max-width: 100%; height: auto; display: block; margin: 1rem auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
       <ul>
         <li>Use imagens de boa qualidade, sem excesso de texto</li>
         <li>Siga a identidade visual da empresa</li>
