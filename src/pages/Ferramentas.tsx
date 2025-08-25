@@ -40,6 +40,20 @@ const Ferramentas = () => {
       path: "/ferramentas/diagnostico-gmn"
     },
     {
+      icon: Code,
+      title: "Checklist CMS SEO",
+      description: "Ferramenta interativa para avaliar se seu CMS atende todos os requisitos essenciais de SEO. Checklist completo com pontuação e recomendações.",
+      features: [
+        "Checklist interativo por categorias",
+        "Sistema de prioridades (Alto/Médio/Baixo)",
+        "Pontuação visual em tempo real",
+        "Relatório de melhorias"
+      ],
+      status: "Disponível",
+      comingSoon: false,
+      path: "/ferramentas/cms-seo-checklist"
+    },
+    {
       icon: MessageSquare,
       title: "Gerador de Mensagens para Avaliação",
       description: "Ferramenta inteligente que cria mensagens personalizadas para solicitar avaliações dos seus clientes no Google Meu Negócio.",
@@ -50,19 +64,6 @@ const Ferramentas = () => {
         "Disparos automáticos"
       ],
       status: "Em Breve",
-      comingSoon: true
-    },
-    {
-      icon: Code,
-      title: "Validador de SEO para HTML",
-      description: "Valide o SEO técnico do seu site com nossa ferramenta que analisa estrutura HTML, meta tags, performance e mais.",
-      features: [
-        "Análise de meta tags",
-        "Validação de estrutura",
-        "Verificação de performance",
-        "Sugestões de melhoria"
-      ],
-      status: "Planejado",
       comingSoon: true
     }
   ];
