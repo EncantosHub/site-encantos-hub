@@ -403,25 +403,14 @@ export const DiagnosticForm = ({ onComplete }: DiagnosticFormProps) => {
             onComplete={handleSectionComplete}
           />
           
-          <div className="flex justify-between mt-8">
+          <div className="flex justify-start mt-8">
             <Button
               variant="outline"
               onClick={goToPreviousSection}
               disabled={currentSectionIndex === 0}
             >
               <ChevronLeft size={20} className="mr-2" />
-              Anterior
-            </Button>
-            
-            <Button
-              onClick={() => {
-                const sectionAnswers = answers[currentSection.id] || {};
-                handleSectionComplete(sectionAnswers);
-              }}
-              className="bg-brand-gold hover:bg-brand-gold/90 text-brand-black"
-            >
-              {currentSectionIndex === sections.length - 1 ? 'Finalizar Diagnóstico' : 'Próxima Seção'}
-              <ChevronRight size={20} className="ml-2" />
+              Seção Anterior
             </Button>
           </div>
         </CardContent>
