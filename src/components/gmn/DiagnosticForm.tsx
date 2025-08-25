@@ -27,13 +27,48 @@ const sections = [
     icon: User,
     description: 'Nome, categoria, endereço e horário de funcionamento',
     questions: [
-      { id: 'business_name', question: 'O nome do seu negócio está correto e completo?', category: 'identity' },
-      { id: 'category', question: 'A categoria principal do seu negócio está adequada?', category: 'identity' },
-      { id: 'address', question: 'O endereço está correto e detalhado?', category: 'identity' },
-      { id: 'phone', question: 'O telefone está atualizado e funcional?', category: 'identity' },
-      { id: 'website', question: 'O site está vinculado corretamente?', category: 'identity' },
-      { id: 'hours', question: 'Os horários de funcionamento estão atualizados?', category: 'identity' },
-      { id: 'holiday_hours', question: 'Os horários especiais e feriados estão configurados?', category: 'identity' }
+      { 
+        id: 'business_name', 
+        question: 'O nome do seu negócio está correto e completo?', 
+        category: 'identity',
+        explanation: 'Use o nome oficial da empresa conforme registrado. Evite abreviações ou caracteres especiais desnecessários. O nome deve ser claro e fácil de encontrar.'
+      },
+      { 
+        id: 'category', 
+        question: 'A categoria principal do seu negócio está adequada?', 
+        category: 'identity',
+        explanation: 'Escolha a categoria mais específica possível. Isso ajuda o Google a entender seu negócio e mostrar para as pessoas certas. Você pode adicionar categorias secundárias também.'
+      },
+      { 
+        id: 'address', 
+        question: 'O endereço está correto e detalhado?', 
+        category: 'identity',
+        explanation: 'Inclua número, complemento e referências quando necessário. O endereço deve ser exatamente como aparecem nos Correios e corresponder à sua localização real.'
+      },
+      { 
+        id: 'phone', 
+        question: 'O telefone está atualizado e funcional?', 
+        category: 'identity',
+        explanation: 'Use um número que seja atendido durante o horário comercial. Prefira números locais e evite números temporários ou redirecionamentos.'
+      },
+      { 
+        id: 'website', 
+        question: 'O site está vinculado corretamente?', 
+        category: 'identity',
+        explanation: 'Adicione a URL completa do seu site principal. Certifique-se de que o link funciona e que o site está atualizado com suas informações atuais.'
+      },
+      { 
+        id: 'hours', 
+        question: 'Os horários de funcionamento estão atualizados?', 
+        category: 'identity',
+        explanation: 'Mantenha os horários sempre atualizados. Clientes frustrados por encontrar estabelecimento fechado tendem a deixar avaliações negativas.'
+      },
+      { 
+        id: 'holiday_hours', 
+        question: 'Os horários especiais e feriados estão configurados?', 
+        category: 'identity',
+        explanation: 'Configure horários especiais para feriados, férias coletivas e eventos sazonais. Isso evita confusão e melhora a experiência do cliente.'
+      }
     ]
   },
   {
@@ -42,14 +77,54 @@ const sections = [
     icon: Camera,
     description: 'Fotos de perfil, capa, internas e posts',
     questions: [
-      { id: 'profile_photo', question: 'Possui foto de perfil de alta qualidade?', category: 'media' },
-      { id: 'cover_photo', question: 'A foto de capa representa bem o negócio?', category: 'media' },
-      { id: 'interior_photos', question: 'Tem fotos internas do estabelecimento?', category: 'media' },
-      { id: 'exterior_photos', question: 'Tem fotos externas do estabelecimento?', category: 'media' },
-      { id: 'product_photos', question: 'Possui fotos dos produtos/serviços?', category: 'media' },
-      { id: 'team_photos', question: 'Tem fotos da equipe trabalhando?', category: 'media' },
-      { id: 'recent_photos', question: 'As fotos são recentes (menos de 6 meses)?', category: 'media' },
-      { id: 'posts_frequency', question: 'Publica posts regularmente (pelo menos 1x por semana)?', category: 'media' }
+      { 
+        id: 'profile_photo', 
+        question: 'Possui foto de perfil de alta qualidade?', 
+        category: 'media',
+        explanation: 'Use sua logo ou uma foto que represente bem o negócio. A imagem deve ter boa resolução (mínimo 720x720px) e ser reconhecível mesmo em tamanho pequeno.'
+      },
+      { 
+        id: 'cover_photo', 
+        question: 'A foto de capa representa bem o negócio?', 
+        category: 'media',
+        explanation: 'A foto de capa é a primeira impressão. Mostre seu estabelecimento, produtos ou serviços de forma atrativa. Use imagens com boa iluminação e resolução mínima de 1024x575px.'
+      },
+      { 
+        id: 'interior_photos', 
+        question: 'Tem fotos internas do estabelecimento?', 
+        category: 'media',
+        explanation: 'Mostre o ambiente interno para que clientes saibam o que esperar. Include diferentes ângulos e ambientes do seu estabelecimento.'
+      },
+      { 
+        id: 'exterior_photos', 
+        question: 'Tem fotos externas do estabelecimento?', 
+        category: 'media',
+        explanation: 'Facilite para os clientes te encontrarem com fotos da fachada, placas e pontos de referência próximos. Inclua fotos diurnas e noturnas se necessário.'
+      },
+      { 
+        id: 'product_photos', 
+        question: 'Possui fotos dos produtos/serviços?', 
+        category: 'media',
+        explanation: 'Mostre seus produtos ou serviços em ação. Use fotos profissionais com boa iluminação. Para serviços, mostre o antes/depois ou o processo.'
+      },
+      { 
+        id: 'team_photos', 
+        question: 'Tem fotos da equipe trabalhando?', 
+        category: 'media',
+        explanation: 'Humanize seu negócio mostrando sua equipe. Isso gera confiança e proximidade com os clientes. Certifique-se de ter autorização da equipe.'
+      },
+      { 
+        id: 'recent_photos', 
+        question: 'As fotos são recentes (menos de 6 meses)?', 
+        category: 'media',
+        explanation: 'Mantenha as fotos atualizadas para refletir a realidade atual do seu negócio. Remova fotos antigas que não representam mais sua empresa.'
+      },
+      { 
+        id: 'posts_frequency', 
+        question: 'Publica posts regularmente (pelo menos 1x por semana)?', 
+        category: 'media',
+        explanation: 'Posts frequentes mantêm seu perfil ativo e relevante. Compartilhe novidades, promoções, dicas e conteúdo que interesse seus clientes.'
+      }
     ]
   },
   {
@@ -58,12 +133,42 @@ const sections = [
     icon: Package,
     description: 'Descrições, atributos e informações sobre ofertas',
     questions: [
-      { id: 'description', question: 'A descrição do negócio é completa e atrativa?', category: 'services' },
-      { id: 'services_list', question: 'Todos os serviços principais estão listados?', category: 'services' },
-      { id: 'attributes', question: 'Os atributos relevantes estão configurados?', category: 'services' },
-      { id: 'products', question: 'Os produtos estão cadastrados com fotos e preços?', category: 'services' },
-      { id: 'menu', question: 'O cardápio/catálogo está atualizado?', category: 'services' },
-      { id: 'special_offers', question: 'Ofertas especiais estão destacadas?', category: 'services' }
+      { 
+        id: 'description', 
+        question: 'A descrição do negócio é completa e atrativa?', 
+        category: 'services',
+        explanation: 'Escreva uma descrição clara do que faz, seus diferenciais e para quem atende. Use palavras-chave que seus clientes usariam para te encontrar. Limite: 750 caracteres.'
+      },
+      { 
+        id: 'services_list', 
+        question: 'Todos os serviços principais estão listados?', 
+        category: 'services',
+        explanation: 'Liste todos os serviços que oferece de forma clara e específica. Isso ajuda na descoberta por pesquisas relacionadas e informa melhor os clientes.'
+      },
+      { 
+        id: 'attributes', 
+        question: 'Os atributos relevantes estão configurados?', 
+        category: 'services',
+        explanation: 'Configure atributos como Wi-Fi, estacionamento, acessibilidade, formas de pagamento aceitas, etc. Isso aparece nas pesquisas e influencia a decisão de compra.'
+      },
+      { 
+        id: 'products', 
+        question: 'Os produtos estão cadastrados com fotos e preços?', 
+        category: 'services',
+        explanation: 'Cadastre seus principais produtos com fotos atrativas e preços quando apropriado. Isso facilita a decisão de compra dos clientes.'
+      },
+      { 
+        id: 'menu', 
+        question: 'O cardápio/catálogo está atualizado?', 
+        category: 'services',
+        explanation: 'Mantenha cardápios e catálogos sempre atualizados com preços e disponibilidade corretos. Informações desatualizadas geram frustração no cliente.'
+      },
+      { 
+        id: 'special_offers', 
+        question: 'Ofertas especiais estão destacadas?', 
+        category: 'services',
+        explanation: 'Use a função de ofertas para destacar promoções, descontos ou serviços especiais. Isso chama atenção e pode aumentar conversões.'
+      }
     ]
   },
   {
@@ -72,12 +177,42 @@ const sections = [
     icon: MessageSquare,
     description: 'Avaliações, mensagens e interação',
     questions: [
-      { id: 'reviews_quantity', question: 'Possui mais de 10 avaliações?', category: 'relationship' },
-      { id: 'recent_reviews', question: 'Recebeu avaliações nos últimos 30 dias?', category: 'relationship' },
-      { id: 'review_responses', question: 'Responde às avaliações regularmente?', category: 'relationship' },
-      { id: 'messaging', question: 'A função de mensagens está ativada?', category: 'relationship' },
-      { id: 'response_time', question: 'Responde mensagens em até 24 horas?', category: 'relationship' },
-      { id: 'q_and_a', question: 'Monitora e responde perguntas dos usuários?', category: 'relationship' }
+      { 
+        id: 'reviews_quantity', 
+        question: 'Possui mais de 10 avaliações?', 
+        category: 'relationship',
+        explanation: 'Avaliações são fundamentais para credibilidade. Incentive clientes satisfeitos a avaliar. Você pode pedir pessoalmente, por WhatsApp ou criar QR codes para facilitar.'
+      },
+      { 
+        id: 'recent_reviews', 
+        question: 'Recebeu avaliações nos últimos 30 dias?', 
+        category: 'relationship',
+        explanation: 'Avaliações recentes mostram que o negócio está ativo e atendendo clientes. Se não tem recebido, crie estratégias para incentivar mais avaliações.'
+      },
+      { 
+        id: 'review_responses', 
+        question: 'Responde às avaliações regularmente?', 
+        category: 'relationship',
+        explanation: 'Responda sempre às avaliações - positivas para agradecer, negativas para mostrar que se importa com o feedback. Isso demonstra profissionalismo.'
+      },
+      { 
+        id: 'messaging', 
+        question: 'A função de mensagens está ativada?', 
+        category: 'relationship',
+        explanation: 'Ative mensagens para que clientes possam te contatar diretamente pelo Google. Configure para receber no WhatsApp ou outro canal que monitore regularmente.'
+      },
+      { 
+        id: 'response_time', 
+        question: 'Responde mensagens em até 24 horas?', 
+        category: 'relationship',
+        explanation: 'Resposta rápida é crucial para conversão. Configure notificações para não perder mensagens. Respostas demoradas podem fazer o cliente desistir.'
+      },
+      { 
+        id: 'q_and_a', 
+        question: 'Monitora e responde perguntas dos usuários?', 
+        category: 'relationship',
+        explanation: 'Usuários fazem perguntas públicas no seu perfil. Monitore e responda para ajudar outros clientes com dúvidas similares e mostrar que está presente.'
+      }
     ]
   },
   {
@@ -86,12 +221,42 @@ const sections = [
     icon: BarChart3,
     description: 'Insights, métricas e análises',
     questions: [
-      { id: 'insights_monitoring', question: 'Monitora os insights semanalmente?', category: 'results' },
-      { id: 'photo_views', question: 'As fotos têm bom engajamento (visualizações)?', category: 'results' },
-      { id: 'discovery_searches', question: 'Aparece em pesquisas de descoberta?', category: 'results' },
-      { id: 'direct_searches', question: 'Recebe pesquisas diretas pelo nome?', category: 'results' },
-      { id: 'actions_tracking', question: 'Acompanha ações dos usuários (chamadas, direções)?', category: 'results' },
-      { id: 'competitor_comparison', question: 'Compara performance com concorrentes?', category: 'results' }
+      { 
+        id: 'insights_monitoring', 
+        question: 'Monitora os insights semanalmente?', 
+        category: 'results',
+        explanation: 'Acompanhe métricas como visualizações, pesquisas e ações semanalmente. Isso ajuda a entender o que funciona e identificar oportunidades de melhoria.'
+      },
+      { 
+        id: 'photo_views', 
+        question: 'As fotos têm bom engajamento (visualizações)?', 
+        category: 'results',
+        explanation: 'Fotos com muitas visualizações indicam interesse dos clientes. Se alguma foto tem poucas views, considere substituí-la por uma mais atrativa.'
+      },
+      { 
+        id: 'discovery_searches', 
+        question: 'Aparece em pesquisas de descoberta?', 
+        category: 'results',
+        explanation: 'Pesquisas de descoberta mostram que aparecem quando pessoas procuram por sua categoria/localização. Se está baixo, revise palavras-chave e categoria.'
+      },
+      { 
+        id: 'direct_searches', 
+        question: 'Recebe pesquisas diretas pelo nome?', 
+        category: 'results',
+        explanation: 'Pesquisas diretas indicam reconhecimento da marca. Se está baixo, trabalhe o marketing offline e a lembrança da marca.'
+      },
+      { 
+        id: 'actions_tracking', 
+        question: 'Acompanha ações dos usuários (chamadas, direções)?', 
+        category: 'results',
+        explanation: 'Monitore quantas pessoas ligam, pedem direções ou visitam seu site através do perfil. Essas são métricas de conversão importantes.'
+      },
+      { 
+        id: 'competitor_comparison', 
+        question: 'Compara performance com concorrentes?', 
+        category: 'results',
+        explanation: 'Use ferramentas como Google Business Intelligence para comparar sua performance com concorrentes locais e identificar gaps.'
+      }
     ]
   }
 ];

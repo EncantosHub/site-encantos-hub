@@ -7,6 +7,7 @@ interface Question {
   id: string;
   question: string;
   category: string;
+  explanation?: string;
 }
 
 interface FormSectionProps {
@@ -62,7 +63,7 @@ export const FormSection = ({ questions, initialData, onComplete }: FormSectionP
           <Card key={question.id} className="border-border hover:border-brand-gold/30 transition-colors">
             <CardContent className="p-6">
               <div className="mb-4">
-                <div className="flex items-center space-x-2 mb-2">
+                <div className="flex items-center space-x-2 mb-3">
                   <span className="bg-brand-gold text-brand-black text-xs px-2 py-1 rounded-full font-medium">
                     {index + 1}
                   </span>
@@ -70,6 +71,13 @@ export const FormSection = ({ questions, initialData, onComplete }: FormSectionP
                     {question.question}
                   </h3>
                 </div>
+                {question.explanation && (
+                  <div className="bg-blue-50 border-l-4 border-blue-400 p-3 rounded-r-lg">
+                    <p className="text-sm text-blue-800 leading-relaxed">
+                      <span className="font-medium">💡 Dica:</span> {question.explanation}
+                    </p>
+                  </div>
+                )}
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3">

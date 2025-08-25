@@ -44,7 +44,7 @@ const DiagnosticoGMN = () => {
 
   const handleFormComplete = (data: FormData) => {
     setFormData(data);
-    setCurrentStep('lead');
+    setCurrentStep('result');
   };
 
   const handleLeadSubmit = (data: LeadData) => {
@@ -60,10 +60,8 @@ const DiagnosticoGMN = () => {
     switch (currentStep) {
       case 'form':
         return <DiagnosticForm onComplete={handleFormComplete} />;
-      case 'lead':
-        return <LeadCapture onSubmit={handleLeadSubmit} diagnosticFormData={formData} />;
       case 'result':
-        return <DiagnosticResult formData={formData} leadData={leadData!} />;
+        return <DiagnosticResult formData={formData} leadData={null} />;
       default:
         return null;
     }
