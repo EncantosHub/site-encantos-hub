@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { DiagnosticForm } from "@/components/gmn/DiagnosticForm";
-import { LeadCapture } from "@/components/gmn/LeadCapture";
 import { DiagnosticResult } from "@/components/gmn/DiagnosticResult";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
@@ -26,7 +25,7 @@ export interface LeadData {
 
 const DiagnosticoGMN = () => {
   const navigate = useNavigate();
-  const [currentStep, setCurrentStep] = useState<'form' | 'lead' | 'result'>('form');
+  const [currentStep, setCurrentStep] = useState<'form' | 'result'>('form');
   const [formData, setFormData] = useState<FormData>({
     identity: {},
     media: {},
@@ -34,7 +33,6 @@ const DiagnosticoGMN = () => {
     relationship: {},
     results: {}
   });
-  const [leadData, setLeadData] = useState<LeadData | null>(null);
 
   useSEO({
     title: "Diagnóstico GMN - Análise Completa do Google Meu Negócio | Encantos Hub",
@@ -47,13 +45,19 @@ const DiagnosticoGMN = () => {
     setCurrentStep('result');
   };
 
-  const handleLeadSubmit = (data: LeadData) => {
-    setLeadData(data);
-    setCurrentStep('result');
-  };
-
   const handleBackToTools = () => {
     navigate('/ferramentas');
+  };
+
+  const handleRestartDiagnosis = () => {
+    setCurrentStep('form');
+    setFormData({
+      identity: {},
+      media: {},
+      services: {},
+      relationship: {},
+      results: {}
+    });
   };
 
   const renderCurrentStep = () => {
@@ -75,14 +79,26 @@ const DiagnosticoGMN = () => {
         {/* Header Section */}
         <section className="bg-gradient-hero py-12">
           <div className="container mx-auto px-4">
-            <Button
-              variant="ghost"
-              onClick={handleBackToTools}
-              className="text-brand-white hover:text-brand-gold hover:bg-brand-white/10 mb-6"
-            >
-              <ArrowLeft size={20} className="mr-2" />
-              Voltar para Ferramentas
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 mb-6">
+              <Button
+                variant="ghost"
+                onClick={handleBackToTools}
+                className="text-brand-white hover:text-brand-gold hover:bg-brand-white/10"
+              >
+                <ArrowLeft size={20} className="mr-2" />
+                Voltar para Ferramentas
+              </Button>
+              
+              {currentStep === 'result' && (
+                <Button
+                  variant="ghost"
+                  onClick={handleRestartDiagnosis}
+                  className="text-brand-white hover:text-brand-gold hover:bg-brand-white/10"
+                >
+                  Fazer Novo Diagnóstico
+                </Button>
+              )}
+            </div>
             
             <div className="text-center">
               <h1 className="text-4xl lg:text-5xl font-bold text-brand-white mb-4">

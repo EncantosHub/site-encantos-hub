@@ -20,7 +20,7 @@ import { FormData, LeadData } from "@/pages/DiagnosticoGMN";
 
 interface DiagnosticResultProps {
   formData: FormData;
-  leadData: LeadData;
+  leadData: LeadData | null;
 }
 
 const sectionIcons = {
@@ -43,28 +43,20 @@ const calculateScore = (sectionData: Record<string, string>) => {
   const values = Object.values(sectionData);
   if (values.length === 0) return 0;
   
-  const points = values.reduce((acc, value) => {
-    switch (value) {
-      case 'yes': return acc + 100;
-      case 'partial': return acc + 50;
-      case 'no': return acc + 0;
-      default: return acc;
-    }
-  }, 0);
-  
-  return Math.round(points / values.length);
+  const yesCount = values.filter(value => value === 'yes').length;
+  return Math.round((yesCount / values.length) * 100);
 };
 
 const getScoreColor = (score: number) => {
-  if (score >= 80) return { color: 'text-green-600', bg: 'bg-green-100', border: 'border-green-200' };
-  if (score >= 50) return { color: 'text-yellow-600', bg: 'bg-yellow-100', border: 'border-yellow-200' };
+  if (score >= 70) return { color: 'text-green-600', bg: 'bg-green-100', border: 'border-green-200' };
+  if (score >= 40) return { color: 'text-yellow-600', bg: 'bg-yellow-100', border: 'border-yellow-200' };
   return { color: 'text-red-600', bg: 'bg-red-100', border: 'border-red-200' };
 };
 
 const getScoreStatus = (score: number) => {
-  if (score >= 80) return { icon: CheckCircle, label: 'Excelente', description: 'Muito bem otimizado!' };
-  if (score >= 50) return { icon: AlertTriangle, label: 'Atenção', description: 'Precisa de melhorias' };
-  return { icon: XCircle, label: 'Crítico', description: 'Necessita ação urgente' };
+  if (score >= 70) return { icon: CheckCircle, label: 'Muito Bom', description: 'Perfil bem otimizado!' };
+  if (score >= 40) return { icon: AlertTriangle, label: 'Precisa Melhorar', description: 'Tem potencial de crescimento' };
+  return { icon: XCircle, label: 'Crítico', description: 'Necessita otimização urgente' };
 };
 
 const getRecommendations = (section: string, score: number) => {
@@ -108,7 +100,10 @@ export const DiagnosticResult = ({ formData, leadData }: DiagnosticResultProps) 
   const sectionScores = Object.entries(formData).map(([section, data]) => ({
     section,
     score: calculateScore(data),
-    data
+    data,
+    yesCount: Object.values(data).filter(v => v === 'yes').length,
+    noCount: Object.values(data).filter(v => v === 'no').length,
+    totalQuestions: Object.values(data).length
   }));
 
   const overallScore = Math.round(
@@ -117,6 +112,11 @@ export const DiagnosticResult = ({ formData, leadData }: DiagnosticResultProps) 
 
   const overallStatus = getScoreStatus(overallScore);
   const overallColors = getScoreColor(overallScore);
+
+  // Identify strengths and weaknesses
+  const strengths = sectionScores.filter(s => s.score >= 70);
+  const weaknesses = sectionScores.filter(s => s.score < 40);
+  const improvementAreas = sectionScores.filter(s => s.score >= 40 && s.score < 70);
 
   const handleDownloadReport = () => {
     window.print();
@@ -139,10 +139,10 @@ export const DiagnosticResult = ({ formData, leadData }: DiagnosticResultProps) 
             </div>
             <div>
               <CardTitle className="text-3xl text-brand-black">
-                Olá, {leadData.name}!
+                Seu Diagnóstico GMN
               </CardTitle>
               <p className="text-muted-foreground">
-                Aqui está seu diagnóstico personalizado
+                Análise completa do seu Google Meu Negócio
               </p>
             </div>
           </div>
@@ -173,8 +173,8 @@ export const DiagnosticResult = ({ formData, leadData }: DiagnosticResultProps) 
             </svg>
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center">
-                <div className={`text-3xl font-bold ${overallColors.color}`}>{overallScore}</div>
-                <div className="text-sm text-muted-foreground">pontos</div>
+                <div className={`text-3xl font-bold ${overallColors.color}`}>{overallScore}%</div>
+                <div className="text-sm text-muted-foreground">otimização</div>
               </div>
             </div>
           </div>
@@ -185,6 +185,99 @@ export const DiagnosticResult = ({ formData, leadData }: DiagnosticResultProps) 
           </Badge>
         </CardHeader>
       </Card>
+
+      {/* Strengths and Weaknesses Summary */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Strengths */}
+        <Card className="border-green-200 bg-green-50">
+          <CardHeader>
+            <CardTitle className="text-green-700 flex items-center">
+              <CheckCircle className="w-5 h-5 mr-2" />
+              Pontos Fortes
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            {strengths.length > 0 ? (
+              <ul className="space-y-2">
+                {strengths.map(({ section, score }) => (
+                  <li key={section} className="flex justify-between items-center">
+                    <span className="text-sm text-green-800">
+                      {sectionTitles[section as keyof typeof sectionTitles]}
+                    </span>
+                    <Badge className="bg-green-100 text-green-700 border-green-200">
+                      {score}%
+                    </Badge>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-sm text-green-700">
+                Ainda não há pontos fortes identificados. Vamos trabalhar para melhorar!
+              </p>
+            )}
+          </CardContent>
+        </Card>
+
+        {/* Areas for Improvement */}
+        <Card className="border-yellow-200 bg-yellow-50">
+          <CardHeader>
+            <CardTitle className="text-yellow-700 flex items-center">
+              <AlertTriangle className="w-5 h-5 mr-2" />
+              Pode Melhorar
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            {improvementAreas.length > 0 ? (
+              <ul className="space-y-2">
+                {improvementAreas.map(({ section, score }) => (
+                  <li key={section} className="flex justify-between items-center">
+                    <span className="text-sm text-yellow-800">
+                      {sectionTitles[section as keyof typeof sectionTitles]}
+                    </span>
+                    <Badge className="bg-yellow-100 text-yellow-700 border-yellow-200">
+                      {score}%
+                    </Badge>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-sm text-yellow-700">
+                Ótimo! Não há áreas intermediárias para melhorar.
+              </p>
+            )}
+          </CardContent>
+        </Card>
+
+        {/* Weaknesses */}
+        <Card className="border-red-200 bg-red-50">
+          <CardHeader>
+            <CardTitle className="text-red-700 flex items-center">
+              <XCircle className="w-5 h-5 mr-2" />
+              Pontos Críticos
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            {weaknesses.length > 0 ? (
+              <ul className="space-y-2">
+                {weaknesses.map(({ section, score }) => (
+                  <li key={section} className="flex justify-between items-center">
+                    <span className="text-sm text-red-800">
+                      {sectionTitles[section as keyof typeof sectionTitles]}
+                    </span>
+                    <Badge className="bg-red-100 text-red-700 border-red-200">
+                      {score}%
+                    </Badge>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-sm text-red-700">
+                Excelente! Não há pontos críticos no seu perfil.
+              </p>
+            )}
+          </CardContent>
+        </Card>
+      </div>
 
       {/* Action Buttons */}
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -204,93 +297,111 @@ export const DiagnosticResult = ({ formData, leadData }: DiagnosticResultProps) 
         </Button>
       </div>
 
-      {/* Section Scores */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {sectionScores.map(({ section, score }) => {
-          const IconComponent = sectionIcons[section as keyof typeof sectionIcons];
-          const colors = getScoreColor(score);
-          const status = getScoreStatus(score);
-          
-          return (
-            <Card key={section} className={`border ${colors.border} hover:shadow-lg transition-shadow`}>
-              <CardHeader className="pb-4">
-                <div className="flex items-center space-x-3">
-                  <div className={`p-2 rounded-lg ${colors.bg}`}>
-                    <IconComponent className={`w-5 h-5 ${colors.color}`} />
+      {/* Section Scores Detailed */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-brand-black">
+            Análise Detalhada por Área
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {sectionScores.map(({ section, score, yesCount, noCount, totalQuestions }) => {
+              const IconComponent = sectionIcons[section as keyof typeof sectionIcons];
+              const colors = getScoreColor(score);
+              const status = getScoreStatus(score);
+              
+              return (
+                <div key={section} className={`p-4 rounded-lg border ${colors.border} ${colors.bg}`}>
+                  <div className="flex items-center space-x-3 mb-4">
+                    <IconComponent className={`w-6 h-6 ${colors.color}`} />
+                    <div>
+                      <h3 className="font-semibold text-brand-black">
+                        {sectionTitles[section as keyof typeof sectionTitles]}
+                      </h3>
+                      <Badge className={`${colors.bg} ${colors.color} border ${colors.border}`}>
+                        {status.label}
+                      </Badge>
+                    </div>
+                    <div className="ml-auto text-right">
+                      <div className={`text-2xl font-bold ${colors.color}`}>{score}%</div>
+                    </div>
                   </div>
-                  <div>
-                    <CardTitle className="text-sm font-medium text-brand-black">
-                      {sectionTitles[section as keyof typeof sectionTitles]}
-                    </CardTitle>
+                  
+                  <div className="space-y-2">
+                    <Progress value={score} className="h-2" />
+                    <div className="flex justify-between text-sm text-muted-foreground">
+                      <span>✅ {yesCount} implementados</span>
+                      <span>❌ {noCount} pendentes</span>
+                    </div>
                   </div>
                 </div>
-              </CardHeader>
-              <CardContent>
-                <div className="flex items-center justify-between mb-3">
-                  <span className={`text-2xl font-bold ${colors.color}`}>{score}</span>
-                  <Badge className={`${colors.bg} ${colors.color} border ${colors.border}`}>
-                    <status.icon className="w-3 h-3 mr-1" />
-                    {status.label}
-                  </Badge>
-                </div>
-                <Progress value={score} className="h-2" />
-              </CardContent>
-            </Card>
-          );
-        })}
-      </div>
+              );
+            })}
+          </div>
+        </CardContent>
+      </Card>
 
       {/* Detailed Recommendations */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center text-brand-black">
             <Award className="w-6 h-6 mr-3 text-brand-gold" />
-            Recomendações Personalizadas
+            Plano de Ação Personalizado
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-8">
-            {sectionScores.map(({ section, score }) => {
-              const IconComponent = sectionIcons[section as keyof typeof sectionIcons];
-              const colors = getScoreColor(score);
-              const recommendations = getRecommendations(section, score);
-              
-              return (
-                <div key={section} className="border-l-4 border-brand-gold pl-6">
-                  <div className="flex items-center space-x-3 mb-4">
-                    <IconComponent className="w-5 h-5 text-brand-gold" />
-                    <h3 className="text-lg font-semibold text-brand-black">
-                      {sectionTitles[section as keyof typeof sectionTitles]}
-                    </h3>
-                    <Badge className={`${colors.bg} ${colors.color} border ${colors.border}`}>
-                      {score} pontos
-                    </Badge>
-                  </div>
-                  
-                  {score < 80 && (
+            {sectionScores
+              .filter(({ score }) => score < 70)
+              .sort((a, b) => a.score - b.score) // Start with lowest scores
+              .map(({ section, score }) => {
+                const IconComponent = sectionIcons[section as keyof typeof sectionIcons];
+                const colors = getScoreColor(score);
+                const recommendations = getRecommendations(section, score);
+                
+                return (
+                  <div key={section} className="border-l-4 border-brand-gold pl-6">
+                    <div className="flex items-center space-x-3 mb-4">
+                      <IconComponent className="w-5 h-5 text-brand-gold" />
+                      <h3 className="text-lg font-semibold text-brand-black">
+                        {sectionTitles[section as keyof typeof sectionTitles]}
+                      </h3>
+                      <Badge className={`${colors.bg} ${colors.color} border ${colors.border}`}>
+                        {score}% - Prioridade {score < 40 ? 'Alta' : 'Média'}
+                      </Badge>
+                    </div>
+                    
                     <div className="space-y-2">
                       <h4 className="font-medium text-muted-foreground mb-3">
-                        Próximos passos para melhorar:
+                        🎯 Ações recomendadas (ordem de prioridade):
                       </h4>
                       <ul className="space-y-2">
-                        {recommendations.slice(0, score < 50 ? 4 : 2).map((rec, index) => (
+                        {recommendations.map((rec, index) => (
                           <li key={index} className="flex items-start space-x-2">
-                            <TrendingUp className="w-4 h-4 text-brand-gold mt-0.5 flex-shrink-0" />
+                            <span className="bg-brand-gold text-brand-black text-xs px-2 py-1 rounded-full font-medium min-w-[24px] text-center">
+                              {index + 1}
+                            </span>
                             <span className="text-sm text-muted-foreground">{rec}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
-                  )}
-                  
-                  {score >= 80 && (
-                    <p className="text-sm text-green-600">
-                      ✅ Excelente! Esta área está bem otimizada. Continue assim!
-                    </p>
-                  )}
-                </div>
-              );
-            })}
+                  </div>
+                );
+              })}
+              
+            {sectionScores.every(({ score }) => score >= 70) && (
+              <div className="text-center py-8">
+                <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-green-700 mb-2">
+                  Parabéns! Seu perfil GMN está muito bem otimizado!
+                </h3>
+                <p className="text-green-600">
+                  Continue monitorando e atualizando regularmente para manter a excelência.
+                </p>
+              </div>
+            )}
           </div>
         </CardContent>
       </Card>
