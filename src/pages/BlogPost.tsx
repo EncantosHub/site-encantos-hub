@@ -64,6 +64,21 @@ const BlogPost = () => {
     }
   }, [slug]);
 
+  // Add IDs to headings in the rendered content for table of contents navigation
+  useEffect(() => {
+    if (post && tableOfContents.length > 0) {
+      const contentContainer = document.querySelector('.prose');
+      if (contentContainer) {
+        const headings = contentContainer.querySelectorAll('h2, h3, h4');
+        headings.forEach((heading, index) => {
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+        });
+      }
+    }
+  }, [post, tableOfContents]);
+
   useSEO({
     title: post ? `${post.title} | Encantos Hub` : "Artigo não encontrado | Encantos Hub",
     description: post ? post.summary : "O artigo que você procura não foi encontrado.",
@@ -349,16 +364,9 @@ const BlogPost = () => {
                 <MessageCircle size={20} className="mr-2 text-brand-gold" />
                 <h3 className="text-xl font-semibold text-brand-black">Deixe seu comentário</h3>
               </div>
-              <p className="text-muted-foreground mb-4">
-                Tem alguma dúvida ou quer compartilhar sua experiência? Deixe um comentário ou entre em contato conosco!
+              <p className="text-muted-foreground">
+                Tem alguma dúvida ou quer compartilhar sua experiência? Deixe um comentário aqui embaixo!
               </p>
-              <Button 
-                onClick={() => window.open("https://wa.me/5511964721143?text=Tenho uma dúvida sobre o artigo do blog.", "_blank")}
-                variant="outline"
-                className="hover:bg-brand-gold hover:text-brand-black hover:border-brand-gold"
-              >
-                Comentar via WhatsApp
-              </Button>
             </div>
 
             {/* Related Posts */}
