@@ -35,6 +35,8 @@ const BlogPost = () => {
   const [isLiked, setIsLiked] = useState(false);
   const [relatedPosts, setRelatedPosts] = useState<BlogPostType[]>([]);
   const [tableOfContents, setTableOfContents] = useState<Array<{id: string, text: string, level: number}>>([]);
+  const [comments, setComments] = useState<Array<{id: string, name: string, email?: string, comment: string, date: string}>>([]);
+  const [commentForm, setCommentForm] = useState({name: '', email: '', comment: ''});
 
   useEffect(() => {
     const foundPost = getPostBySlug(slug || "");
@@ -115,6 +117,34 @@ const BlogPost = () => {
     const text = content.replace(/<[^>]*>/g, '');
     const wordCount = text.split(/\s+/).length;
     return Math.max(1, Math.ceil(wordCount / wordsPerMinute));
+  };
+
+  const handleSubmitComment = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!commentForm.name.trim() || !commentForm.comment.trim()) {
+      toast({
+        title: "Campos obrigatórios",
+        description: "Por favor, preencha seu nome e comentário.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    const newComment = {
+      id: Date.now().toString(),
+      name: commentForm.name.trim(),
+      email: commentForm.email.trim(),
+      comment: commentForm.comment.trim(),
+      date: new Date().toLocaleDateString('pt-BR')
+    };
+
+    setComments([newComment, ...comments]);
+    setCommentForm({ name: '', email: '', comment: '' });
+    
+    toast({
+      title: "Comentário enviado!",
+      description: "Obrigado por compartilhar sua opinião."
+    });
   };
 
   if (!post) {
@@ -362,11 +392,87 @@ const BlogPost = () => {
             <div className="mb-16 p-6 bg-muted/30 rounded-lg">
               <div className="flex items-center mb-4">
                 <MessageCircle size={20} className="mr-2 text-brand-gold" />
-                <h3 className="text-xl font-semibold text-brand-black">Deixe seu comentário</h3>
+                <h3 className="text-xl font-semibold text-brand-black">Comentários ({comments.length})</h3>
               </div>
-              <p className="text-muted-foreground">
-                Tem alguma dúvida ou quer compartilhar sua experiência? Deixe um comentário aqui embaixo!
-              </p>
+              
+              {/* Comment Form */}
+              <form onSubmit={handleSubmitComment} className="mb-6 space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-brand-black mb-1">
+                      Nome *
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      value={commentForm.name}
+                      onChange={(e) => setCommentForm({ ...commentForm, name: e.target.value })}
+                      required
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-gold focus:border-transparent"
+                      placeholder="Seu nome"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-brand-black mb-1">
+                      Email (opcional)
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      value={commentForm.email}
+                      onChange={(e) => setCommentForm({ ...commentForm, email: e.target.value })}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-gold focus:border-transparent"
+                      placeholder="seu@email.com"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label htmlFor="comment" className="block text-sm font-medium text-brand-black mb-1">
+                    Comentário *
+                  </label>
+                  <textarea
+                    id="comment"
+                    value={commentForm.comment}
+                    onChange={(e) => setCommentForm({ ...commentForm, comment: e.target.value })}
+                    required
+                    rows={4}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-gold focus:border-transparent resize-vertical"
+                    placeholder="Escreva seu comentário..."
+                  />
+                </div>
+                <Button 
+                  type="submit"
+                  className="bg-brand-gold text-brand-black hover:bg-brand-gold/90"
+                >
+                  Enviar Comentário
+                </Button>
+              </form>
+
+              {/* Comments List */}
+              <div className="space-y-4">
+                {comments.length === 0 ? (
+                  <p className="text-muted-foreground text-center py-4">
+                    Seja o primeiro a comentar! Compartilhe sua opinião sobre este artigo.
+                  </p>
+                ) : (
+                  comments.map((comment) => (
+                    <div key={comment.id} className="border-l-4 border-brand-gold pl-4 py-3 bg-background rounded-r-lg shadow-sm">
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="w-8 h-8 bg-brand-gold rounded-full flex items-center justify-center">
+                          <span className="text-brand-black font-semibold text-sm">
+                            {comment.name.charAt(0).toUpperCase()}
+                          </span>
+                        </div>
+                        <div>
+                          <p className="font-semibold text-brand-black">{comment.name}</p>
+                          <p className="text-xs text-muted-foreground">{comment.date}</p>
+                        </div>
+                      </div>
+                      <p className="text-muted-foreground leading-relaxed">{comment.comment}</p>
+                    </div>
+                  ))
+                )}
+              </div>
             </div>
 
             {/* Related Posts */}
