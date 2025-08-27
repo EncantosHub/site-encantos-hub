@@ -24,7 +24,8 @@ const Blog = () => {
   useSEO({
     title: "Blog de Marketing Digital e SEO | Encantos Hub",
     description: "Explore estratégias e dicas sobre marketing digital e SEO. Conteúdo especializado para impulsionar sua presença online.",
-    canonical: "https://www.encantoshub.com.br/blog"
+    canonical: "https://www.encantoshub.com.br/blog",
+    ogImage: "https://www.encantoshub.com.br/lovable-uploads/50eafc97-7976-48cf-86d3-511cd2eb5e68.png"
   });
 
   return (

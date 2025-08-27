@@ -21,7 +21,8 @@ const Ferramentas = () => {
   useSEO({
     title: "Ferramentas de SEO e Marketing Digital | Encantos Hub",
     description: "Acesse ferramentas profissionais de SEO e marketing digital. Diagnóstico GMN, gerador de mensagens e validador de SEO.",
-    canonical: "https://www.encantoshub.com.br/ferramentas"
+    canonical: "https://www.encantoshub.com.br/ferramentas",
+    ogImage: "https://www.encantoshub.com.br/lovable-uploads/50eafc97-7976-48cf-86d3-511cd2eb5e68.png"
   });
   
   const tools = [

@@ -1,8 +1,17 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { useSEO } from "@/hooks/useSEO";
 
 const NotFound = () => {
   const location = useLocation();
+
+  useSEO({
+    title: "Página Não Encontrada - 404 | Encantos Hub",
+    description: "A página que você procura não existe. Retorne à página inicial do Encantos Hub para acessar nossos serviços de marketing digital.",
+    canonical: `https://www.encantoshub.com.br${location.pathname}`,
+    robots: "noindex, nofollow",
+    ogImage: "https://www.encantoshub.com.br/lovable-uploads/50eafc97-7976-48cf-86d3-511cd2eb5e68.png"
+  });
 
   useEffect(() => {
     console.error(

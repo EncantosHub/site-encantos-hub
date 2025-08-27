@@ -14,7 +14,8 @@ const Index = () => {
   useSEO({
     title: "Consultoria de Marketing Digital e SEO | Encantos Hub",
     description: "Descubra como nossa consultoria de marketing digital pode impulsionar sua presença online. Serviços especializados em SEO, conteúdo e mais.",
-    canonical: "https://www.encantoshub.com.br/"
+    canonical: "https://www.encantoshub.com.br/",
+    ogImage: "https://www.encantoshub.com.br/lovable-uploads/50eafc97-7976-48cf-86d3-511cd2eb5e68.png"
   });
 
   return (

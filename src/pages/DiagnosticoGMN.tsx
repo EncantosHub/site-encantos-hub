@@ -37,7 +37,8 @@ const DiagnosticoGMN = () => {
   useSEO({
     title: "Diagnóstico GMN - Análise Completa do Google Meu Negócio | Encantos Hub",
     description: "Faça uma análise completa do seu perfil do Google Meu Negócio e receba um diagnóstico personalizado com recomendações práticas.",
-    canonical: "https://www.encantoshub.com.br/ferramentas/diagnostico-gmn"
+    canonical: "https://www.encantoshub.com.br/ferramentas/diagnostico-gmn",
+    ogImage: "https://www.encantoshub.com.br/lovable-uploads/50eafc97-7976-48cf-86d3-511cd2eb5e68.png"
   });
 
   const handleFormComplete = (data: FormData) => {
