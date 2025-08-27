@@ -93,6 +93,48 @@ export const useSEO = ({
         meta.content = ogImage;
         document.head.appendChild(meta);
       }
+
+      // Open Graph Image Width/Height for better display
+      let metaOgImageWidth = document.querySelector('meta[property="og:image:width"]');
+      if (metaOgImageWidth) {
+        metaOgImageWidth.setAttribute('content', '1200');
+      } else {
+        const meta = document.createElement('meta');
+        meta.setAttribute('property', 'og:image:width');
+        meta.content = '1200';
+        document.head.appendChild(meta);
+      }
+
+      let metaOgImageHeight = document.querySelector('meta[property="og:image:height"]');
+      if (metaOgImageHeight) {
+        metaOgImageHeight.setAttribute('content', '630');
+      } else {
+        const meta = document.createElement('meta');
+        meta.setAttribute('property', 'og:image:height');
+        meta.content = '630';
+        document.head.appendChild(meta);
+      }
+
+      // Twitter Card
+      let metaTwitterCard = document.querySelector('meta[name="twitter:card"]');
+      if (metaTwitterCard) {
+        metaTwitterCard.setAttribute('content', 'summary_large_image');
+      } else {
+        const meta = document.createElement('meta');
+        meta.name = 'twitter:card';
+        meta.content = 'summary_large_image';
+        document.head.appendChild(meta);
+      }
+
+      let metaTwitterImage = document.querySelector('meta[name="twitter:image"]');
+      if (metaTwitterImage) {
+        metaTwitterImage.setAttribute('content', ogImage);
+      } else {
+        const meta = document.createElement('meta');
+        meta.name = 'twitter:image';
+        meta.content = ogImage;
+        document.head.appendChild(meta);
+      }
     }
 
     // Open Graph URL
