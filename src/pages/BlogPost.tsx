@@ -85,6 +85,8 @@ const BlogPost = () => {
     title: post ? `${post.title} | Encantos Hub` : "Artigo não encontrado | Encantos Hub",
     description: post ? post.summary : "O artigo que você procura não foi encontrado.",
     canonical: post ? `https://www.encantoshub.com.br/blog/${post.slug}` : undefined,
+    ogTitle: post ? post.title : undefined,
+    ogDescription: post ? post.summary : undefined,
     ogImage: post?.thumbnail ? `https://www.encantoshub.com.br${post.thumbnail}` : "https://www.encantoshub.com.br/lovable-uploads/50eafc97-7976-48cf-86d3-511cd2eb5e68.png"
   });
 
