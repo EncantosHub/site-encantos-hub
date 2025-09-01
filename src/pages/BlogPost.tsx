@@ -32,7 +32,6 @@ import {
 interface BlogComment {
   id: string;
   name: string;
-  email: string;
   comment: string;
   created_at: string;
 }
@@ -55,7 +54,7 @@ const BlogPost = () => {
     try {
       const { data, error } = await supabase
         .from('blog_comments')
-        .select('*')
+        .select('id, name, comment, created_at, approved')
         .eq('post_slug', postSlug)
         .eq('approved', true)
         .order('created_at', { ascending: false });
