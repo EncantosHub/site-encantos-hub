@@ -237,7 +237,6 @@ export const blogPosts: BlogPost[] = [
     <h2>Conclusão</h2>
     <p>Pedir avaliações no Google de forma estratégica e ética é um dos caminhos mais diretos para fortalecer sua autoridade digital e atrair novos clientes. Ao combinar boas práticas com um processo simples — QR Codes com foto, mensagens personalizadas e acompanhamento periódico — você constrói uma reputação sólida e relevante para quem realmente importa: seus futuros clientes.</p>
 
-<p>Acesse a <a href="https://encantoshub.com.br/blog" title="Acesse o blog da EncantosHub">página central do nosso Blog</a> e descubra mais conteúdos exclusivos.</p>
   
   `
 },
@@ -385,8 +384,6 @@ export const blogPosts: BlogPost[] = [
     <p>Saber o que é um hiperlink e como criar corretamente é fundamental para estruturar um site otimizado, com boa navegabilidade e potencial de ranqueamento no Google.</p>
     <p>Ao aplicar essas boas práticas com consistência, você melhora acessibilidade, experiência do usuário e performance SEO.</p>
 
-<hr />
-<p>Acesse a <a href="https://encantoshub.com.br/blog" title="Acesse o blog da EncantosHub">página central do nosso Blog</a> e descubra mais conteúdos exclusivos.</p>
   
   `
 },
@@ -501,8 +498,6 @@ export const blogPosts: BlogPost[] = [
     <h2 id="conclusao">Conclusão</h2>
     <p>O SEO para imagens vai além de renomear arquivos: ele impacta desempenho, indexação, acessibilidade e experiência do usuário. Aplicando essas práticas no CMS, você garante um site mais rápido, acessível e com maior potencial de ranqueamento.</p>
 
-<hr />
-<p>Acesse a <a href="https://encantoshub.com.br/blog" title="Acesse o blog da EncantosHub">página central do nosso Blog</a> e descubra mais conteúdos exclusivos.</p>
   
   `
 },
@@ -594,8 +589,6 @@ O post deve ser informativo, destacar os benefícios e ser atraente para o públ
       <h2 id="conclusao">Conclusão</h2>
       <p>Criar um plano de conteúdo estratégico para o Google Meu Negócio é uma forma acessível e eficaz de melhorar o posicionamento da marca nas buscas locais. Além de fortalecer a presença digital, o plano garante organização, frequência e foco nos resultados reais. Se sua empresa ainda não aposta nessa estratégia, este é o momento ideal para começar — especialmente se você deseja atrair mais clientes, gerar autoridade e crescer com consistência no ambiente digital.</p>
 
-      <hr />
-      <p>Acesse a <a href="https://encantoshub.com.br/blog" title="Acesse o blog da EncantosHub">página central do nosso Blog</a> e descubra mais conteúdos exclusivos.</p>
     </div>
   `
 },
