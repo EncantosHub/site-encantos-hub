@@ -319,36 +319,6 @@ const BlogPost = () => {
               />
             </div>
 
-            {/* Highlighted Insight Box */}
-            <div className="mb-16 p-8 bg-gradient-to-r from-brand-gold/10 to-brand-gold/5 border border-brand-gold/20 rounded-lg">
-              <div className="flex items-start space-x-3">
-                <div className="w-1 h-16 bg-brand-gold rounded-full flex-shrink-0 mt-1"></div>
-                <div>
-                  <h3 className="text-xl font-semibold text-brand-black mb-3">💡 Dica Importante</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    A implementação consistente dessas estratégias é fundamental para obter resultados duradouros. 
-                    Lembre-se: o sucesso digital vem da combinação entre conhecimento técnico e aplicação prática.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Final CTA */}
-            <div className="mb-16 p-8 bg-gradient-hero rounded-lg text-center">
-              <h3 className="text-2xl font-bold text-brand-white mb-4">
-                Precisa de ajuda para implementar essas estratégias?
-              </h3>
-              <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-                Nossa equipe especializada pode ajudar você a colocar em prática tudo que aprendeu neste artigo. 
-                Entre em contato para uma consultoria personalizada e acelere seus resultados.
-              </p>
-              <Button 
-                onClick={() => window.open("https://wa.me/5511964721143?text=Vim do blog e gostaria de uma consultoria personalizada.", "_blank")}
-                className="bg-brand-gold hover:bg-brand-gold/90 text-brand-black font-semibold px-8 py-3 text-lg"
-              >
-                Solicitar Consultoria Gratuita
-              </Button>
-            </div>
 
             {/* Social Sharing */}
             <div className="mb-16 p-6 bg-muted/30 rounded-lg text-center">
