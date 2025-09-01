@@ -321,41 +321,60 @@ const BlogPost = () => {
 
 
             {/* Social Sharing */}
-            <div className="mb-16 p-6 bg-muted/30 rounded-lg text-center">
-              <h3 className="text-lg font-semibold text-brand-black mb-4">Gostou do conteúdo? Compartilhe!</h3>
-              <div className="flex justify-center space-x-4">
+            <div className="mb-16 p-8 bg-gradient-to-r from-brand-gold/20 to-brand-gold/10 border border-brand-gold/30 rounded-lg text-center shadow-lg">
+              <h3 className="text-xl font-bold text-brand-black mb-6">🌟 Gostou do conteúdo? Compartilhe!</h3>
+              <div className="flex justify-center flex-wrap gap-3">
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={() => window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(window.location.href)}`, '_blank')}
-                  className="hover:bg-brand-gold hover:text-brand-black hover:border-brand-gold"
+                  onClick={() => window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(window.location.href)}&hashtags=EncantosHub,SEO,MarketingDigital`, '_blank')}
+                  className="bg-white/50 hover:bg-brand-gold hover:text-brand-black hover:border-brand-gold transition-all duration-300"
                 >
-                  Twitter
+                  🐦 Twitter
                 </Button>
                 <Button
                   variant="outline"
                   size="sm"
                   onClick={() => window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank')}
-                  className="hover:bg-brand-gold hover:text-brand-black hover:border-brand-gold"
+                  className="bg-white/50 hover:bg-brand-gold hover:text-brand-black hover:border-brand-gold transition-all duration-300"
                 >
-                  LinkedIn
+                  💼 LinkedIn
                 </Button>
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={() => window.open(`https://wa.me/?text=${encodeURIComponent(`Confira este artigo: ${post.title} ${window.location.href}`)}`, '_blank')}
-                  className="hover:bg-brand-gold hover:text-brand-black hover:border-brand-gold"
+                  onClick={() => window.open(`https://wa.me/?text=${encodeURIComponent(`📖 Confira este artigo da EncantosHub: "${post.title}" ${window.location.href}`)}`, '_blank')}
+                  className="bg-white/50 hover:bg-brand-gold hover:text-brand-black hover:border-brand-gold transition-all duration-300"
                 >
-                  WhatsApp
+                  💬 WhatsApp
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => {
+                    const shareText = `📖 Confira este artigo: "${post.title}" - EncantosHub\n\n${window.location.href}\n\n#EncantosHub #MarketingDigital #SEO`;
+                    if (navigator.share) {
+                      navigator.share({
+                        title: post.title,
+                        text: shareText,
+                        url: window.location.href
+                      });
+                    } else {
+                      window.open('https://www.instagram.com/', '_blank');
+                    }
+                  }}
+                  className="bg-white/50 hover:bg-brand-gold hover:text-brand-black hover:border-brand-gold transition-all duration-300"
+                >
+                  📸 Instagram
                 </Button>
                 <Button
                   variant="outline"
                   size="sm"
                   onClick={handleShare}
-                  className="hover:bg-brand-gold hover:text-brand-black hover:border-brand-gold"
+                  className="bg-white/50 hover:bg-brand-gold hover:text-brand-black hover:border-brand-gold transition-all duration-300"
                 >
                   <Share2 size={16} className="mr-1" />
-                  Copiar Link
+                  📋 Copiar Link
                 </Button>
               </div>
             </div>
