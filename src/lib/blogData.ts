@@ -34,7 +34,6 @@ export const blogPosts: BlogPost[] = [
       <li>Informações comerciais</li>
       <li>Botões de ação (WhatsApp, site, rota, telefone)</li>
     </ul>
-    <p>Se você está montando sua base local, aprofunde nas ações de <a href="https://encantoshub.com.br/blog/otimizar-gmn" target="_blank" rel="noopener">otimização do Perfil da Empresa no Google</a> e garanta que suas fotos e banners estejam leves e bem descritos com este guia de <a href="https://encantoshub.com.br/blog/seo-para-imagens" target="_blank" rel="noopener">SEO para imagens</a>.</p>
 
     <h3>Como cadastrar sua empresa</h3>
   <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
@@ -131,10 +130,8 @@ export const blogPosts: BlogPost[] = [
     
     <h3>Quer iniciar agora?</h3>
     <p>Conte com a EncantosHub para estruturar e otimizar a presença digital da sua empresa. Entre em contato pelo <a href="https://wa.me/5511964721143" target="_blank" rel="noopener"><strong>WhatsApp</strong></a> e vamos criar sua estratégia personalizada.</p>
-
-<hr />
-<p>Acesse a <a href="https://encantoshub.com.br/blog" title="Acesse o blog da EncantosHub">página central do nosso Blog</a> e descubra mais conteúdos exclusivos.</p>
-  
+    
+    <p>Se você está montando sua base local, aprofunde nas ações de <a href="https://encantoshub.com.br/blog/otimizar-gmn" target="_blank" rel="noopener">otimização do Perfil da Empresa no Google</a> e garanta que suas fotos e banners estejam leves e bem descritos com este guia de <a href="https://encantoshub.com.br/blog/seo-para-imagens" target="_blank" rel="noopener">SEO para imagens</a>.</p> 
   `
 },
 {
