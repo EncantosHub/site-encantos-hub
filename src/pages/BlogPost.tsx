@@ -330,7 +330,7 @@ const BlogPost = () => {
                   onClick={() => window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(window.location.href)}&hashtags=EncantosHub,SEO,MarketingDigital`, '_blank')}
                   className="bg-white/50 hover:bg-brand-gold hover:text-brand-black hover:border-brand-gold transition-all duration-300"
                 >
-                  🐦 Twitter
+                  Twitter
                 </Button>
                 <Button
                   variant="outline"
@@ -338,7 +338,7 @@ const BlogPost = () => {
                   onClick={() => window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank')}
                   className="bg-white/50 hover:bg-brand-gold hover:text-brand-black hover:border-brand-gold transition-all duration-300"
                 >
-                  💼 LinkedIn
+                  LinkedIn
                 </Button>
                 <Button
                   variant="outline"
@@ -346,7 +346,7 @@ const BlogPost = () => {
                   onClick={() => window.open(`https://wa.me/?text=${encodeURIComponent(`📖 Confira este artigo da EncantosHub: "${post.title}" ${window.location.href}`)}`, '_blank')}
                   className="bg-white/50 hover:bg-brand-gold hover:text-brand-black hover:border-brand-gold transition-all duration-300"
                 >
-                  💬 WhatsApp
+                  WhatsApp
                 </Button>
                 <Button
                   variant="outline"
@@ -365,7 +365,7 @@ const BlogPost = () => {
                   }}
                   className="bg-white/50 hover:bg-brand-gold hover:text-brand-black hover:border-brand-gold transition-all duration-300"
                 >
-                  📸 Instagram
+                  Instagram
                 </Button>
                 <Button
                   variant="outline"
@@ -374,7 +374,7 @@ const BlogPost = () => {
                   className="bg-white/50 hover:bg-brand-gold hover:text-brand-black hover:border-brand-gold transition-all duration-300"
                 >
                   <Share2 size={16} className="mr-1" />
-                  📋 Copiar Link
+                  Copiar Link
                 </Button>
               </div>
             </div>
