@@ -14,6 +14,39 @@ export type Database = {
   }
   public: {
     Tables: {
+      blog_comments: {
+        Row: {
+          approved: boolean
+          comment: string
+          created_at: string
+          email: string
+          id: string
+          name: string
+          post_slug: string
+          updated_at: string
+        }
+        Insert: {
+          approved?: boolean
+          comment: string
+          created_at?: string
+          email: string
+          id?: string
+          name: string
+          post_slug: string
+          updated_at?: string
+        }
+        Update: {
+          approved?: boolean
+          comment?: string
+          created_at?: string
+          email?: string
+          id?: string
+          name?: string
+          post_slug?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       gmn_leads: {
         Row: {
           company_name: string

@@ -19,6 +19,7 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import { getPostBySlug, blogPosts, type BlogPost as BlogPostType } from "@/lib/blogData";
 import { useSEO } from "@/hooks/useSEO";
+import { supabase } from "@/integrations/supabase/client";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -28,6 +29,14 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
+interface BlogComment {
+  id: string;
+  name: string;
+  email: string;
+  comment: string;
+  created_at: string;
+}
+
 const BlogPost = () => {
   const { slug } = useParams();
   const { toast } = useToast();
@@ -35,13 +44,46 @@ const BlogPost = () => {
   const [isLiked, setIsLiked] = useState(false);
   const [relatedPosts, setRelatedPosts] = useState<BlogPostType[]>([]);
   const [tableOfContents, setTableOfContents] = useState<Array<{id: string, text: string, level: number}>>([]);
-  const [comments, setComments] = useState<Array<{id: string, name: string, email?: string, comment: string, date: string}>>([]);
+  const [comments, setComments] = useState<BlogComment[]>([]);
   const [commentForm, setCommentForm] = useState({name: '', email: '', comment: ''});
+  const [loadingComments, setLoadingComments] = useState(false);
+  const [submittingComment, setSubmittingComment] = useState(false);
+
+  // Load comments from Supabase
+  const loadComments = async (postSlug: string) => {
+    setLoadingComments(true);
+    try {
+      const { data, error } = await supabase
+        .from('blog_comments')
+        .select('*')
+        .eq('post_slug', postSlug)
+        .eq('approved', true)
+        .order('created_at', { ascending: false });
+
+      if (error) {
+        console.error('Error loading comments:', error);
+        toast({
+          title: "Erro ao carregar comentários",
+          description: "Não foi possível carregar os comentários. Tente recarregar a página.",
+          variant: "destructive"
+        });
+      } else {
+        setComments(data || []);
+      }
+    } catch (error) {
+      console.error('Error loading comments:', error);
+    } finally {
+      setLoadingComments(false);
+    }
+  };
 
   useEffect(() => {
     const foundPost = getPostBySlug(slug || "");
     if (foundPost) {
       setPost(foundPost);
+      
+      // Load comments for this post
+      loadComments(foundPost.slug);
       
       // Find related posts (same category, different slug)
       const related = blogPosts
@@ -121,32 +163,67 @@ const BlogPost = () => {
     return Math.max(1, Math.ceil(wordCount / wordsPerMinute));
   };
 
-  const handleSubmitComment = (e: React.FormEvent) => {
+  const handleSubmitComment = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!commentForm.name.trim() || !commentForm.comment.trim()) {
+    
+    // Validate required fields including email
+    if (!commentForm.name.trim() || !commentForm.email.trim() || !commentForm.comment.trim()) {
       toast({
         title: "Campos obrigatórios",
-        description: "Por favor, preencha seu nome e comentário.",
+        description: "Por favor, preencha nome, email e comentário.",
         variant: "destructive"
       });
       return;
     }
 
-    const newComment = {
-      id: Date.now().toString(),
-      name: commentForm.name.trim(),
-      email: commentForm.email.trim(),
-      comment: commentForm.comment.trim(),
-      date: new Date().toLocaleDateString('pt-BR')
-    };
+    // Validate email format
+    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+    if (!emailRegex.test(commentForm.email.trim())) {
+      toast({
+        title: "Email inválido",
+        description: "Por favor, digite um email válido.",
+        variant: "destructive"
+      });
+      return;
+    }
 
-    setComments([newComment, ...comments]);
-    setCommentForm({ name: '', email: '', comment: '' });
-    
-    toast({
-      title: "Comentário enviado!",
-      description: "Obrigado por compartilhar sua opinião."
-    });
+    if (!post) return;
+
+    setSubmittingComment(true);
+    try {
+      const { error } = await supabase
+        .from('blog_comments')
+        .insert({
+          post_slug: post.slug,
+          name: commentForm.name.trim(),
+          email: commentForm.email.trim(),
+          comment: commentForm.comment.trim()
+        });
+
+      if (error) {
+        console.error('Error submitting comment:', error);
+        toast({
+          title: "Erro ao enviar comentário",
+          description: "Não foi possível enviar seu comentário. Tente novamente.",
+          variant: "destructive"
+        });
+      } else {
+        setCommentForm({ name: '', email: '', comment: '' });
+        toast({
+          title: "Comentário enviado!",
+          description: "Seu comentário foi enviado e está aguardando aprovação."
+        });
+      }
+    } catch (error) {
+      console.error('Error submitting comment:', error);
+      toast({
+        title: "Erro ao enviar comentário",
+        description: "Não foi possível enviar seu comentário. Tente novamente.",
+        variant: "destructive"
+      });
+    } finally {
+      setSubmittingComment(false);
+    }
   };
 
   if (!post) {
@@ -405,13 +482,14 @@ const BlogPost = () => {
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-brand-black mb-1">
-                      Email (opcional)
+                      Email *
                     </label>
                     <input
                       type="email"
                       id="email"
                       value={commentForm.email}
                       onChange={(e) => setCommentForm({ ...commentForm, email: e.target.value })}
+                      required
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-gold focus:border-transparent"
                       placeholder="seu@email.com"
                     />
@@ -433,15 +511,20 @@ const BlogPost = () => {
                 </div>
                 <Button 
                   type="submit"
-                  className="bg-brand-gold text-brand-black hover:bg-brand-gold/90"
+                  disabled={submittingComment}
+                  className="bg-brand-gold text-brand-black hover:bg-brand-gold/90 disabled:opacity-50"
                 >
-                  Enviar Comentário
+                  {submittingComment ? "Enviando..." : "Enviar Comentário"}
                 </Button>
               </form>
 
               {/* Comments List */}
               <div className="space-y-4">
-                {comments.length === 0 ? (
+                {loadingComments ? (
+                  <p className="text-muted-foreground text-center py-4">
+                    Carregando comentários...
+                  </p>
+                ) : comments.length === 0 ? (
                   <p className="text-muted-foreground text-center py-4">
                     Seja o primeiro a comentar! Compartilhe sua opinião sobre este artigo.
                   </p>
@@ -456,7 +539,9 @@ const BlogPost = () => {
                         </div>
                         <div>
                           <p className="font-semibold text-brand-black">{comment.name}</p>
-                          <p className="text-xs text-muted-foreground">{comment.date}</p>
+                          <p className="text-xs text-muted-foreground">
+                            {new Date(comment.created_at).toLocaleDateString('pt-BR')}
+                          </p>
                         </div>
                       </div>
                       <p className="text-muted-foreground leading-relaxed">{comment.comment}</p>
