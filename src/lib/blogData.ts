@@ -146,7 +146,6 @@ export const blogPosts: BlogPost[] = [
       content: `
 
     <p>As avaliações no Google têm papel central na reputação local de qualquer negócio. Elas aumentam a visibilidade no Google Maps, fortalecem a confiança de novos clientes e influenciam decisões de compra de maneira espontânea. A seguir, veja como pedir avaliações com ética e estratégia — incluindo o uso de QR Code e imagens.</p>
-    <p>Se você está estruturando sua presença local, veja também as <a href="https://encantoshub.com.br/blog/otimizar-gmn" target="_blank" rel="noopener">melhores práticas para otimizar o Perfil da Empresa no Google</a> e o panorama de <a href="https://encantoshub.com.br/blog/importancia-presenca-digital" target="_blank" rel="noopener">por que a presença digital importa</a> para atrair mais clientes.</p>
 
     <h2>Por que avaliações no Google são importantes</h2>
     <ul>
@@ -236,7 +235,7 @@ export const blogPosts: BlogPost[] = [
 
     <h2>Conclusão</h2>
     <p>Pedir avaliações no Google de forma estratégica e ética é um dos caminhos mais diretos para fortalecer sua autoridade digital e atrair novos clientes. Ao combinar boas práticas com um processo simples — QR Codes com foto, mensagens personalizadas e acompanhamento periódico — você constrói uma reputação sólida e relevante para quem realmente importa: seus futuros clientes.</p>
-
+    <p>Se você está estruturando sua presença local, veja também as <a href="https://encantoshub.com.br/blog/otimizar-gmn" target="_blank" rel="noopener">melhores práticas para otimizar o Perfil da Empresa no Google</a> e o panorama de <a href="https://encantoshub.com.br/blog/importancia-presenca-digital" target="_blank" rel="noopener">por que a presença digital importa</a> para atrair mais clientes.</p>
   
   `
 },
@@ -375,7 +374,6 @@ export const blogPosts: BlogPost[] = [
       <li>Evite links apenas em botões com JavaScript.</li>
       <li>Mantenha URLs limpas e legíveis (ex: /servicos/consultoria-seo).</li>
     </ul>
-    <p>Para potencializar seu interlinking, publique com imagens otimizadas (nome de arquivo, alt, peso) seguindo este guia de <a href="https://encantoshub.com.br/blog/seo-para-imagens" target="_blank" rel="noopener">SEO para imagens</a> e mantenha um hub de conteúdos atualizado na <a href="https://encantoshub.com.br/blog" target="_blank" rel="noopener">página do Blog</a>.</p>
 
     <h3>💡 Material de apoio</h3>
     <p>Para facilitar a implementação dessas práticas, disponibilizamos uma <a href="https://docs.google.com/spreadsheets/d/1gpuCYeZmnw_CZfUsO2uU_LLQWyP4QYM5XMZJPp5chio/edit?gid=1231688682#gid=1231688682" target="_blank" rel="noopener">planilha de controle de links internos</a> com exemplos práticos para organizar sua estratégia de interlinking.</p>
@@ -383,7 +381,7 @@ export const blogPosts: BlogPost[] = [
     <h2 id="conclusao">Conclusão</h2>
     <p>Saber o que é um hiperlink e como criar corretamente é fundamental para estruturar um site otimizado, com boa navegabilidade e potencial de ranqueamento no Google.</p>
     <p>Ao aplicar essas boas práticas com consistência, você melhora acessibilidade, experiência do usuário e performance SEO.</p>
-
+    <p>Para potencializar seu interlinking, publique com imagens otimizadas (nome de arquivo, alt, peso) seguindo este guia de <a href="https://encantoshub.com.br/blog/seo-para-imagens" target="_blank" rel="noopener">SEO para imagens</a> e mantenha um hub de conteúdos atualizado na <a href="https://encantoshub.com.br/blog" target="_blank" rel="noopener">página do Blog</a>.</p>
   
   `
 },
