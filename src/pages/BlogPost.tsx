@@ -48,16 +48,12 @@ const BlogPost = () => {
   const [loadingComments, setLoadingComments] = useState(false);
   const [submittingComment, setSubmittingComment] = useState(false);
 
-  // Load comments from Supabase
+  // Load comments from Supabase using secure function
   const loadComments = async (postSlug: string) => {
     setLoadingComments(true);
     try {
       const { data, error } = await supabase
-        .from('blog_comments')
-        .select('id, name, comment, created_at, approved')
-        .eq('post_slug', postSlug)
-        .eq('approved', true)
-        .order('created_at', { ascending: false });
+        .rpc('get_approved_blog_comments', { post_slug_param: postSlug });
 
       if (error) {
         console.error('Error loading comments:', error);

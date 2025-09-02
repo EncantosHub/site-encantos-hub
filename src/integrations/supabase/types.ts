@@ -103,32 +103,19 @@ export type Database = {
       }
     }
     Views: {
-      blog_comments_public: {
-        Row: {
-          comment: string | null
-          created_at: string | null
-          id: string | null
-          name: string | null
-          post_slug: string | null
-        }
-        Insert: {
-          comment?: string | null
-          created_at?: string | null
-          id?: string | null
-          name?: string | null
-          post_slug?: string | null
-        }
-        Update: {
-          comment?: string | null
-          created_at?: string | null
-          id?: string | null
-          name?: string | null
-          post_slug?: string | null
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Functions: {
+      get_approved_blog_comments: {
+        Args: { post_slug_param?: string }
+        Returns: {
+          comment: string
+          created_at: string
+          id: string
+          name: string
+          post_slug: string
+        }[]
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
