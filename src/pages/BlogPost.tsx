@@ -266,10 +266,6 @@ const BlogPost = () => {
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbLink>{post.category}</BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator />
-                <BreadcrumbItem>
                   <BreadcrumbPage className="text-brand-gold font-medium">
                     {post.title.length > 50 ? `${post.title.substring(0, 50)}...` : post.title}
                   </BreadcrumbPage>
