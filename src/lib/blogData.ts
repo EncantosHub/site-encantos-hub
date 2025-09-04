@@ -841,134 +841,126 @@ O post deve ser informativo, destacar os benefícios e ser atraente para o públ
   `
 },
 {
-  slug: "guia-seo-artigos-blog",
-  title: "Guia de SEO para criação e publicação de artigos",
-  summary: "Aprenda a criar e publicar artigos otimizados para SEO com foco em ranqueamento, estratégia e experiência do usuário.",
+  slug: "seo-em-migracao-de-sites",
+  title: "SEO em migração de sites: guia para manter sua autoridade",
+  summary: "Evite perder tráfego ao trocar de site. Veja como aplicar SEO em migração de sites sem afetar sua autoridade e performance no Google.",
   date: "2025-09-04",
   category: "SEO",
-  thumbnail: "/images/blog/seo-artigos-capa.jpg",
+  thumbnail: "/images/blog/seo-migracao-sites.jpg",
   author: "Isabella Brilha",
   authorLinkedIn: "https://linkedin.com/in/isabella-brilha",
   content: `
     <div style="max-width: 100%; overflow: hidden;">
 
-      <h1>Guia completo de SEO para criação e publicação de artigos</h1>
-      <p>Neste guia, você vê passo a passo como escrever artigos para blogs considerando as boas práticas de SEO — do entendimento do cliente até a publicação e validação do conteúdo.</p>
+      <h1>Guia completo de SEO em migração de sites: como proteger sua autoridade</h1>
+
+      <p>Descubra neste guia como realizar a migração de um site sem perder performance no Google. Aprenda a proteger sua autoridade digital com boas práticas de SEO <strong>antes</strong>, <strong>durante</strong> e <strong>após</strong> a mudança de domínio ou estrutura.</p>
 
       <h2>Sumário</h2>
       <ul>
-        <li><a href="#briefing">Briefing de SEO: como criar e publicar artigos otimizados</a></li>
-        <li><a href="#cliente">Conhecendo o cliente</a></li>
-        <li><a href="#pauta">Sugestão de pauta e pesquisa de palavras-chave</a></li>
-        <li><a href="#briefing-detalhado">Briefing detalhado</a></li>
-        <li><a href="#criacao">Orientações de SEO na hora de criar um artigo</a></li>
-        <li><a href="#publicacao">Orientações de SEO na hora de publicar</a></li>
-        <li><a href="#validacao">Validação da página publicada</a></li>
-        <li><a href="#conclusao">Conclusão</a></li>
+        <li><a href="#introducao">Introdução: por que SEO na migração de sites é essencial</a></li>
+        <li><a href="#etapa-1">Etapa 1: o essencial para uma migração SEO saudável</a></li>
+        <li><a href="#etapa-2">Etapa 2: otimizações para evitar retrabalho futuro</a></li>
+        <li><a href="#etapa-3">Etapa 3: testes e monitoramento pós-migração</a></li>
+        <li><a href="#etapa-4">Etapa 4: checklist técnico contínuo</a></li>
+        <li><a href="#conclusao">Conclusão: transforme a migração em uma oportunidade de crescimento</a></li>
       </ul>
 
-      <h2 id="briefing">Briefing de SEO: como criar e publicar artigos otimizados</h2>
-      <p>Antes de escrever, alinhe objetivos, público e palavras-chave. Isso aumenta a relevância do conteúdo e evita retrabalho.</p>
+      <h2 id="introducao">Introdução: por que SEO na migração de sites é essencial</h2>
+      <p>Migrar um site é como mudar de endereço físico: se ninguém for avisado ou se as instruções estiverem erradas, visitas importantes são perdidas. Ao falar de SEO em migração de sites, o principal objetivo é manter tudo o que foi conquistado — autoridade, tráfego orgânico e posicionamento no Google.</p>
+      <p>Uma migração mal planejada pode significar perda de páginas indexadas, queda nas posições e danos à reputação digital. Quando bem executada, porém, é uma oportunidade de corrigir erros antigos, melhorar a performance e fortalecer a presença digital da marca.</p>
 
-      <h2 id="cliente">Conhecendo o cliente</h2>
+      <h2 id="etapa-1">Etapa 1: o essencial para uma migração SEO saudável</h2>
+      <p>Se o projeto tiver recursos limitados, concentre-se nos seguintes itens:</p>
       <ul>
-        <li><strong>Sobre o cliente:</strong> área de atuação, público-alvo, missão, visão e valores.</li>
-        <li><strong>Site:</strong> informe a URL para análise de conteúdo atual, arquitetura e oportunidades.</li>
+        <li><strong>Redirecionamentos 301 bem implementados</strong>: preservam a autoridade de URLs antigas e evitam erros 404.</li>
       </ul>
-
-      <h2 id="pauta">Sugestão de pauta e pesquisa de palavras-chave</h2>
+      <p><strong>Exemplo em Apache (.htaccess):</strong></p>
+      <pre><code>Redirect 301 /url-antiga /nova-url-otimizada</code></pre>
       <ul>
-        <li><strong>Tema central:</strong> relevante ao público e aos objetivos do negócio.</li>
-        <li><strong>Palavra-chave principal:</strong> foco do artigo; avalie <em>volume</em>, <em>intenção</em> e <em>dificuldade</em>.</li>
-        <li><strong>Palavras-chave secundárias/relacionadas:</strong> variações e sinônimos para ampliar cobertura semântica.</li>
+        <li><strong>Titles, meta descriptions e headings otimizados</strong>: atualize pelo menos as páginas principais (home, categorias, serviços) com títulos e descrições claras e focadas.</li>
+        <li><strong>Robots.txt e sitemap.xml atualizados</strong>:
+          <ul>
+            <li><em>robots.txt</em>: libere o rastreamento de páginas úteis e bloqueie diretórios como <code>/admin/</code>, <code>/checkout/</code>.</li>
+            <li><em>sitemap.xml</em>: inclua as novas URLs e envie ao Search Console.</li>
+          </ul>
+        </li>
+        <li><strong>Atualização de links internos</strong>: corrija todos os links para refletirem a nova estrutura (nada de 404).</li>
+        <li><strong>Teste de indexação</strong>: use “Inspeção de URL” no Search Console para validar as principais páginas.</li>
       </ul>
 
-      <h2 id="briefing-detalhado">Briefing detalhado</h2>
+      <h2 id="etapa-2">Etapa 2: otimizações para evitar retrabalho futuro</h2>
       <ul>
-        <li><strong>Objetivo do conteúdo:</strong> informar, educar, converter, etc.</li>
-        <li><strong>Tamanho do texto:</strong> defina faixa de palavras conforme complexidade e concorrência.</li>
-        <li><strong>Persona:</strong> dores, interesses, objeções e estágio do funil.</li>
-        <li><strong>Tom de voz:</strong> formal, técnico, didático, etc.</li>
-        <li><strong>Links de referência:</strong> bases confiáveis para embasar o texto.</li>
-        <li><strong>Prazo:</strong> defina data de entrega e revisões.</li>
+        <li><strong>Tags canônicas</strong>: cada página deve conter <code>&lt;link rel="canonical" href="URL-canonica" /&gt;</code> apontando para si mesma (ou para a versão canônica correta).</li>
+        <li><strong>Dados estruturados (Schema)</strong>:
+          <ul>
+            <li><code>BreadcrumbList</code> em todas as páginas;</li>
+            <li><code>Article</code> e <code>FAQ</code> em posts do blog;</li>
+            <li><code>LocalBusiness</code> em páginas institucionais;</li>
+            <li><code>Product</code> e <code>Review</code> para e-commerce.</li>
+          </ul>
+        </li>
+        <li><strong>Design mobile-first e responsividade</strong>: projete para mobile desde o início. Ferramenta útil: <a href="https://search.google.com/test/mobile-friendly" target="_blank" rel="noopener">Mobile-Friendly Test</a>.</li>
+        <li><strong>Core Web Vitals</strong> — metas recomendadas:
+          <ul>
+            <li><strong>LCP</strong>: abaixo de 2,5s</li>
+            <li><strong>FID</strong> (ou INP): abaixo de 100ms</li>
+            <li><strong>CLS</strong>: abaixo de 0,1</li>
+          </ul>
+          <p>Ferramenta recomendada: <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener">PageSpeed Insights</a>.</p>
+        </li>
       </ul>
 
-      <h2 id="criacao">Orientações de SEO na hora de criar um artigo</h2>
-      <h3>Título (title tag)</h3>
-      <ul>
-        <li>Inclua a palavra-chave principal, preferencialmente no início.</li>
-        <li>Mantenha entre 50–60 caracteres.</li>
-      </ul>
-
-      <h3>Descrição (meta description)</h3>
-      <ul>
-        <li>Resuma o conteúdo em 150–160 caracteres com proposta de valor e CTA sutil.</li>
-      </ul>
-
-      <h3>Legibilidade</h3>
-      <ul>
-        <li>Parágrafos curtos, subtítulos (H2/H3/H4), listas e intertítulos claros.</li>
-        <li>Quebre a página com imagens relevantes e links úteis.</li>
-        <li>Tipografia legível e bom espaçamento.</li>
-      </ul>
-
-      <h3>Formatação útil</h3>
-      <ul>
-        <li><strong>Negrito</strong> para trechos essenciais (use com parcimônia).</li>
-        <li><em>Itálico</em> para termos técnicos/estrangeiros.</li>
-        <li><u>Sublinhado</u> apenas para elementos com link.</li>
-        <li>Listas, citações e variação de tamanhos de título para hierarquia.</li>
-      </ul>
-
-      <h3>Links internos e externos</h3>
-      <ul>
-        <li><strong>Internos:</strong> use âncoras descritivas e aponte para páginas relacionadas e úteis.</li>
-        <li><strong>Externos:</strong> cite fontes confiáveis (<code>https</code>), sem exagero, e revise periodicamente.</li>
-      </ul>
-
-      <div style="text-align:center; margin:2rem 0;">
-        <img src="/images/blog/seo-artigos-exemplo-estrutura.jpg" alt="Exemplo de estrutura com H1, H2, listas e chamada para ação" style="max-width:100%; height:auto;">
-        <p style="font-size:0.9em; color:#666; margin-top:0.5rem;"><em>Exemplo visual de hierarquia e escaneabilidade</em></p>
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="/images/blog/migracao-seo-pagespeed.jpg" alt="Exemplo de relatório do PageSpeed Insights destacando LCP, FID/INP e CLS após migração" style="max-width: 100%; height: auto;">
+        <p style="font-size: 0.9em; color: #666; margin-top: 0.5rem;"><em>Exemplo: acompanhamento dos Core Web Vitals pós-migração</em></p>
       </div>
 
-      <h2 id="publicacao">Orientações de SEO na hora de publicar</h2>
-      <h3>Arquivos (imagens)</h3>
       <ul>
-        <li>Nomes descritivos e enxutos (ex.: <code>seo-artigos-capa.jpg</code>), comprimidos.</li>
-        <li><strong>Alt text</strong> objetivo (até ~300 caracteres) e contextual.</li>
-        <li>Inclua link na imagem quando fizer sentido (ex.: para um estudo citado).</li>
+        <li><strong>Certificado SSL + redirecionamento para HTTPS</strong>: implemente SSL, force HTTPS e elimine conteúdo misto.</li>
+        <li><strong>Estrutura de paginação</strong>: mesmo sem <code>rel="next/prev"</code>, mantenha a navegação clara.</li>
+        <li><strong>Indexação de conteúdo dinâmico</strong>: se usar JavaScript para conteúdo crítico, teste a renderização no Search Console.</li>
+        <li><strong>Páginas legais</strong>: garanta <em>Política de Privacidade</em>, <em>Termos de Uso</em> e <em>Política de Cookies</em>.</li>
+        <li><strong>Proteções contra spam</strong>: reCAPTCHA em formulários e segurança básica no servidor.</li>
+        <li><strong>Acessibilidade (WCAG)</strong>: contraste, navegação por teclado, formulários acessíveis e <em>alt text</em> em imagens.</li>
       </ul>
 
-      <h3>URL do artigo</h3>
+      <h2 id="etapa-3">Etapa 3: testes e monitoramento pós-migração</h2>
+      <p>Após o lançamento do novo site:</p>
       <ul>
-        <li>Curta, descritiva e com a palavra-chave principal.</li>
-        <li>Sem acentos, caixa alta, <code>ç</code> ou parâmetros; separe com hífens.</li>
-        <li>Evite > 115 caracteres; categorize corretamente.</li>
-      </ul>
-      <pre><code>https://www.seusite.com.br/blog/palavra-chave-principal</code></pre>
-
-      <h3>Texto alternativo das imagens</h3>
-      <ul>
-        <li>Descreva claramente o que a imagem mostra e seu propósito no contexto.</li>
+        <li>Teste os redirecionamentos 301;</li>
+        <li>Valide a velocidade de carregamento;</li>
+        <li>Verifique as tags de rastreamento (Analytics, pixels, etc.);</li>
+        <li>Analise e corrija erros 404;</li>
+        <li>Reenvie o <code>sitemap.xml</code> ao Search Console;</li>
+        <li>Acompanhe variações no tráfego e nas posições orgânicas.</li>
       </ul>
 
-      <h2 id="validacao">Validação da página publicada</h2>
+      <p><strong>Ferramentas recomendadas:</strong> Google Analytics, Google Search Console e Screaming Frog.</p>
+
+      <h2 id="etapa-4">Etapa 4: checklist técnico contínuo</h2>
       <ul>
-        <li>Teste no desktop e mobile (responsividade, tempo de carregamento, navegação).</li>
-        <li>Revise títulos, metas, headings e links internos.</li>
-        <li>Confirme a URL e a categoria final.</li>
+        <li>Indexação de novas páginas;</li>
+        <li>Dados estruturados atualizados;</li>
+        <li>Performance (Core Web Vitals);</li>
+        <li>Links internos e arquitetura de navegação;</li>
+        <li>Funcionalidades técnicas após updates do CMS e de plugins.</li>
       </ul>
+
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="/images/blog/migracao-seo-redirects.jpg" alt="Diagrama visual de redirecionamentos 301 mapeando URLs antigas para novas" style="max-width: 100%; height: auto;">
+        <p style="font-size: 0.9em; color: #666; margin-top: 0.5rem;"><em>Mapa de redirecionamentos: essencial para preservar autoridade</em></p>
+      </div>
+
+      <h2 id="conclusao">Conclusão: transforme a migração em uma oportunidade de crescimento</h2>
+      <p>A migração de um site não precisa ser um risco. Com planejamento e foco em SEO, ela vira uma oportunidade para corrigir erros antigos, fortalecer a autoridade da marca e crescer no orgânico. Use este guia para alinhar time técnico e marketing em torno de um único objetivo: proteger e ampliar seus resultados digitais.</p>
+
+      <p>Leituras relacionadas: <a href="/blog/cms-seo" target="_blank" rel="noopener">Como o CMS impacta na performance de SEO</a> • <a href="/blog/seo-para-imagens" target="_blank" rel="noopener">SEO para imagens</a></p>
 
       <hr>
-      <h2 id="conclusao">Conclusão</h2>
-      <p>Produzir um bom artigo envolve estratégia, pesquisa e execução cuidadosa. Seguindo este guia, você aumenta as chances de ranquear, gerar tráfego qualificado e construir autoridade.</p>
+      <p>Precisa de ajuda especializada para conduzir uma migração segura? Fale com nossa equipe de SEO técnico pelo <a href="https://wa.me/5511964721143" target="_blank" rel="noopener"><strong>WhatsApp</strong></a>.</p>
 
-      <p><strong>Precisa acelerar sua produção com qualidade?</strong> Fale com a EncantosHub pelo 
-      <a href="https://wa.me/5511964721143" target="_blank" rel="noopener"><strong>WhatsApp</strong></a> e receba um checklist de publicação e revisão editorial.</p>
-
-      <hr>
-      <p>Acesse a <a href="https://encantoshub.com.br/blog" target="_blank" rel="noopener" title="Blog EncantosHub">página central do nosso Blog</a> para ver mais guias e checklists.</p>
-
+      <p style="margin-top: 1rem;">Voltar para a <a href="https://encantoshub.com.br/blog" target="_blank" rel="noopener">página central do Blog</a>.</p>
     </div>
   `
 },
