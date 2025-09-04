@@ -109,46 +109,49 @@ const Blog = () => {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredPosts.map((post, index) => (
-                  <Card 
-                    key={index} 
-                    className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 border-border hover:border-brand-gold/30 overflow-hidden"
+                  <Link 
+                    key={index}
+                    to={`/blog/${post.slug}`}
+                    className="block"
                   >
-                    <div className="relative">
-                      <img
-                        src={post.thumbnail}
-                        alt={post.title}
-                        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                      <div className="absolute top-4 left-4">
-                        <Badge className="bg-brand-gold text-brand-black hover:bg-brand-gold/90">
-                          {post.category}
-                        </Badge>
-                      </div>
-                    </div>
-                    
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-semibold text-brand-black mb-3 group-hover:text-brand-gold transition-colors line-clamp-2">
-                        {post.title}
-                      </h3>
-                      
-                      <p className="text-muted-foreground mb-4 leading-relaxed line-clamp-3">
-                        {post.summary}
-                      </p>
-                      
-                      <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
-                        <div className="flex items-center space-x-4">
-                          <div className="flex items-center space-x-1">
-                            <User size={14} />
-                            <span>{post.author}</span>
-                          </div>
-                          <div className="flex items-center space-x-1">
-                            <Calendar size={14} />
-                            <span>{post.date}</span>
-                          </div>
+                    <Card 
+                      className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 border-border hover:border-brand-gold/30 overflow-hidden cursor-pointer h-full"
+                    >
+                      <div className="relative">
+                        <img
+                          src={post.thumbnail}
+                          alt={post.title}
+                          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div className="absolute top-4 left-4">
+                          <Badge className="bg-brand-gold text-brand-black hover:bg-brand-gold/90">
+                            {post.category}
+                          </Badge>
                         </div>
                       </div>
                       
-                      <Link to={`/blog/${post.slug}`}>
+                      <CardContent className="p-6">
+                        <h3 className="text-xl font-semibold text-brand-black mb-3 group-hover:text-brand-gold transition-colors line-clamp-2">
+                          {post.title}
+                        </h3>
+                        
+                        <p className="text-muted-foreground mb-4 leading-relaxed line-clamp-3">
+                          {post.summary}
+                        </p>
+                        
+                        <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
+                          <div className="flex items-center space-x-4">
+                            <div className="flex items-center space-x-1">
+                              <User size={14} />
+                              <span>{post.author}</span>
+                            </div>
+                            <div className="flex items-center space-x-1">
+                              <Calendar size={14} />
+                              <span>{post.date}</span>
+                            </div>
+                          </div>
+                        </div>
+                        
                         <Button 
                           variant="outline"
                           className="w-full group-hover:bg-brand-gold group-hover:text-brand-black group-hover:border-brand-gold transition-all"
@@ -156,9 +159,9 @@ const Blog = () => {
                           Ler Artigo
                           <ArrowRight size={16} className="ml-2" />
                         </Button>
-                      </Link>
-                    </CardContent>
-                  </Card>
+                      </CardContent>
+                    </Card>
+                  </Link>
                 ))}
               </div>
             )}
