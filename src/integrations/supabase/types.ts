@@ -47,6 +47,30 @@ export type Database = {
         }
         Relationships: []
       }
+      blog_likes: {
+        Row: {
+          created_at: string
+          id: string
+          likes_count: number
+          post_slug: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          likes_count?: number
+          post_slug: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          likes_count?: number
+          post_slug?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       gmn_leads: {
         Row: {
           company_name: string
@@ -122,6 +146,10 @@ export type Database = {
           _user_id: string
         }
         Returns: boolean
+      }
+      increment_blog_likes: {
+        Args: { post_slug_param: string }
+        Returns: number
       }
     }
     Enums: {
