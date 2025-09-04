@@ -840,6 +840,138 @@ O post deve ser informativo, destacar os benefícios e ser atraente para o públ
     </div>
   `
 },
+{
+  slug: "guia-seo-artigos-blog",
+  title: "Guia de SEO para criação e publicação de artigos",
+  summary: "Aprenda a criar e publicar artigos otimizados para SEO com foco em ranqueamento, estratégia e experiência do usuário.",
+  date: "2025-09-04",
+  category: "SEO",
+  thumbnail: "/images/blog/seo-artigos-capa.jpg",
+  author: "Isabella Brilha",
+  authorLinkedIn: "https://linkedin.com/in/isabella-brilha",
+  content: `
+    <div style="max-width: 100%; overflow: hidden;">
+
+      <h1>Guia completo de SEO para criação e publicação de artigos</h1>
+      <p>Neste guia, você vê passo a passo como escrever artigos para blogs considerando as boas práticas de SEO — do entendimento do cliente até a publicação e validação do conteúdo.</p>
+
+      <h2>Sumário</h2>
+      <ul>
+        <li><a href="#briefing">Briefing de SEO: como criar e publicar artigos otimizados</a></li>
+        <li><a href="#cliente">Conhecendo o cliente</a></li>
+        <li><a href="#pauta">Sugestão de pauta e pesquisa de palavras-chave</a></li>
+        <li><a href="#briefing-detalhado">Briefing detalhado</a></li>
+        <li><a href="#criacao">Orientações de SEO na hora de criar um artigo</a></li>
+        <li><a href="#publicacao">Orientações de SEO na hora de publicar</a></li>
+        <li><a href="#validacao">Validação da página publicada</a></li>
+        <li><a href="#conclusao">Conclusão</a></li>
+      </ul>
+
+      <h2 id="briefing">Briefing de SEO: como criar e publicar artigos otimizados</h2>
+      <p>Antes de escrever, alinhe objetivos, público e palavras-chave. Isso aumenta a relevância do conteúdo e evita retrabalho.</p>
+
+      <h2 id="cliente">Conhecendo o cliente</h2>
+      <ul>
+        <li><strong>Sobre o cliente:</strong> área de atuação, público-alvo, missão, visão e valores.</li>
+        <li><strong>Site:</strong> informe a URL para análise de conteúdo atual, arquitetura e oportunidades.</li>
+      </ul>
+
+      <h2 id="pauta">Sugestão de pauta e pesquisa de palavras-chave</h2>
+      <ul>
+        <li><strong>Tema central:</strong> relevante ao público e aos objetivos do negócio.</li>
+        <li><strong>Palavra-chave principal:</strong> foco do artigo; avalie <em>volume</em>, <em>intenção</em> e <em>dificuldade</em>.</li>
+        <li><strong>Palavras-chave secundárias/relacionadas:</strong> variações e sinônimos para ampliar cobertura semântica.</li>
+      </ul>
+
+      <h2 id="briefing-detalhado">Briefing detalhado</h2>
+      <ul>
+        <li><strong>Objetivo do conteúdo:</strong> informar, educar, converter, etc.</li>
+        <li><strong>Tamanho do texto:</strong> defina faixa de palavras conforme complexidade e concorrência.</li>
+        <li><strong>Persona:</strong> dores, interesses, objeções e estágio do funil.</li>
+        <li><strong>Tom de voz:</strong> formal, técnico, didático, etc.</li>
+        <li><strong>Links de referência:</strong> bases confiáveis para embasar o texto.</li>
+        <li><strong>Prazo:</strong> defina data de entrega e revisões.</li>
+      </ul>
+
+      <h2 id="criacao">Orientações de SEO na hora de criar um artigo</h2>
+      <h3>Título (title tag)</h3>
+      <ul>
+        <li>Inclua a palavra-chave principal, preferencialmente no início.</li>
+        <li>Mantenha entre 50–60 caracteres.</li>
+      </ul>
+
+      <h3>Descrição (meta description)</h3>
+      <ul>
+        <li>Resuma o conteúdo em 150–160 caracteres com proposta de valor e CTA sutil.</li>
+      </ul>
+
+      <h3>Legibilidade</h3>
+      <ul>
+        <li>Parágrafos curtos, subtítulos (H2/H3/H4), listas e intertítulos claros.</li>
+        <li>Quebre a página com imagens relevantes e links úteis.</li>
+        <li>Tipografia legível e bom espaçamento.</li>
+      </ul>
+
+      <h3>Formatação útil</h3>
+      <ul>
+        <li><strong>Negrito</strong> para trechos essenciais (use com parcimônia).</li>
+        <li><em>Itálico</em> para termos técnicos/estrangeiros.</li>
+        <li><u>Sublinhado</u> apenas para elementos com link.</li>
+        <li>Listas, citações e variação de tamanhos de título para hierarquia.</li>
+      </ul>
+
+      <h3>Links internos e externos</h3>
+      <ul>
+        <li><strong>Internos:</strong> use âncoras descritivas e aponte para páginas relacionadas e úteis.</li>
+        <li><strong>Externos:</strong> cite fontes confiáveis (<code>https</code>), sem exagero, e revise periodicamente.</li>
+      </ul>
+
+      <div style="text-align:center; margin:2rem 0;">
+        <img src="/images/blog/seo-artigos-exemplo-estrutura.jpg" alt="Exemplo de estrutura com H1, H2, listas e chamada para ação" style="max-width:100%; height:auto;">
+        <p style="font-size:0.9em; color:#666; margin-top:0.5rem;"><em>Exemplo visual de hierarquia e escaneabilidade</em></p>
+      </div>
+
+      <h2 id="publicacao">Orientações de SEO na hora de publicar</h2>
+      <h3>Arquivos (imagens)</h3>
+      <ul>
+        <li>Nomes descritivos e enxutos (ex.: <code>seo-artigos-capa.jpg</code>), comprimidos.</li>
+        <li><strong>Alt text</strong> objetivo (até ~300 caracteres) e contextual.</li>
+        <li>Inclua link na imagem quando fizer sentido (ex.: para um estudo citado).</li>
+      </ul>
+
+      <h3>URL do artigo</h3>
+      <ul>
+        <li>Curta, descritiva e com a palavra-chave principal.</li>
+        <li>Sem acentos, caixa alta, <code>ç</code> ou parâmetros; separe com hífens.</li>
+        <li>Evite > 115 caracteres; categorize corretamente.</li>
+      </ul>
+      <pre><code>https://www.seusite.com.br/blog/palavra-chave-principal</code></pre>
+
+      <h3>Texto alternativo das imagens</h3>
+      <ul>
+        <li>Descreva claramente o que a imagem mostra e seu propósito no contexto.</li>
+      </ul>
+
+      <h2 id="validacao">Validação da página publicada</h2>
+      <ul>
+        <li>Teste no desktop e mobile (responsividade, tempo de carregamento, navegação).</li>
+        <li>Revise títulos, metas, headings e links internos.</li>
+        <li>Confirme a URL e a categoria final.</li>
+      </ul>
+
+      <hr>
+      <h2 id="conclusao">Conclusão</h2>
+      <p>Produzir um bom artigo envolve estratégia, pesquisa e execução cuidadosa. Seguindo este guia, você aumenta as chances de ranquear, gerar tráfego qualificado e construir autoridade.</p>
+
+      <p><strong>Precisa acelerar sua produção com qualidade?</strong> Fale com a EncantosHub pelo 
+      <a href="https://wa.me/5511964721143" target="_blank" rel="noopener"><strong>WhatsApp</strong></a> e receba um checklist de publicação e revisão editorial.</p>
+
+      <hr>
+      <p>Acesse a <a href="https://encantoshub.com.br/blog" target="_blank" rel="noopener" title="Blog EncantosHub">página central do nosso Blog</a> para ver mais guias e checklists.</p>
+
+    </div>
+  `
+},
   
 ];
 
