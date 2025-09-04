@@ -590,6 +590,101 @@ O post deve ser informativo, destacar os benefícios e ser atraente para o públ
     </div>
   `
 },
+{
+  slug: "planilha-palavras-chave",
+  title: "Como usar uma planilha de combinação de palavras-chave",
+  summary: "Descubra como uma planilha estratégica de palavras-chave pode impulsionar seu SEO com combinações eficientes e foco em conversão.",
+  date: "2025-09-04",
+  category: "SEO",
+  thumbnail: "/images/blog/planilha-combinacao.jpg",
+  author: "Isabella Brilha",
+  authorLinkedIn: "https://linkedin.com/in/isabella-brilha",
+  content: `
+    <div style="max-width: 100%; overflow: hidden;">
+      <h1>Como uma planilha de combinação de palavras-chave potencializa seu SEO</h1>
+
+      <p>Aprenda como usar uma planilha de combinação de palavras-chave para criar conteúdos mais relevantes, aumentar a visibilidade nos buscadores e impulsionar sua estratégia de SEO. Descubra como estruturar categorias, criar variações e adaptar os termos à intenção de busca do usuário.</p>
+
+      <h2>Sumário</h2>
+      <ul>
+        <li><a href="#o-que-e">O que é uma planilha de combinação de palavras-chave</a></li>
+        <li><a href="#para-que-serve">Para que serve essa ferramenta no SEO</a></li>
+        <li><a href="#estrutura">Estrutura da planilha por categorias</a></li>
+        <li><a href="#exemplos">Exemplos práticos de combinações otimizadas</a></li>
+        <li><a href="#beneficios">Benefícios para sua estratégia digital</a></li>
+        <li><a href="#quem-pode-usar">Quem pode usar essa planilha</a></li>
+        <li><a href="#conclusao">Conclusão e próximos passos</a></li>
+      </ul>
+
+      <h2 id="o-que-e">O que é uma planilha de combinação de palavras-chave?</h2>
+      <p>Na EncantosHub, entendemos que SEO vai muito além de escolher uma palavra-chave principal. Para gerar resultados consistentes, aplicamos uma abordagem estratégica que combina palavras-chave principais, secundárias, variações semânticas e o contexto de busca do consumidor.</p>
+      <p>Uma das ferramentas que usamos é a <a href="https://docs.google.com/spreadsheets/d/1FfR4hOJauva3r2kgKejKC3FFDRyM9rY70A6_QiqAnfY/edit?gid=0#gid=0" target="_blank" rel="noopener">planilha de combinação de palavras-chave</a>. Trata-se de um documento simples, mas estratégico, criado para facilitar a produção de conteúdos, títulos, descrições, URLs e campanhas que realmente se conectam com a intenção do usuário — e com o algoritmo do Google.</p>
+
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="/images/blog/planilha-seo.jpg" alt="planilha de SEO com colunas categorizadas por intenção de busca" style="max-width: 100%; height: auto;">
+        <p style="font-size: 0.9em; color: #666; margin-top: 0.5rem;"><em>Planilha de SEO com colunas categorizadas por intenção de busca</em></p>
+      </div>
+
+      <h2 id="para-que-serve">Para que serve essa planilha no SEO?</h2>
+      <p>Essa planilha tem como objetivo mapear palavras que, quando combinadas, ajudam a criar títulos, descrições e conteúdos com mais relevância, variação semântica e foco comercial.</p>
+      <p>Ela também é extremamente útil em campanhas de Google Ads, SEO local e produção de conteúdo para blogs e redes sociais, pois permite adaptar a linguagem e os termos às diferentes etapas da jornada de compra.</p>
+
+      <h2 id="estrutura">Como a planilha é estruturada?</h2>
+      <p>A planilha é dividida em colunas temáticas, com palavras organizadas por contexto. Cada linha pode gerar novas combinações otimizadas, refletindo diferentes intenções de busca. Você pode <a href="https://docs.google.com/spreadsheets/d/1FfR4hOJauva3r2kgKejKC3FFDRyM9rY70A6_QiqAnfY/edit?gid=0#gid=0" target="_blank" rel="noopener">acessar o modelo completo aqui</a> para explorar as categorias na prática.</p>
+      <ul>
+        <li><strong>Marca:</strong> Nike, Clube Nike, NK</li>
+        <li><strong>Serviços:</strong> clínica, restaurante, loja</li>
+        <li><strong>Contato:</strong> telefone, WhatsApp, e-mail, site</li>
+        <li><strong>Produtos:</strong> camisetas, mesas, aulas, pizza</li>
+        <li><strong>Características:</strong> cor, tamanho, marca, origem, gênero</li>
+        <li><strong>Preço e Ofertas:</strong> promoção, desconto, barato, cupom</li>
+        <li><strong>Localização:</strong> SP, RJ, MG, Bahia</li>
+        <li><strong>Momentos de Consumo:</strong> Natal, Dia das Mães, reunião, praia</li>
+        <li><strong>Estações:</strong> inverno, verão, outono, primavera</li>
+        <li><strong>Classificação:</strong> premium, exclusivo, lançamento, gourmet</li>
+        <li><strong>Verbos de Ação:</strong> comprar, escolher, assinar, ligar, provar</li>
+      </ul>
+
+      <h2 id="exemplos">Exemplos práticos de combinações otimizadas</h2>
+      <p>Imagine que seu cliente venda camisetas personalizadas. Com base na planilha, é possível gerar frases como:</p>
+      <ul>
+        <li>Comprar camiseta exclusiva para o Dia dos Namorados em SP</li>
+        <li>Ofertas de camisetas tamanho G com desconto – Verão 2025</li>
+        <li>Camiseta premium masculina – Lançamento com frete para Bahia</li>
+        <li>Camisetas baratas para churrasco – Veja nossas promoções</li>
+      </ul>
+
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="/images/blog/frases-planilha.jpg" alt="frases otimizadas geradas a partir de colunas da planilha" style="max-width: 100%; height: auto;">
+        <p style="font-size: 0.9em; color: #666; margin-top: 0.5rem;"><em>Frases otimizadas geradas a partir das colunas da planilha</em></p>
+      </div>
+
+      <h2 id="beneficios">Benefícios dessa abordagem para o SEO</h2>
+      <ul>
+        <li>Evita repetições e uso excessivo da mesma keyword</li>
+        <li>Aumenta a naturalidade e variedade do conteúdo</li>
+        <li>Expande a cobertura de caudas longas e intenções específicas</li>
+        <li>Facilita a adaptação do conteúdo para diferentes momentos da jornada</li>
+        <li>Gera escala e consistência na produção de conteúdos otimizados</li>
+        <li>Contribui com SEO local ao permitir segmentações regionais mais precisas</li>
+      </ul>
+
+      <h2 id="quem-pode-usar">Para quem essa planilha é útil?</h2>
+      <p>Essa metodologia pode ser usada por diversos perfis profissionais:</p>
+      <ul>
+        <li><strong>Analistas de SEO:</strong> para planejamento de conteúdo, arquitetura de site e clusters temáticos</li>
+        <li><strong>Redatores e copywriters:</strong> como ponto de partida para headlines, descrições e CTAs</li>
+        <li><strong>Especialistas em mídia paga:</strong> para gerar anúncios dinâmicos com múltiplas variações</li>
+        <li><strong>Donos de negócios e clientes:</strong> para entender como a estratégia de SEO vai além de escolher uma palavra isolada</li>
+      </ul>
+
+      <h2 id="conclusao">Conclusão e próximos passos</h2>
+      <p>A planilha de combinação de palavras-chave não é apenas uma lista de termos — é uma ferramenta estratégica que une criatividade, dados e intenção de busca. Ela permite transformar ideias soltas em conteúdos relevantes, que não apenas ranqueiam, mas realmente geram resultados.</p>
+      <p>Na EncantosHub, aplicamos essa abordagem para construir presenças digitais com inteligência e performance. Se você está começando sua jornada como analista de SEO ou quer entender melhor como aumentar sua visibilidade online, saiba: as palavras certas, combinadas de forma estratégica, são o que movem seu negócio para o topo dos resultados.</p>
+    </div>
+  `
+},
+  
 ];
 
 export const categories = ["Todos", "SEO", "Marketing", "Ferramentas", "GMN", "Conteúdo", "Análise"];
