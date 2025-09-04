@@ -41,12 +41,32 @@ const BlogPost = () => {
   const { toast } = useToast();
   const [post, setPost] = useState<BlogPostType | null>(null);
   const [isLiked, setIsLiked] = useState(false);
+  const [likesCount, setLikesCount] = useState(0);
   const [relatedPosts, setRelatedPosts] = useState<BlogPostType[]>([]);
   const [tableOfContents, setTableOfContents] = useState<Array<{id: string, text: string, level: number}>>([]);
   const [comments, setComments] = useState<BlogComment[]>([]);
   const [commentForm, setCommentForm] = useState({name: '', email: '', comment: ''});
   const [loadingComments, setLoadingComments] = useState(false);
   const [submittingComment, setSubmittingComment] = useState(false);
+
+  // Load likes count from Supabase
+  const loadLikesCount = async (postSlug: string) => {
+    try {
+      const { data, error } = await supabase
+        .from('blog_likes')
+        .select('likes_count')
+        .eq('post_slug', postSlug)
+        .single();
+
+      if (error && error.code !== 'PGRST116') { // PGRST116 is "no rows returned"
+        console.error('Error loading likes:', error);
+      } else {
+        setLikesCount(data?.likes_count || 0);
+      }
+    } catch (error) {
+      console.error('Error loading likes:', error);
+    }
+  };
 
   // Load comments from Supabase using secure function
   const loadComments = async (postSlug: string) => {
@@ -76,6 +96,9 @@ const BlogPost = () => {
     const foundPost = getPostBySlug(slug || "");
     if (foundPost) {
       setPost(foundPost);
+      
+      // Load likes count for this post
+      loadLikesCount(foundPost.slug);
       
       // Load comments for this post
       loadComments(foundPost.slug);
@@ -143,12 +166,36 @@ const BlogPost = () => {
     }
   };
 
-  const handleLike = () => {
-    setIsLiked(!isLiked);
-    toast({
-      title: isLiked ? "Like removido" : "Obrigado pelo like!",
-      description: isLiked ? "Você removeu seu like deste artigo." : "Que bom que você gostou deste artigo!",
-    });
+  const handleLike = async () => {
+    if (!post) return;
+
+    try {
+      const { data, error } = await supabase
+        .rpc('increment_blog_likes', { post_slug_param: post.slug });
+
+      if (error) {
+        console.error('Error incrementing likes:', error);
+        toast({
+          title: "Erro ao curtir",
+          description: "Não foi possível registrar seu like. Tente novamente.",
+          variant: "destructive"
+        });
+      } else {
+        setLikesCount(data || 0);
+        setIsLiked(true);
+        toast({
+          title: "Obrigado pelo like!",
+          description: "Que bom que você gostou deste artigo!",
+        });
+      }
+    } catch (error) {
+      console.error('Error incrementing likes:', error);
+      toast({
+        title: "Erro ao curtir",
+        description: "Não foi possível registrar seu like. Tente novamente.",
+        variant: "destructive"
+      });
+    }
   };
 
   const calculateReadingTime = (content: string) => {
@@ -328,12 +375,10 @@ const BlogPost = () => {
                   variant="outline"
                   size="sm"
                   onClick={handleLike}
-                  className={`hover:bg-brand-gold hover:text-brand-black hover:border-brand-gold ${
-                    isLiked ? "bg-brand-gold text-brand-black border-brand-gold" : ""
-                  }`}
+                  className="hover:bg-brand-gold hover:text-brand-black hover:border-brand-gold"
                 >
-                  <Heart size={16} className={`mr-2 ${isLiked ? "fill-current" : ""}`} />
-                  {isLiked ? "Curtido" : "Curtir"}
+                  <Heart size={16} className="mr-2" />
+                  Curtir {likesCount > 0 && `(${likesCount})`}
                 </Button>
               </div>
             </header>
