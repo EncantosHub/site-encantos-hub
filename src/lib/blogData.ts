@@ -947,11 +947,6 @@ O post deve ser informativo, destacar os benefícios e ser atraente para o públ
         <li>Funcionalidades técnicas após updates do CMS e de plugins.</li>
       </ul>
 
-      <div style="text-align: center; margin: 2rem 0;">
-        <img src="/images/blog/migracao-seo-redirects.jpg" alt="Diagrama visual de redirecionamentos 301 mapeando URLs antigas para novas" style="max-width: 100%; height: auto;">
-        <p style="font-size: 0.9em; color: #666; margin-top: 0.5rem;"><em>Mapa de redirecionamentos: essencial para preservar autoridade</em></p>
-      </div>
-
       <h2 id="conclusao">Conclusão: transforme a migração em uma oportunidade de crescimento</h2>
       <p>A migração de um site não precisa ser um risco. Com planejamento e foco em SEO, ela vira uma oportunidade para corrigir erros antigos, fortalecer a autoridade da marca e crescer no orgânico. Use este guia para alinhar time técnico e marketing em torno de um único objetivo: proteger e ampliar seus resultados digitais.</p>
 
