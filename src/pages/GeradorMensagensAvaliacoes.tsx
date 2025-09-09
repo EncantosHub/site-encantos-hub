@@ -8,11 +8,9 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import { Copy, Mail, MessageSquare, CheckCircle, Star, Users, MessageCircle, Link2, Gift } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useSEO } from "@/hooks/useSEO";
-import { supabase } from "@/integrations/supabase/client";
 
 interface QuizAnswers {
   clientProfile: string;
@@ -169,9 +167,9 @@ export default function GeradorMensagensAvaliacoes() {
 
     setIsSubmitting(true);
     try {
-      // TODO: Save email lead to database after types are updated
-      // await supabase.from('gerador_avaliacoes_leads').insert([{ email, created_at: new Date().toISOString() }]);
-
+      // TODO: Save email lead to database when types are updated
+      console.log('Lead captured:', email);
+      
       setCurrentStep('quiz');
       toast({
         title: "Perfeito!",
@@ -205,11 +203,7 @@ export default function GeradorMensagensAvaliacoes() {
 
   const saveQuizResults = async () => {
     try {
-      // TODO: Save quiz results to database after types are updated
-      // await supabase.from('gerador_avaliacoes_respostas').insert([{
-      //   email, client_profile: answers.clientProfile, communication_channel: answers.communicationChannel,
-      //   client_experience: answers.clientExperience, include_extras: answers.includeExtras
-      // }]);
+      // TODO: Save quiz results to database when types are updated
       console.log('Quiz results:', { email, answers });
     } catch (error) {
       console.error('Error saving quiz results:', error);
