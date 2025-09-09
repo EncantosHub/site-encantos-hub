@@ -8,6 +8,7 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Ferramentas from "./pages/Ferramentas";
 import DiagnosticoGMN from "./pages/DiagnosticoGMN";
+import GeradorMensagensAvaliacoes from "./pages/GeradorMensagensAvaliacoes";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/ferramentas" element={<Ferramentas />} />
           <Route path="/ferramentas/diagnostico-gmn" element={<DiagnosticoGMN />} />
+          <Route path="/ferramentas/gerador-mensagens-avaliacoes" element={<GeradorMensagensAvaliacoes />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

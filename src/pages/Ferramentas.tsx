@@ -45,13 +45,14 @@ const Ferramentas = () => {
       title: "Gerador de Mensagens para Avaliação",
       description: "Ferramenta inteligente que cria mensagens personalizadas para solicitar avaliações dos seus clientes no Google Meu Negócio.",
       features: [
-        "Templates personalizáveis",
-        "Integração com WhatsApp",
-        "Diferentes tipos de negócio",
-        "Disparos automáticos"
+        "Quiz interativo personalizado",
+        "5 modelos de mensagem",
+        "Captura de leads qualificados",
+        "Cópia para WhatsApp/E-mail"
       ],
-      status: "Em Breve",
-      comingSoon: true
+      status: "Disponível",
+      comingSoon: false,
+      path: "/ferramentas/gerador-mensagens-avaliacoes"
     },
     {
       icon: Code,
