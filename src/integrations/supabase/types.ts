@@ -71,6 +71,60 @@ export type Database = {
         }
         Relationships: []
       }
+      gerador_avaliacoes_leads: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      gerador_avaliacoes_respostas: {
+        Row: {
+          client_experience: string
+          client_profile: string
+          communication_channel: string
+          created_at: string
+          email: string
+          id: string
+          include_extras: string
+          updated_at: string
+        }
+        Insert: {
+          client_experience: string
+          client_profile: string
+          communication_channel: string
+          created_at?: string
+          email: string
+          id?: string
+          include_extras: string
+          updated_at?: string
+        }
+        Update: {
+          client_experience?: string
+          client_profile?: string
+          communication_channel?: string
+          created_at?: string
+          email?: string
+          id?: string
+          include_extras?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       gmn_leads: {
         Row: {
           company_name: string
