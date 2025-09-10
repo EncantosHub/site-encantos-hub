@@ -237,7 +237,23 @@ export default function GeradorMensagensAvaliacoes() {
     return (
       <div className="min-h-screen bg-background">
         <Header />
-        <main className="container mx-auto px-4 py-16">
+        
+        {/* Hero Section with Background */}
+        <section className="relative bg-brand-black py-16 overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0">
+            <div className="absolute inset-0" style={{
+              backgroundImage: `url("/lovable-uploads/f080db56-f2da-46b1-8475-f9e86ca135b9.png")`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }} />
+          </div>
+          
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-brand-black/60"></div>
+
+          <main className="container mx-auto px-4 relative z-10">
           <div className="max-w-2xl mx-auto text-center">
             <div className="mb-8">
               <Badge className="mb-4" variant="secondary">
@@ -306,6 +322,7 @@ export default function GeradorMensagensAvaliacoes() {
             </div>
           </div>
         </main>
+        </section>
         <Footer />
       </div>
     );
