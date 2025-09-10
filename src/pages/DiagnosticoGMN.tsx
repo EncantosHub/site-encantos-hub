@@ -4,6 +4,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { DiagnosticForm } from "@/components/gmn/DiagnosticForm";
 import { DiagnosticResult } from "@/components/gmn/DiagnosticResult";
+import { LeadCapture } from "@/components/gmn/LeadCapture";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
@@ -25,7 +26,7 @@ export interface LeadData {
 
 const DiagnosticoGMN = () => {
   const navigate = useNavigate();
-  const [currentStep, setCurrentStep] = useState<'form' | 'result'>('form');
+  const [currentStep, setCurrentStep] = useState<'form' | 'leadCapture' | 'result'>('form');
   const [formData, setFormData] = useState<FormData>({
     identity: {},
     media: {},
@@ -33,6 +34,7 @@ const DiagnosticoGMN = () => {
     relationship: {},
     results: {}
   });
+  const [leadData, setLeadData] = useState<LeadData | null>(null);
 
   useSEO({
     title: "Diagnóstico GMN - Análise Completa do Google Meu Negócio | Encantos Hub",
@@ -43,6 +45,11 @@ const DiagnosticoGMN = () => {
 
   const handleFormComplete = (data: FormData) => {
     setFormData(data);
+    setCurrentStep('leadCapture');
+  };
+
+  const handleLeadCapture = (lead: LeadData) => {
+    setLeadData(lead);
     setCurrentStep('result');
   };
 
@@ -59,14 +66,17 @@ const DiagnosticoGMN = () => {
       relationship: {},
       results: {}
     });
+    setLeadData(null);
   };
 
   const renderCurrentStep = () => {
     switch (currentStep) {
       case 'form':
         return <DiagnosticForm onComplete={handleFormComplete} />;
+      case 'leadCapture':
+        return <LeadCapture diagnosticFormData={formData} onSubmit={handleLeadCapture} />;
       case 'result':
-        return <DiagnosticResult formData={formData} leadData={null} />;
+        return <DiagnosticResult formData={formData} leadData={leadData} />;
       default:
         return null;
     }
@@ -103,7 +113,7 @@ const DiagnosticoGMN = () => {
                 Voltar para Ferramentas
               </Button>
               
-              {currentStep === 'result' && (
+              {(currentStep === 'result' || currentStep === 'leadCapture') && (
                 <Button
                   variant="ghost"
                   onClick={handleRestartDiagnosis}
