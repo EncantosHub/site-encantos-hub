@@ -254,19 +254,19 @@ export default function GeradorMensagensAvaliacoes() {
           <div className="absolute inset-0 bg-brand-black/60"></div>
 
           <main className="container mx-auto px-4 relative z-10">
-          <div className="max-w-2xl mx-auto text-center">
-            <div className="mb-8">
-              <Badge className="mb-4" variant="secondary">
-                <Star className="w-4 h-4 mr-2" />
-                Ferramenta Gratuita
-              </Badge>
-              <h1 className="text-4xl font-bold mb-4 text-foreground">
-                Descubra a melhor forma de pedir avaliações no Google!
-              </h1>
-              <p className="text-xl text-muted-foreground mb-8">
-                Responda 4 perguntas rápidas e receba um modelo de mensagem ideal para seu negócio.
-              </p>
-            </div>
+            <div className="max-w-2xl mx-auto text-center">
+              <div className="mb-8">
+                <Badge className="mb-4 bg-brand-gold/20 text-brand-gold border-brand-gold/30">
+                  <Star className="w-4 h-4 mr-2" />
+                  Ferramenta Gratuita
+                </Badge>
+                <h1 className="text-4xl font-bold mb-4 text-brand-white">
+                  Descubra a melhor forma de pedir avaliações no Google!
+                </h1>
+                <p className="text-xl text-gray-300 mb-8">
+                  Responda 4 perguntas rápidas e receba um modelo de mensagem ideal para seu negócio.
+                </p>
+              </div>
 
             <Card className="max-w-md mx-auto">
               <CardHeader>
@@ -304,20 +304,20 @@ export default function GeradorMensagensAvaliacoes() {
 
             <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="text-center">
-                <Users className="w-8 h-8 mx-auto mb-2 text-primary" />
-                <p className="text-sm text-muted-foreground">5 Modelos<br />Personalizados</p>
+                <Users className="w-8 h-8 mx-auto mb-2 text-brand-gold" />
+                <p className="text-sm text-gray-300">5 Modelos<br />Personalizados</p>
               </div>
               <div className="text-center">
-                <MessageCircle className="w-8 h-8 mx-auto mb-2 text-primary" />
-                <p className="text-sm text-muted-foreground">WhatsApp &<br />E-mail Ready</p>
+                <MessageCircle className="w-8 h-8 mx-auto mb-2 text-brand-gold" />
+                <p className="text-sm text-gray-300">WhatsApp &<br />E-mail Ready</p>
               </div>
               <div className="text-center">
-                <CheckCircle className="w-8 h-8 mx-auto mb-2 text-primary" />
-                <p className="text-sm text-muted-foreground">100%<br />Gratuita</p>
+                <CheckCircle className="w-8 h-8 mx-auto mb-2 text-brand-gold" />
+                <p className="text-sm text-gray-300">100%<br />Gratuita</p>
               </div>
               <div className="text-center">
-                <Star className="w-8 h-8 mx-auto mb-2 text-primary" />
-                <p className="text-sm text-muted-foreground">Resultados<br />Comprovados</p>
+                <Star className="w-8 h-8 mx-auto mb-2 text-brand-gold" />
+                <p className="text-sm text-gray-300">Resultados<br />Comprovados</p>
               </div>
             </div>
           </div>
