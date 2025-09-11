@@ -73,8 +73,13 @@ export const LeadCapture = ({ onSubmit, diagnosticFormData }: LeadCaptureProps) 
         .single();
 
       if (dbError) {
-        console.error('Database error:', dbError);
-        throw new Error('Erro ao salvar os dados. Tente novamente.');
+        console.error('Database error details:', {
+          message: dbError.message,
+          code: dbError.code,
+          details: dbError.details,
+          hint: dbError.hint
+        });
+        throw new Error(`Erro ao salvar os dados: ${dbError.message}`);
       }
 
       // Send email with report
