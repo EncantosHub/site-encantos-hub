@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { Copy, Mail, MessageSquare, CheckCircle, Star, Users, MessageCircle, Link2, Gift } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useSEO } from "@/hooks/useSEO";
+import { supabase } from "@/integrations/supabase/client";
 
 interface QuizAnswers {
   clientProfile: string;
@@ -167,8 +168,15 @@ export default function GeradorMensagensAvaliacoes() {
 
     setIsSubmitting(true);
     try {
-      // TODO: Save email lead to database when types are updated
-      console.log('Lead captured:', email);
+      // Save email lead to database
+      const { error: leadError } = await supabase
+        .from('gerador_avaliacoes_leads')
+        .insert([{ email }]);
+
+      if (leadError) {
+        console.error('Error saving lead:', leadError);
+        throw new Error('Erro ao salvar dados. Tente novamente.');
+      }
       
       setCurrentStep('quiz');
       toast({
@@ -203,8 +211,25 @@ export default function GeradorMensagensAvaliacoes() {
 
   const saveQuizResults = async () => {
     try {
-      // TODO: Save quiz results to database when types are updated
-      console.log('Quiz results:', { email, answers });
+      // Save quiz results to database
+      const { error: responseError } = await supabase
+        .from('gerador_avaliacoes_respostas')
+        .insert([{
+          email,
+          client_profile: answers.clientProfile,
+          communication_channel: answers.communicationChannel,
+          client_experience: answers.clientExperience,
+          include_extras: answers.includeExtras
+        }]);
+
+      if (responseError) {
+        console.error('Error saving quiz results:', responseError);
+        toast({
+          title: "Aviso",
+          description: "Resultado gerado com sucesso, mas houve um problema ao salvar as respostas.",
+          variant: "default"
+        });
+      }
     } catch (error) {
       console.error('Error saving quiz results:', error);
     }
