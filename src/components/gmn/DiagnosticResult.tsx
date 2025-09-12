@@ -121,13 +121,427 @@ export const DiagnosticResult = ({ formData, leadData }: DiagnosticResultProps) 
   const improvementAreas = sectionScores.filter(s => s.score >= 40 && s.score < 70);
 
   const handleDownloadReport = () => {
-    window.print();
+    // Create a new window for the PDF
+    const printWindow = window.open('', '_blank');
+    const currentDate = new Date().toLocaleDateString('pt-BR');
+    
+    if (printWindow) {
+      printWindow.document.write(`
+        <html>
+          <head>
+            <title>Diagnóstico GMN - ${leadData?.name || 'Cliente'} | Encantos Hub</title>
+            <meta charset="utf-8">
+            <style>
+              * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+              }
+              
+              body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+                line-height: 1.6;
+                color: #333;
+                background: white;
+              }
+              
+              .page {
+                max-width: 210mm;
+                margin: 0 auto;
+                padding: 20mm;
+                page-break-after: always;
+              }
+              
+              .page:last-child {
+                page-break-after: avoid;
+              }
+              
+              .header {
+                text-align: center;
+                margin-bottom: 40px;
+                padding-bottom: 20px;
+                border-bottom: 3px solid #D4AF37;
+              }
+              
+              .header h1 {
+                font-size: 28px;
+                color: #D4AF37;
+                margin-bottom: 10px;
+              }
+              
+              .header .subtitle {
+                font-size: 16px;
+                color: #666;
+                margin-bottom: 5px;
+              }
+              
+              .header .date {
+                font-size: 14px;
+                color: #888;
+              }
+              
+              .score-circle {
+                width: 120px;
+                height: 120px;
+                margin: 0 auto 30px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+              
+              .overall-score {
+                text-align: center;
+                margin-bottom: 40px;
+                page-break-inside: avoid;
+              }
+              
+              .overall-score h2 {
+                font-size: 48px;
+                color: ${overallScore >= 70 ? '#059669' : overallScore >= 40 ? '#D97706' : '#DC2626'};
+                margin-bottom: 10px;
+              }
+              
+              .status-badge {
+                display: inline-block;
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-weight: bold;
+                background: ${overallScore >= 70 ? '#ECFDF5' : overallScore >= 40 ? '#FEF3C7' : '#FEE2E2'};
+                color: ${overallScore >= 70 ? '#059669' : overallScore >= 40 ? '#D97706' : '#DC2626'};
+                border: 2px solid ${overallScore >= 70 ? '#BBF7D0' : overallScore >= 40 ? '#FDE68A' : '#FECACA'};
+              }
+              
+              .summary-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 20px;
+                margin-bottom: 40px;
+                page-break-inside: avoid;
+              }
+              
+              .summary-card {
+                padding: 20px;
+                border-radius: 8px;
+                border: 2px solid;
+              }
+              
+              .strengths {
+                background: #ECFDF5;
+                border-color: #BBF7D0;
+                color: #059669;
+              }
+              
+              .improvements {
+                background: #FEF3C7;
+                border-color: #FDE68A;
+                color: #D97706;
+              }
+              
+              .weaknesses {
+                background: #FEE2E2;
+                border-color: #FECACA;
+                color: #DC2626;
+              }
+              
+              .summary-card h3 {
+                font-size: 16px;
+                margin-bottom: 15px;
+                font-weight: bold;
+              }
+              
+              .summary-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 8px;
+                font-size: 14px;
+              }
+              
+              .section-analysis {
+                page-break-before: always;
+              }
+              
+              .section-item {
+                margin-bottom: 30px;
+                padding: 20px;
+                border: 1px solid #E5E7EB;
+                border-radius: 8px;
+                page-break-inside: avoid;
+              }
+              
+              .section-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 15px;
+              }
+              
+              .section-title {
+                font-size: 18px;
+                font-weight: bold;
+                color: #374151;
+              }
+              
+              .section-score {
+                font-size: 24px;
+                font-weight: bold;
+              }
+              
+              .progress-bar {
+                width: 100%;
+                height: 8px;
+                background: #F3F4F6;
+                border-radius: 4px;
+                overflow: hidden;
+                margin: 10px 0;
+              }
+              
+              .progress-fill {
+                height: 100%;
+                border-radius: 4px;
+              }
+              
+              .recommendations {
+                page-break-before: always;
+              }
+              
+              .recommendation-section {
+                margin-bottom: 40px;
+                padding: 20px;
+                border-left: 4px solid #D4AF37;
+                page-break-inside: avoid;
+              }
+              
+              .recommendation-section h4 {
+                font-size: 18px;
+                color: #374151;
+                margin-bottom: 15px;
+              }
+              
+              .recommendation-list {
+                list-style: none;
+              }
+              
+              .recommendation-list li {
+                display: flex;
+                margin-bottom: 10px;
+                align-items: flex-start;
+              }
+              
+              .recommendation-number {
+                background: #D4AF37;
+                color: white;
+                border-radius: 50%;
+                width: 24px;
+                height: 24px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+                margin-right: 12px;
+                flex-shrink: 0;
+              }
+              
+              .footer {
+                text-align: center;
+                margin-top: 40px;
+                padding-top: 20px;
+                border-top: 1px solid #E5E7EB;
+                color: #6B7280;
+                font-size: 14px;
+              }
+              
+              @media print {
+                .page {
+                  margin: 0;
+                  page-break-after: always;
+                }
+                
+                .section-analysis {
+                  page-break-before: always;
+                }
+                
+                .recommendations {
+                  page-break-before: always;
+                }
+              }
+            </style>
+          </head>
+          <body>
+            <!-- Page 1: Overall Results -->
+            <div class="page">
+              <div class="header">
+                <h1>📊 Diagnóstico GMN - Análise Completa do Google Meu Negócio</h1>
+                <div class="subtitle">Encantos Hub</div>
+                <div class="date">${currentDate}, 10:51</div>
+              </div>
+              
+              <div class="overall-score">
+                <div class="score-circle">
+                  <h2>${overallScore}%</h2>
+                </div>
+                <div class="status-badge">
+                  ${getScoreStatus(overallScore).label} - ${getScoreStatus(overallScore).description}
+                </div>
+              </div>
+              
+              <div class="summary-grid">
+                <div class="summary-card strengths">
+                  <h3>✅ Pontos Fortes</h3>
+                  ${strengths.length > 0 ? 
+                    strengths.map(({ section, score }) => 
+                      `<div class="summary-item">
+                        <span>${sectionTitles[section as keyof typeof sectionTitles]}</span>
+                        <strong>${score}%</strong>
+                      </div>`
+                    ).join('') : 
+                    '<p>Ainda não há pontos fortes identificados.</p>'
+                  }
+                </div>
+                
+                <div class="summary-card improvements">
+                  <h3>⚠️ Pode Melhorar</h3>
+                  ${improvementAreas.length > 0 ? 
+                    improvementAreas.map(({ section, score }) => 
+                      `<div class="summary-item">
+                        <span>${sectionTitles[section as keyof typeof sectionTitles]}</span>
+                        <strong>${score}%</strong>
+                      </div>`
+                    ).join('') : 
+                    '<p>Ótimo! Não há áreas intermediárias.</p>'
+                  }
+                </div>
+                
+                <div class="summary-card weaknesses">
+                  <h3>❌ Pontos Críticos</h3>
+                  ${weaknesses.length > 0 ? 
+                    weaknesses.map(({ section, score }) => 
+                      `<div class="summary-item">
+                        <span>${sectionTitles[section as keyof typeof sectionTitles]}</span>
+                        <strong>${score}%</strong>
+                      </div>`
+                    ).join('') : 
+                    '<p>Excelente! Não há pontos críticos.</p>'
+                  }
+                </div>
+              </div>
+              
+              <div class="footer">
+                <p>Relatório gerado automaticamente pela plataforma Encantos Hub</p>
+                <p>Para mais informações e consultoria personalizada, entre em contato conosco</p>
+              </div>
+            </div>
+            
+            <!-- Page 2: Detailed Analysis -->
+            <div class="page section-analysis">
+              <div class="header">
+                <h1>📈 Análise Detalhada por Seção</h1>
+              </div>
+              
+              ${sectionScores.map(({ section, score, yesCount, noCount }) => {
+                const colors = getScoreColor(score);
+                const status = getScoreStatus(score);
+                return `
+                  <div class="section-item">
+                    <div class="section-header">
+                      <div class="section-title">${sectionTitles[section as keyof typeof sectionTitles]}</div>
+                      <div class="section-score" style="color: ${score >= 70 ? '#059669' : score >= 40 ? '#D97706' : '#DC2626'}">${score}%</div>
+                    </div>
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: ${score}%; background: ${score >= 70 ? '#059669' : score >= 40 ? '#D97706' : '#DC2626'}"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 14px; color: #6B7280; margin-top: 8px;">
+                      <span>✅ ${yesCount} implementados</span>
+                      <span>❌ ${noCount} pendentes</span>
+                    </div>
+                    <div style="margin-top: 10px; padding: 10px; background: ${score >= 70 ? '#ECFDF5' : score >= 40 ? '#FEF3C7' : '#FEE2E2'}; border-radius: 6px;">
+                      <strong>${status.label}</strong> - ${status.description}
+                    </div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+            
+            <!-- Page 3: Action Plan -->
+            <div class="page recommendations">
+              <div class="header">
+                <h1>🎯 Plano de Ação Personalizado</h1>
+              </div>
+              
+              ${sectionScores
+                .filter(({ score }) => score < 70)
+                .sort((a, b) => a.score - b.score)
+                .map(({ section, score }) => {
+                  const recommendations = getRecommendations(section, score);
+                  return `
+                    <div class="recommendation-section">
+                      <h4>${sectionTitles[section as keyof typeof sectionTitles]} - ${score}% (Prioridade ${score < 40 ? 'Alta' : 'Média'})</h4>
+                      <p style="margin-bottom: 15px; color: #6B7280;">🎯 Ações recomendadas (ordem de prioridade):</p>
+                      <ul class="recommendation-list">
+                        ${recommendations.map((rec, index) => `
+                          <li>
+                            <div class="recommendation-number">${index + 1}</div>
+                            <span>${rec}</span>
+                          </li>
+                        `).join('')}
+                      </ul>
+                    </div>
+                  `;
+                }).join('')
+              }
+              
+              ${sectionScores.every(({ score }) => score >= 70) ? `
+                <div style="text-align: center; padding: 40px 0;">
+                  <div style="font-size: 48px; margin-bottom: 20px;">🎉</div>
+                  <h3 style="color: #059669; font-size: 24px; margin-bottom: 10px;">Parabéns! Seu perfil GMN está muito bem otimizado!</h3>
+                  <p style="color: #059669;">Continue monitorando e atualizando regularmente para manter a excelência.</p>
+                </div>
+              ` : ''}
+              
+              <div class="footer">
+                <p><strong>Encantos Hub</strong> - Especialistas em Marketing Digital e Google Meu Negócio</p>
+                <p>Este relatório foi gerado automaticamente com base nas suas respostas do diagnóstico</p>
+              </div>
+            </div>
+          </body>
+        </html>
+      `);
+      
+      printWindow.document.close();
+      
+      // Wait a moment for content to load then print
+      setTimeout(() => {
+        printWindow.print();
+        printWindow.close();
+      }, 500);
+    }
   };
 
   const handleShareReport = () => {
-    const url = window.location.href;
-    navigator.clipboard.writeText(url);
-    // You could add a toast notification here
+    const shareData = {
+      title: `Diagnóstico GMN - ${leadData?.name || 'Cliente'} | Encantos Hub`,
+      text: `Acabei de fazer meu diagnóstico do Google Meu Negócio e obtive ${overallScore}% de otimização! 📊`,
+      url: window.location.href
+    };
+    
+    if (navigator.share) {
+      navigator.share(shareData).catch(() => {
+        // Fallback to clipboard
+        navigator.clipboard.writeText(`${shareData.text} ${shareData.url}`);
+        toast({
+          title: "Link copiado!",
+          description: "O link foi copiado para sua área de transferência."
+        });
+      });
+    } else {
+      navigator.clipboard.writeText(`${shareData.text} ${shareData.url}`);
+      toast({
+        title: "Link copiado!",
+        description: "O link foi copiado para sua área de transferência."
+      });
+    }
   };
 
   return (
@@ -441,33 +855,7 @@ export const DiagnosticResult = ({ formData, leadData }: DiagnosticResultProps) 
             </Button>
             
             <Button
-              onClick={() => {
-                const printContent = document.getElementById('diagnostic-result');
-                if (printContent) {
-                  const printWindow = window.open('', '_blank');
-                  printWindow?.document.write(`
-                    <html>
-                      <head>
-                        <title>Diagnóstico GMN - ${leadData?.name}</title>
-                        <style>
-                          body { font-family: Arial, sans-serif; margin: 20px; }
-                          .score { font-size: 24px; font-weight: bold; text-align: center; }
-                          .section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; }
-                          .recommendation { margin: 10px 0; }
-                        </style>
-                      </head>
-                      <body>
-                        <h1>Diagnóstico Google Meu Negócio</h1>
-                        <h2>Cliente: ${leadData?.name || 'N/A'}</h2>
-                        <div class="score">Pontuação Geral: ${overallScore}%</div>
-                        ${printContent.innerHTML}
-                      </body>
-                    </html>
-                  `);
-                  printWindow?.document.close();
-                  printWindow?.print();
-                }
-              }}
+              onClick={handleDownloadReport}
               variant="outline"
               className="border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-white"
             >
