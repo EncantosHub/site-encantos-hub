@@ -25,10 +25,18 @@ export const LeadCapture = ({ onSubmit, diagnosticFormData }: LeadCaptureProps) 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const calculateScore = (sectionData: any) => {
-    if (!sectionData) return 0;
+    console.log('Calculando score para seção:', sectionData);
+    if (!sectionData || typeof sectionData !== 'object') {
+      console.log('Dados da seção inválidos ou vazios');
+      return 0;
+    }
     const values = Object.values(sectionData);
+    console.log('Valores da seção:', values);
     const yesCount = values.filter(value => value === 'yes').length;
-    return Math.round((yesCount / values.length) * 100);
+    const totalCount = values.length;
+    const score = totalCount > 0 ? Math.round((yesCount / totalCount) * 100) : 0;
+    console.log(`Score calculado: ${yesCount}/${totalCount} = ${score}%`);
+    return score;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -36,6 +44,8 @@ export const LeadCapture = ({ onSubmit, diagnosticFormData }: LeadCaptureProps) 
     setIsSubmitting(true);
     
     try {
+      console.log('FormData recebido:', diagnosticFormData);
+      
       // Calculate diagnostic results
       const sectionScores = {
         identity: calculateScore(diagnosticFormData.identity),
@@ -44,6 +54,8 @@ export const LeadCapture = ({ onSubmit, diagnosticFormData }: LeadCaptureProps) 
         relationship: calculateScore(diagnosticFormData.relationship),
         results: calculateScore(diagnosticFormData.results)
       };
+
+      console.log('Pontuações por seção:', sectionScores);
 
       const overallScore = Math.round(
         Object.values(sectionScores).reduce((sum, score) => sum + score, 0) / 
@@ -57,6 +69,8 @@ export const LeadCapture = ({ onSubmit, diagnosticFormData }: LeadCaptureProps) 
         formData: diagnosticFormData
       };
 
+      console.log('Resultados do diagnóstico calculados:', diagnosticResults);
+
       // Save lead data to Supabase
       const leadDataWithMapping = {
         full_name: leadFormData.name,
@@ -67,11 +81,16 @@ export const LeadCapture = ({ onSubmit, diagnosticFormData }: LeadCaptureProps) 
         diagnostic_results: diagnosticResults as any // Save the calculated results
       };
 
+      console.log('Dados que serão enviados para o banco:', leadDataWithMapping);
+
       const { data: leadRecord, error: dbError } = await supabase
         .from('gmn_leads')
         .insert(leadDataWithMapping)
         .select()
         .single();
+
+      console.log('Resposta do banco de dados:', leadRecord);
+      console.log('Erro do banco de dados:', dbError);
 
       if (dbError) {
         console.error('Database error details:', {
