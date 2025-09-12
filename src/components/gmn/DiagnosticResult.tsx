@@ -520,26 +520,36 @@ export const DiagnosticResult = ({ formData, leadData }: DiagnosticResultProps) 
   };
 
   const handleShareReport = () => {
+    const diagnosticUrl = "https://encantoshub.com.br/ferramentas/diagnostico-gmn";
+    const shareMessage = `Acabei de fazer meu diagnóstico do Google Meu Negócio e obtive ${overallScore}% de otimização! 📊
+
+🎯 Resumo dos resultados:
+${strengths.length > 0 ? `✅ Pontos Fortes: ${strengths.length} área(s)` : ''}
+${improvementAreas.length > 0 ? `⚠️ Pode Melhorar: ${improvementAreas.length} área(s)` : ''}
+${weaknesses.length > 0 ? `❌ Pontos Críticos: ${weaknesses.length} área(s)` : ''}
+
+Diagnóstico fácil e prático feito através da ferramenta: ${diagnosticUrl}`;
+
     const shareData = {
-      title: `Diagnóstico GMN - ${leadData?.name || 'Cliente'} | Encantos Hub`,
-      text: `Acabei de fazer meu diagnóstico do Google Meu Negócio e obtive ${overallScore}% de otimização! 📊`,
-      url: window.location.href
+      title: `Diagnóstico GMN - ${overallScore}% de otimização | Encantos Hub`,
+      text: shareMessage,
+      url: diagnosticUrl
     };
     
     if (navigator.share) {
       navigator.share(shareData).catch(() => {
         // Fallback to clipboard
-        navigator.clipboard.writeText(`${shareData.text} ${shareData.url}`);
+        navigator.clipboard.writeText(shareMessage);
         toast({
-          title: "Link copiado!",
-          description: "O link foi copiado para sua área de transferência."
+          title: "Mensagem copiada! 📋",
+          description: "A mensagem com seu resultado foi copiada para área de transferência. Cole onde quiser compartilhar!"
         });
       });
     } else {
-      navigator.clipboard.writeText(`${shareData.text} ${shareData.url}`);
+      navigator.clipboard.writeText(shareMessage);
       toast({
-        title: "Link copiado!",
-        description: "O link foi copiado para sua área de transferência."
+        title: "Mensagem copiada! 📋", 
+        description: "A mensagem com seu resultado foi copiada para área de transferência. Cole onde quiser compartilhar!"
       });
     }
   };
@@ -831,19 +841,35 @@ export const DiagnosticResult = ({ formData, leadData }: DiagnosticResultProps) 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               onClick={() => {
+                const diagnosticUrl = "https://encantoshub.com.br/ferramentas/diagnostico-gmn";
+                const shareMessage = `Acabei de fazer meu diagnóstico do Google Meu Negócio e obtive ${overallScore}% de otimização! 📊
+
+🎯 Resumo dos resultados:
+${strengths.length > 0 ? `✅ Pontos Fortes: ${strengths.length} área(s)` : ''}
+${improvementAreas.length > 0 ? `⚠️ Pode Melhorar: ${improvementAreas.length} área(s)` : ''}
+${weaknesses.length > 0 ? `❌ Pontos Críticos: ${weaknesses.length} área(s)` : ''}
+
+Diagnóstico fácil e prático feito através da ferramenta: ${diagnosticUrl}`;
+
                 const shareData = {
-                  title: 'Meu Diagnóstico GMN - Encantos Hub',
-                  text: `Acabei de fazer meu diagnóstico do Google Meu Negócio e obtive ${overallScore}% de otimização!`,
-                  url: window.location.href
+                  title: `Diagnóstico GMN - ${overallScore}% de otimização | Encantos Hub`,
+                  text: shareMessage,
+                  url: diagnosticUrl
                 };
                 
                 if (navigator.share) {
-                  navigator.share(shareData);
+                  navigator.share(shareData).catch(() => {
+                    navigator.clipboard.writeText(shareMessage);
+                    toast({
+                      title: "Mensagem copiada! 📋",
+                      description: "A mensagem com seu resultado foi copiada para área de transferência."
+                    });
+                  });
                 } else {
-                  navigator.clipboard.writeText(`${shareData.text} ${shareData.url}`);
+                  navigator.clipboard.writeText(shareMessage);
                   toast({
-                    title: "Link copiado!",
-                    description: "O link foi copiado para sua área de transferência."
+                    title: "Mensagem copiada! 📋",
+                    description: "A mensagem com seu resultado foi copiada para área de transferência."
                   });
                 }
               }}
