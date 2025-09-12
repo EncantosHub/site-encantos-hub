@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Search, MapPin, Building2, GraduationCap, Users, BarChart3, ArrowRight } from "lucide-react";
+import { Search, MapPin, Building2, GraduationCap, Users, Wrench, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 const SolutionsSection = () => {
+  const navigate = useNavigate();
   const solutions = [{
     icon: Search,
     title: "Gestão de SEO para sites",
@@ -33,10 +35,14 @@ const SolutionsSection = () => {
     details: ["Diagnóstico completo do seu site", "Estratégias personalizadas de SEO", "Relatório detalhado com plano de ação"],
     cta: "whatsapp"
   }, {
-    icon: BarChart3,
-    title: "Diagnóstico do GMN",
-    description: "Análise técnica completa do seu Google Meu Negócio com plano de otimização detalhado. Relatório em PDF com insights práticos para maximizar sua visibilidade local e atrair mais clientes.",
-    details: ["Análise completa do perfil GMN", "Relatório detalhado em PDF", "Plano de otimização personalizado"],
+    icon: Wrench,
+    title: "Ferramentas Gratuitas",
+    description: "Acesse nossa coleção de ferramentas profissionais desenvolvidas para otimizar sua presença digital. Faça diagnósticos, gere conteúdo e acelere seus resultados online.",
+    details: [
+      { text: "Diagnóstico GMN", link: "/ferramentas/diagnostico-gmn" },
+      { text: "Gerador de Mensagens", link: "/ferramentas/gerador-mensagens-avaliacoes" },
+      { text: "Validador de SEO", link: null, comingSoon: true }
+    ],
     cta: "ferramentas"
   }];
   const handleCTA = (type: string) => {
@@ -76,13 +82,26 @@ const SolutionsSection = () => {
                     {solution.details.map((detail, detailIndex) => (
                       <li key={detailIndex} className="flex items-start">
                         <span className="text-brand-gold mr-2">•</span>
-                        {detail}
+                        {typeof detail === 'string' ? (
+                          detail
+                        ) : detail.link ? (
+                          <button 
+                            onClick={() => navigate(detail.link)}
+                            className="text-left hover:text-brand-gold transition-colors underline"
+                          >
+                            {detail.text}
+                          </button>
+                        ) : (
+                          <span className={detail.comingSoon ? "opacity-60" : ""}>
+                            {detail.text} {detail.comingSoon && "(Em breve)"}
+                          </span>
+                        )}
                       </li>
                     ))}
                   </ul>
                   
                   <Button onClick={() => handleCTA(solution.cta)} variant="outline" className="w-full group-hover:bg-brand-gold group-hover:text-brand-black group-hover:border-brand-gold transition-all">
-                    {solution.cta === "whatsapp" ? "Solicitar Orçamento" : "Saiba Mais"}
+                    {solution.cta === "whatsapp" ? "Solicitar Orçamento" : solution.title === "Ferramentas Gratuitas" ? "Ver todas as ferramentas" : "Saiba Mais"}
                     <ArrowRight size={16} className="ml-2" />
                   </Button>
                 </CardContent>
