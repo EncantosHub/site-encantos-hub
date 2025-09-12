@@ -46,11 +46,13 @@ const DiagnosticoGMN = () => {
   const handleFormComplete = (data: FormData) => {
     setFormData(data);
     setCurrentStep('leadCapture');
+    setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
   };
 
   const handleLeadCapture = (lead: LeadData) => {
     setLeadData(lead);
     setCurrentStep('result');
+    setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
   };
 
   const handleBackToTools = () => {

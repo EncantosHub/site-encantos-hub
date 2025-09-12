@@ -121,12 +121,60 @@ export const DiagnosticResult = ({ formData, leadData }: DiagnosticResultProps) 
   const improvementAreas = sectionScores.filter(s => s.score >= 40 && s.score < 70);
 
   const handleDownloadReport = () => {
-    // Create a new window for the PDF
-    const printWindow = window.open('', '_blank');
+    // Create a comprehensive PDF report content
     const currentDate = new Date().toLocaleDateString('pt-BR');
     
-    if (printWindow) {
-      printWindow.document.write(`
+    // For mobile devices, we'll use a better approach
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+      // Mobile-friendly approach: create downloadable content
+      const reportContent = `
+        DIAGNÓSTICO GMN - ${leadData?.name || 'Cliente'}
+        Data: ${currentDate}
+        
+        RESULTADO GERAL: ${overallScore}%
+        Status: ${overallStatus.label}
+        
+        PONTUAÇÕES POR SEÇÃO:
+        ${sectionScores.map(section => `- ${sectionTitles[section.section as keyof typeof sectionTitles]}: ${section.score}%`).join('\n        ')}
+        
+        PONTOS FORTES:
+        ${strengths.map(s => `✓ ${sectionTitles[s.section as keyof typeof sectionTitles]} (${s.score}%)`).join('\n        ')}
+        
+        ÁREAS PARA MELHORIA:
+        ${improvementAreas.concat(weaknesses).map(section => {
+          const recommendations = getRecommendations(section.section, section.score);
+          return `${sectionTitles[section.section as keyof typeof sectionTitles]} (${section.score}%):\n${recommendations.map(rec => `  • ${rec}`).join('\n')}`;
+        }).join('\n\n        ')}
+        
+        Relatório gerado por Encantos Hub
+        www.encantoshub.com.br
+      `;
+      
+      // Create a blob and download
+      const blob = new Blob([reportContent], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `diagnostico-gmn-${leadData?.name?.replace(/\s+/g, '-').toLowerCase() || 'cliente'}-${new Date().toISOString().split('T')[0]}.txt`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+      
+      toast({
+        title: "Relatório baixado!",
+        description: "O diagnóstico foi salvo como arquivo de texto no seu dispositivo.",
+      });
+      
+      return;
+    }
+    // Create a new window for the PDF
+    const printWindow = window.open('', '_blank');
+     
+     if (printWindow) {
+       printWindow.document.write(`
         <html>
           <head>
             <title>Diagnóstico GMN - ${leadData?.name || 'Cliente'} | Encantos Hub</title>

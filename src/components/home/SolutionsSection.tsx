@@ -86,7 +86,10 @@ const SolutionsSection = () => {
                           detail
                         ) : detail.link ? (
                           <button 
-                            onClick={() => navigate(detail.link)}
+                            onClick={() => {
+                              navigate(detail.link);
+                              setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
+                            }}
                             className="text-left hover:text-brand-gold transition-colors underline"
                           >
                             {detail.text}
