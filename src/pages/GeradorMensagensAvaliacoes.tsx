@@ -20,74 +20,53 @@ interface QuizAnswers {
   includeExtras: string;
 }
 
-const messageTemplates = {
-  "fieis-whatsapp-proxima-nao": {
-    title: "Modelo 1: Amigável e Personalizada",
-    message: `Oi, [Nome do Cliente]! 😊
-
-Espero que esteja tudo bem! Foi um prazer atendê-lo(a) hoje. 
-
-Sua opinião é muito importante para nós! Se possível, deixe uma avaliação sobre sua experiência conosco no Google. Isso nos ajuda muito a continuar melhorando.
-
-[Link da Avaliação]
-
-Muito obrigado(a)!
-[Seu Nome/Empresa]`
+// Modelos de mensagem organizados por tipo e canal
+const messageModels = {
+  // Modelo 1 – Amigável e personalizada (clientes fiéis/recorrentes)
+  amigavel: {
+    whatsapp: "Oi [Nome], que bom ter você com a gente de novo! Ficaremos muito felizes se puder contar no Google como foi sua experiência. [link]",
+    presencial: "Sempre bom receber você por aqui! Escaneie este QR e deixe sua avaliação no Google. Sua opinião faz diferença.",
+    email: "Olá [Nome], agradecemos por mais uma visita. Se puder, compartilhe sua opinião no Google. Isso ajuda muito nosso crescimento! [link]",
+    redes: "Oi [Nome], sempre um prazer ter você com a gente! Que tal compartilhar sua experiência no Google? [link]"
   },
-  "novos-email-positiva-nao": {
-    title: "Modelo 5: Cliente Novo",
-    message: `Olá, [Nome do Cliente]!
-
-Agradecemos por escolher nossos serviços! Esperamos que tenha tido uma experiência positiva conosco.
-
-Gostaríamos muito de saber sua opinião sobre nosso atendimento. Se você ficou satisfeito(a), que tal compartilhar sua experiência no Google? Sua avaliação nos ajuda a crescer e a atender ainda melhor outros clientes.
-
-[Link da Avaliação]
-
-Muito obrigado pelo seu tempo!
-Equipe [Nome da Empresa]`
+  
+  // Modelo 2 – Com benefício (clientes que valorizam melhorias)
+  beneficio: {
+    whatsapp: "Sua avaliação nos ajuda a melhorar sempre! Se puder, deixe sua opinião no Google. [link]",
+    email: "Queremos evoluir junto com você! Sua avaliação no Google mostra o que estamos fazendo bem e onde podemos melhorar. [link]",
+    presencial: "Gostou da experiência? Sua avaliação no Google nos ajuda a trazer ainda mais novidades. Escaneie o QR e participe.",
+    redes: "Sua opinião nos ajuda a evoluir! Avalie nossa experiência no Google e nos ajude a melhorar sempre. [link]"
   },
-  "melhoria-presencial-neutra-nao": {
-    title: "Modelo 3: Reputação e Melhoria Contínua",
-    message: `Prezado(a) [Nome do Cliente],
-
-Agradecemos por sua visita e confiança em nossos serviços.
-
-Como estamos sempre buscando melhorar, sua opinião é fundamental para nós. Que tal compartilhar sua experiência no Google? Sua avaliação nos ajuda a entender o que estamos fazendo bem e onde podemos melhorar.
-
-[Link da Avaliação]
-
-Obrigado por nos ajudar a crescer!
-[Nome da Empresa]`
+  
+  // Modelo 3 – Reputação e melhoria contínua (clientes neutros ou críticos construtivos)
+  reputacao: {
+    whatsapp: "Obrigado por sua visita, [Nome]. Sua opinião é essencial para que possamos melhorar cada vez mais. Avalie aqui no Google: [link]",
+    email: "Valorizamos muito sua opinião sincera. Se puder, deixe sua avaliação no Google para nos ajudar a crescer com responsabilidade. [link]",
+    presencial: "Sua opinião conta muito para nós! Escaneie aqui e conte como podemos melhorar sua experiência.",
+    redes: "Sua avaliação sincera no Google nos ajuda a crescer de forma responsável. Conte sua experiência! [link]"
   },
-  "compartilham-redes-marcante-foto": {
-    title: "Modelo 4: Avaliação com Foto",
-    message: `Oi, [Nome do Cliente]! 📸
-
-Que momento especial tivemos hoje! Adoramos ver sua alegria com [produto/serviço].
-
-Se você gostou da experiência, que tal compartilhar isso no Google e anexar aquela foto incrível? Sua avaliação com foto ajuda outros clientes a conhecer melhor nosso trabalho!
-
-[Link da Avaliação]
-
-Muito obrigado!
-[Seu Nome/Empresa]`
+  
+  // Modelo 4 – Avaliação com foto (clientes que compartilham momentos visuais)
+  foto: {
+    whatsapp: "Adoramos quando nossos clientes registram os melhores momentos! Se quiser, compartilhe sua avaliação com uma foto no Google. Isso inspira muita gente. [link]",
+    email: "Além de sua avaliação no Google, que tal incluir uma foto do momento especial que viveu conosco? Vai inspirar novos clientes! [link]",
+    presencial: "Tire uma foto e compartilhe sua experiência no Google. É simples, só escanear aqui.",
+    redes: "Que tal compartilhar uma foto dessa experiência na sua avaliação do Google? Vai inspirar outros clientes! [link]"
   },
-  "default": {
-    title: "Modelo 2: Com Benefício (Cuidado com Diretrizes)",
-    message: `Olá, [Nome do Cliente]!
-
-Muito obrigado por escolher nossos serviços! Ficamos felizes em atendê-lo(a).
-
-Sua opinião é muito valiosa para nós. Se você ficou satisfeito(a) com nossa experiência, que tal deixar uma avaliação no Google?
-
-[Link da Avaliação]
-
-Agradecemos muito!
-Equipe [Nome da Empresa]
-
-⚠️ Importante: Este modelo deve ser usado com cuidado, sem oferecer benefícios diretos pela avaliação.`
+  
+  // Modelo 5 – Cliente novo (primeira vez, experiência positiva)
+  clienteNovo: {
+    whatsapp: "Foi um prazer receber você pela primeira vez, [Nome]! Se puder contar no Google como foi, vai nos ajudar muito a crescer. [link]",
+    email: "Esperamos que sua primeira experiência tenha sido ótima. Se puder avaliar no Google, será um grande incentivo para seguirmos evoluindo. [link]",
+    presencial: "Seja bem-vindo(a)! Gostaríamos muito de saber sua opinião. Escaneie aqui e deixe sua primeira avaliação no Google.",
+    redes: "Que bom ter você pela primeira vez! Sua avaliação no Google nos ajuda a receber mais clientes como você. [link]"
   }
+};
+
+// Textos adicionais para foto e mimo
+const extrasTexts = {
+  foto: " Que tal incluir uma foto na sua avaliação para inspirar outros clientes?",
+  mimo: " Esperamos que tenha gostado do nosso mimo especial!"
 };
 
 export default function GeradorMensagensAvaliacoes() {
@@ -236,8 +215,45 @@ export default function GeradorMensagensAvaliacoes() {
   };
 
   const getRecommendedTemplate = () => {
-    const key = `${answers.clientProfile}-${answers.communicationChannel}-${answers.clientExperience}-${answers.includeExtras}`;
-    return messageTemplates[key as keyof typeof messageTemplates] || messageTemplates.default;
+    // Determinar o modelo baseado no perfil e experiência do cliente
+    let selectedModel = 'beneficio'; // default
+    let modelTitle = 'Modelo 2: Com Benefício';
+    
+    if (answers.clientProfile === 'fieis' && (answers.clientExperience === 'proxima' || answers.clientExperience === 'positiva')) {
+      selectedModel = 'amigavel';
+      modelTitle = 'Modelo 1: Amigável e Personalizada';
+    } else if (answers.clientProfile === 'novos' && answers.clientExperience === 'positiva') {
+      selectedModel = 'clienteNovo';
+      modelTitle = 'Modelo 5: Cliente Novo';
+    } else if (answers.clientProfile === 'melhoria' || answers.clientExperience === 'neutra') {
+      selectedModel = 'reputacao';
+      modelTitle = 'Modelo 3: Reputação e Melhoria Contínua';
+    } else if (answers.clientProfile === 'compartilham' || answers.clientExperience === 'marcante' || answers.includeExtras === 'foto') {
+      selectedModel = 'foto';
+      modelTitle = 'Modelo 4: Avaliação com Foto';
+    }
+    
+    // Determinar o canal de comunicação
+    let channel = answers.communicationChannel;
+    if (channel === 'outro') channel = 'whatsapp'; // fallback
+    
+    // Buscar a mensagem base do modelo e canal
+    const baseMessage = messageModels[selectedModel as keyof typeof messageModels]?.[channel as keyof typeof messageModels.amigavel] || 
+                       messageModels[selectedModel as keyof typeof messageModels]?.whatsapp || 
+                       messageModels.beneficio.whatsapp;
+    
+    // Adicionar extras se necessário
+    let finalMessage = baseMessage;
+    if (answers.includeExtras === 'foto' && selectedModel !== 'foto') {
+      finalMessage += extrasTexts.foto;
+    } else if (answers.includeExtras === 'mimo') {
+      finalMessage += extrasTexts.mimo;
+    }
+    
+    return {
+      title: modelTitle,
+      message: finalMessage
+    };
   };
 
   const copyToClipboard = (text: string) => {
