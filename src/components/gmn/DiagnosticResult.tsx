@@ -17,6 +17,7 @@ import {
   Award
 } from "lucide-react";
 import { FormData, LeadData } from "@/pages/DiagnosticoGMN";
+import { useToast } from "@/hooks/use-toast";
 
 interface DiagnosticResultProps {
   formData: FormData;
@@ -97,6 +98,7 @@ const getRecommendations = (section: string, score: number) => {
 };
 
 export const DiagnosticResult = ({ formData, leadData }: DiagnosticResultProps) => {
+  const { toast } = useToast();
   const sectionScores = Object.entries(formData).map(([section, data]) => ({
     section,
     score: calculateScore(data),
@@ -129,7 +131,7 @@ export const DiagnosticResult = ({ formData, leadData }: DiagnosticResultProps) 
   };
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
+    <div className="max-w-4xl mx-auto space-y-8" id="diagnostic-result">
       {/* Header with Overall Score */}
       <Card className={`border-2 ${overallColors.border} ${overallColors.bg}`}>
         <CardHeader className="text-center">
@@ -402,6 +404,76 @@ export const DiagnosticResult = ({ formData, leadData }: DiagnosticResultProps) 
                 </p>
               </div>
             )}
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Share and Download Options */}
+      <Card className="border-brand-gold/20">
+        <CardContent className="p-6">
+          <h3 className="text-xl font-semibold mb-4 text-center">
+            Compartilhe ou Baixe seu Diagnóstico
+          </h3>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              onClick={() => {
+                const shareData = {
+                  title: 'Meu Diagnóstico GMN - Encantos Hub',
+                  text: `Acabei de fazer meu diagnóstico do Google Meu Negócio e obtive ${overallScore}% de otimização!`,
+                  url: window.location.href
+                };
+                
+                if (navigator.share) {
+                  navigator.share(shareData);
+                } else {
+                  navigator.clipboard.writeText(`${shareData.text} ${shareData.url}`);
+                  toast({
+                    title: "Link copiado!",
+                    description: "O link foi copiado para sua área de transferência."
+                  });
+                }
+              }}
+              variant="outline"
+              className="border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-white"
+            >
+              <Share2 className="w-4 h-4 mr-2" />
+              Compartilhar Resultado
+            </Button>
+            
+            <Button
+              onClick={() => {
+                const printContent = document.getElementById('diagnostic-result');
+                if (printContent) {
+                  const printWindow = window.open('', '_blank');
+                  printWindow?.document.write(`
+                    <html>
+                      <head>
+                        <title>Diagnóstico GMN - ${leadData?.name}</title>
+                        <style>
+                          body { font-family: Arial, sans-serif; margin: 20px; }
+                          .score { font-size: 24px; font-weight: bold; text-align: center; }
+                          .section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; }
+                          .recommendation { margin: 10px 0; }
+                        </style>
+                      </head>
+                      <body>
+                        <h1>Diagnóstico Google Meu Negócio</h1>
+                        <h2>Cliente: ${leadData?.name || 'N/A'}</h2>
+                        <div class="score">Pontuação Geral: ${overallScore}%</div>
+                        ${printContent.innerHTML}
+                      </body>
+                    </html>
+                  `);
+                  printWindow?.document.close();
+                  printWindow?.print();
+                }
+              }}
+              variant="outline"
+              className="border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-white"
+            >
+              <Download className="w-4 h-4 mr-2" />
+              Baixar PDF
+            </Button>
           </div>
         </CardContent>
       </Card>

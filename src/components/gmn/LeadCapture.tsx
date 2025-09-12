@@ -24,39 +24,11 @@ export const LeadCapture = ({ onSubmit, diagnosticFormData }: LeadCaptureProps) 
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Helper function to calculate scores (copied from DiagnosticResult)
-  const calculateScore = (sectionData: Record<string, string>) => {
-    const values = Object.values(sectionData);
-    if (values.length === 0) return 0;
-    
-    const points = values.reduce((acc, value) => {
-      switch (value) {
-        case 'yes': return acc + 100;
-        case 'partial': return acc + 50;
-        case 'no': return acc + 0;
-        default: return acc;
-      }
-    }, 0);
-    
-    return Math.round(points / values.length);
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
     try {
-      // Calculate scores for the email
-      const sectionScores = Object.entries(diagnosticFormData).reduce((acc, [section, data]) => ({
-        ...acc,
-        [section]: calculateScore(data)
-      }), {});
-      
-      const overallScore = Math.round(
-        Object.values(sectionScores as Record<string, number>).reduce((acc: number, score: number) => acc + score, 0) / 
-        Object.values(sectionScores).length
-      );
-
       // Save lead data to Supabase
       const leadDataWithMapping = {
         full_name: leadFormData.name,
@@ -82,30 +54,11 @@ export const LeadCapture = ({ onSubmit, diagnosticFormData }: LeadCaptureProps) 
         throw new Error(`Erro ao salvar os dados: ${dbError.message}`);
       }
 
-      // Send email with report
-      const { data: emailResponse, error: emailError } = await supabase.functions.invoke('send-gmn-report', {
-        body: {
-          leadData: leadDataWithMapping,
-          formData: diagnosticFormData,
-          overallScore,
-          sectionScores
-        }
+      toast({
+        title: "Diagnóstico concluído!",
+        description: "Seus dados foram salvos com sucesso. Veja seu relatório abaixo.",
+        variant: "default",
       });
-
-      if (emailError) {
-        console.error('Email error:', emailError);
-        toast({
-          title: "Dados salvos com sucesso!",
-          description: "Houve um problema no envio do email, mas seus dados foram salvos. Entraremos em contato em breve.",
-          variant: "default",
-        });
-      } else {
-        toast({
-          title: "Diagnóstico enviado!",
-          description: "Seu relatório foi enviado para seu e-mail. Verifique sua caixa de entrada.",
-          variant: "default",
-        });
-      }
 
       // Pass the lead data back to parent component
       const leadDataForParent: LeadData = {
@@ -148,7 +101,7 @@ export const LeadCapture = ({ onSubmit, diagnosticFormData }: LeadCaptureProps) 
             Parabéns! Seu diagnóstico está pronto
           </CardTitle>
           <p className="text-muted-foreground">
-            Para acessar seu relatório personalizado com recomendações específicas 
+            Para ver seu relatório personalizado com recomendações específicas 
             para melhorar seu Google Meu Negócio, precisamos de algumas informações:
           </p>
         </CardHeader>
@@ -182,7 +135,7 @@ export const LeadCapture = ({ onSubmit, diagnosticFormData }: LeadCaptureProps) 
               <li className="flex items-start space-x-2">
                 <div className="w-1.5 h-1.5 bg-brand-gold rounded-full mt-2"></div>
                 <span className="text-sm text-muted-foreground">
-                  Dicas exclusivas da nossa equipe especializada
+                  Opções para compartilhar ou baixar o diagnóstico
                 </span>
               </li>
             </ul>
@@ -266,7 +219,7 @@ export const LeadCapture = ({ onSubmit, diagnosticFormData }: LeadCaptureProps) 
               disabled={!isFormValid || isSubmitting}
               className="w-full bg-brand-gold hover:bg-brand-gold/90 text-brand-black font-semibold py-3 text-lg"
             >
-              {isSubmitting ? 'Gerando seu relatório...' : 'Receber Meu Diagnóstico'}
+              {isSubmitting ? 'Gerando seu relatório...' : 'Ver Meu Diagnóstico'}
             </Button>
           </form>
         </CardContent>
