@@ -129,6 +129,7 @@ export type Database = {
         Row: {
           company_name: string
           created_at: string
+          diagnostic_results: Json | null
           email: string
           form_data: Json
           full_name: string
@@ -139,6 +140,7 @@ export type Database = {
         Insert: {
           company_name: string
           created_at?: string
+          diagnostic_results?: Json | null
           email: string
           form_data: Json
           full_name: string
@@ -149,6 +151,7 @@ export type Database = {
         Update: {
           company_name?: string
           created_at?: string
+          diagnostic_results?: Json | null
           email?: string
           form_data?: Json
           full_name?: string

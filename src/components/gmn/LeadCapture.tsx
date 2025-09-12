@@ -24,18 +24,47 @@ export const LeadCapture = ({ onSubmit, diagnosticFormData }: LeadCaptureProps) 
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const calculateScore = (sectionData: any) => {
+    if (!sectionData) return 0;
+    const values = Object.values(sectionData);
+    const yesCount = values.filter(value => value === 'yes').length;
+    return Math.round((yesCount / values.length) * 100);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
     try {
+      // Calculate diagnostic results
+      const sectionScores = {
+        identity: calculateScore(diagnosticFormData.identity),
+        media: calculateScore(diagnosticFormData.media),
+        services: calculateScore(diagnosticFormData.services),
+        relationship: calculateScore(diagnosticFormData.relationship),
+        results: calculateScore(diagnosticFormData.results)
+      };
+
+      const overallScore = Math.round(
+        Object.values(sectionScores).reduce((sum, score) => sum + score, 0) / 
+        Object.values(sectionScores).length
+      );
+
+      const diagnosticResults = {
+        overallScore,
+        sectionScores,
+        timestamp: new Date().toISOString(),
+        formData: diagnosticFormData
+      };
+
       // Save lead data to Supabase
       const leadDataWithMapping = {
         full_name: leadFormData.name,
         email: leadFormData.email,
         whatsapp: leadFormData.phone,
         company_name: leadFormData.company || 'Não informado',
-        form_data: diagnosticFormData as any // This is the entire diagnostic form data
+        form_data: diagnosticFormData as any, // This is the entire diagnostic form data
+        diagnostic_results: diagnosticResults as any // Save the calculated results
       };
 
       const { data: leadRecord, error: dbError } = await supabase
