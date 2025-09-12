@@ -61,59 +61,62 @@ const ToolsSection = () => {
             </p>
           </div>
 
-          {/* Tools Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {/* Tools List */}
+          <div className="space-y-6 mb-12">
             {featuredTools.map((tool, index) => {
               const IconComponent = tool.icon;
               return (
                 <Card 
                   key={index} 
-                  className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 border-border hover:border-brand-gold/30 relative overflow-hidden"
+                  className="group hover:shadow-elegant transition-all duration-300 border-border hover:border-brand-gold/30"
                 >
                   <CardContent className="p-6">
-                    {/* Status Badge */}
-                    <div className="absolute top-4 right-4">
-                      <Badge 
-                        variant={tool.comingSoon ? "secondary" : "default"}
-                        className={tool.comingSoon ? "bg-orange-100 text-orange-700" : "bg-brand-gold text-brand-black"}
-                      >
-                        <Clock size={12} className="mr-1" />
-                        {tool.status}
-                      </Badge>
+                    <div className="flex items-center gap-6">
+                      {/* Icon */}
+                      <div className="bg-brand-gold/10 w-16 h-16 rounded-lg flex items-center justify-center group-hover:bg-brand-gold/20 transition-colors flex-shrink-0">
+                        <IconComponent className="w-8 h-8 text-brand-gold" />
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="flex-1">
+                        <div className="flex items-start justify-between mb-2">
+                          <h3 className="text-xl font-semibold text-brand-black group-hover:text-brand-gold transition-colors">
+                            {tool.title}
+                          </h3>
+                          <Badge 
+                            variant={tool.comingSoon ? "secondary" : "default"}
+                            className={tool.comingSoon ? "bg-orange-100 text-orange-700" : "bg-brand-gold text-brand-black"}
+                          >
+                            <Clock size={12} className="mr-1" />
+                            {tool.status}
+                          </Badge>
+                        </div>
+                        
+                        <p className="text-muted-foreground mb-4 leading-relaxed">
+                          {tool.description}
+                        </p>
+                        
+                        {/* CTA */}
+                        <Button 
+                          variant="outline"
+                          size="sm"
+                          disabled={tool.comingSoon}
+                          onClick={() => {
+                            if (!tool.comingSoon && tool.path) {
+                              navigate(tool.path);
+                            }
+                          }}
+                          className={`${
+                            tool.comingSoon 
+                              ? "opacity-50 cursor-not-allowed" 
+                              : "group-hover:bg-brand-gold group-hover:text-brand-black group-hover:border-brand-gold"
+                          } transition-all`}
+                        >
+                          {tool.comingSoon ? "Em Breve" : "Usar Agora"}
+                          {!tool.comingSoon && <ArrowRight size={16} className="ml-2" />}
+                        </Button>
+                      </div>
                     </div>
-
-                    {/* Icon */}
-                    <div className="bg-brand-gold/10 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-gold/20 transition-colors">
-                      <IconComponent className="w-8 h-8 text-brand-gold" />
-                    </div>
-                    
-                    {/* Content */}
-                    <h3 className="text-xl font-semibold text-brand-black mb-3 group-hover:text-brand-gold transition-colors">
-                      {tool.title}
-                    </h3>
-                    
-                    <p className="text-muted-foreground mb-6 leading-relaxed">
-                      {tool.description}
-                    </p>
-                    
-                    {/* CTA */}
-                    <Button 
-                      variant="outline"
-                      disabled={tool.comingSoon}
-                      onClick={() => {
-                        if (!tool.comingSoon && tool.path) {
-                          navigate(tool.path);
-                        }
-                      }}
-                      className={`w-full ${
-                        tool.comingSoon 
-                          ? "opacity-50 cursor-not-allowed" 
-                          : "group-hover:bg-brand-gold group-hover:text-brand-black group-hover:border-brand-gold"
-                      } transition-all`}
-                    >
-                      {tool.comingSoon ? "Em Breve" : "Usar Agora"}
-                      {!tool.comingSoon && <ArrowRight size={16} className="ml-2" />}
-                    </Button>
                   </CardContent>
                 </Card>
               );
