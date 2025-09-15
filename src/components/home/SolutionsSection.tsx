@@ -6,34 +6,36 @@ const SolutionsSection = () => {
   const navigate = useNavigate();
   const solutions = [{
     icon: Search,
-    title: "Gestão de SEO para sites",
-    description: "Serviço personalizado para grandes empresas que desejam aumentar sua visibilidade orgânica no site e mídias sociais. Incluindo diagnóstico completo, plano estratégico semestral e gestão de conteúdo.",
-    details: ["Diagnóstico completo", "Plano de ação semestral", "Gestão de conteúdo, técnica e de backlinks", "Relatórios e alinhamentos"],
-    cta: "whatsapp"
-  }, {
-    icon: MapPin,
-    title: "Gestão Local para Franquias",
-    description: "Projeto dedicado a aumentar visibilidade, performance e autoridade local de franquias com 10+ unidades. Estratégias para Site, Google Meu Negócio e YouTube com produção de conteúdo semanal.",
-    details: ["Plano estratégico semestral", "Produção semanal de conteúdo local", "Gestão de canais, avaliações e menções locais", "Gestão estratégica do site e youtube da Franqueadora"],
-    cta: "whatsapp"
+    title: "Gestão Completa",
+    description: "Crescimento sólido, estratégico e sustentável para empresas e franquias.",
+    valor: "a partir de R$ 3.000/mês",
+    contrato: "12 meses",
+    cta: "detalhes",
+    link: "/servicos/gestao-completa"
   }, {
     icon: Building2,
-    title: "Presença Digital para PME's",
-    description: "Implementamos estratégias digitais completas para pequenas e médias empresas, criando canais de vendas eficientes. Análise, otimização do GMN, criação de site e campanhas publicitárias.",
-    details: ["Análise de presença digital", "Criação e otimização do Google Meu Negócio", "Criação de site", "Gerenciamento de campanhas e anúncios patrocinados"],
-    cta: "whatsapp"
+    title: "Gestão Essencial",
+    description: "Evolução consistente com investimento acessível para PME's.",
+    valor: "a partir de R$ 1.500/mês",
+    contrato: "12 meses",
+    cta: "detalhes",
+    link: "/servicos/gestao-essencial"
   }, {
-    icon: GraduationCap,
-    title: "Mentoria de SEO para autônomos",
-    description: "Aprenda na prática como gerir um projeto de SEO completo em sessões flexíveis. Conteúdo personalizado de acordo com suas demandas e clientes atuais, com materiais de apoio inclusos.",
-    details: ["4 a 8 sessões online", "50 minutos de duração cada sessão", "Materiais de apoio"],
-    cta: "whatsapp"
+    icon: MapPin,
+    title: "Gestão Local",
+    description: "Destaque nas buscas locais e Google Meu Negócio.",
+    valor: "Setup R$ 600 + R$ 300/mês",
+    contrato: "12 meses",
+    cta: "detalhes",
+    link: "/servicos/gestao-local"
   }, {
     icon: Users,
-    title: "Consultoria de SEO",
-    description: "Montamos um diagnóstico estratégico para seu negócio com plano detalhado personalizado. Reunião pontual de até 2h com apresentação completa de oportunidades e estratégias recomendadas.",
-    details: ["Diagnóstico completo do seu site", "Estratégias personalizadas de SEO", "Relatório detalhado com plano de ação"],
-    cta: "whatsapp"
+    title: "Consultoria Estratégica",
+    description: "Direcionamento rápido e personalizado para seu negócio.",
+    valor: "R$ 300/sessão",
+    contrato: "Sessão avulsa (1h30)",
+    cta: "detalhes",
+    link: "/servicos/consultoria"
   }, {
     icon: Wrench,
     title: "Ferramentas Gratuitas",
@@ -45,11 +47,14 @@ const SolutionsSection = () => {
     ],
     cta: "ferramentas"
   }];
-  const handleCTA = (type: string) => {
+  const handleCTA = (type: string, link?: string) => {
     if (type === "whatsapp") {
       window.open("https://wa.me/5511964721143?text=Vim do site e gostaria de algumas informações.", "_blank");
     } else if (type === "ferramentas") {
       window.location.href = "/ferramentas";
+    } else if (type === "detalhes" && link) {
+      navigate(link);
+      setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
     }
   };
   return <section id="solucoes" className="py-20 bg-background">
@@ -78,33 +83,46 @@ const SolutionsSection = () => {
                     {solution.description}
                   </p>
                   
-                  <ul className="text-sm text-muted-foreground mb-6 space-y-2">
-                    {solution.details.map((detail, detailIndex) => (
-                      <li key={detailIndex} className="flex items-start">
-                        <span className="text-brand-gold mr-2">•</span>
-                        {typeof detail === 'string' ? (
-                          detail
-                        ) : detail.link ? (
-                          <button 
-                            onClick={() => {
-                              navigate(detail.link);
-                              setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
-                            }}
-                            className="text-left hover:text-brand-gold transition-colors underline"
-                          >
-                            {detail.text}
-                          </button>
-                        ) : (
-                          <span className={detail.comingSoon ? "opacity-60" : ""}>
-                            {detail.text} {detail.comingSoon && "(Em breve)"}
-                          </span>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
+                  {solution.cta !== "ferramentas" ? (
+                    <div className="mb-6 space-y-3">
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="text-muted-foreground">Valor:</span>
+                        <span className="font-semibold text-brand-gold">{solution.valor}</span>
+                      </div>
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="text-muted-foreground">Contrato:</span>
+                        <span className="font-semibold text-brand-black">{solution.contrato}</span>
+                      </div>
+                    </div>
+                  ) : (
+                    <ul className="text-sm text-muted-foreground mb-6 space-y-2">
+                      {solution.details.map((detail, detailIndex) => (
+                        <li key={detailIndex} className="flex items-start">
+                          <span className="text-brand-gold mr-2">•</span>
+                          {typeof detail === 'string' ? (
+                            detail
+                          ) : detail.link ? (
+                            <button 
+                              onClick={() => {
+                                navigate(detail.link);
+                                setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
+                              }}
+                              className="text-left hover:text-brand-gold transition-colors underline"
+                            >
+                              {detail.text}
+                            </button>
+                          ) : (
+                            <span className={detail.comingSoon ? "opacity-60" : ""}>
+                              {detail.text} {detail.comingSoon && "(Em breve)"}
+                            </span>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                   
-                  <Button onClick={() => handleCTA(solution.cta)} variant="outline" className="w-full group-hover:bg-brand-gold group-hover:text-brand-black group-hover:border-brand-gold transition-all">
-                    {solution.cta === "whatsapp" ? "Solicitar Orçamento" : solution.title === "Ferramentas Gratuitas" ? "Ver todas as ferramentas" : "Saiba Mais"}
+                  <Button onClick={() => handleCTA(solution.cta, solution.link)} variant="outline" className="w-full group-hover:bg-brand-gold group-hover:text-brand-black group-hover:border-brand-gold transition-all">
+                    {solution.cta === "detalhes" ? "Ver mais detalhes" : solution.title === "Ferramentas Gratuitas" ? "Ver todas as ferramentas" : "Saiba Mais"}
                     <ArrowRight size={16} className="ml-2" />
                   </Button>
                 </CardContent>

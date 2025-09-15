@@ -9,6 +9,10 @@ import BlogPost from "./pages/BlogPost";
 import Ferramentas from "./pages/Ferramentas";
 import DiagnosticoGMN from "./pages/DiagnosticoGMN";
 import GeradorMensagensAvaliacoes from "./pages/GeradorMensagensAvaliacoes";
+import GestaoCompleta from "./pages/GestaoCompleta";
+import GestaoEssencial from "./pages/GestaoEssencial";
+import GestaoLocal from "./pages/GestaoLocal";
+import ConsultoriaEstrategica from "./pages/ConsultoriaEstrategica";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +30,10 @@ const App = () => (
           <Route path="/ferramentas" element={<Ferramentas />} />
           <Route path="/ferramentas/diagnostico-gmn" element={<DiagnosticoGMN />} />
           <Route path="/ferramentas/gerador-mensagens-avaliacoes" element={<GeradorMensagensAvaliacoes />} />
+          <Route path="/servicos/gestao-completa" element={<GestaoCompleta />} />
+          <Route path="/servicos/gestao-essencial" element={<GestaoEssencial />} />
+          <Route path="/servicos/gestao-local" element={<GestaoLocal />} />
+          <Route path="/servicos/consultoria" element={<ConsultoriaEstrategica />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
