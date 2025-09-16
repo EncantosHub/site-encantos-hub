@@ -94,7 +94,7 @@ const SolutionsSection = () => {
           <Card className="max-w-md mx-auto border-2 border-brand-gold/30 bg-gradient-to-br from-brand-gold/5 to-brand-gold/10 shadow-gold">
             <CardContent className="p-6">
               <h3 className="text-xl font-semibold mb-3 text-brand-black">
-                🎯 Não sabe qual serviço escolher?
+                Não sabe qual serviço escolher?
               </h3>
               <p className="text-muted-foreground mb-4">
                 Responda um quiz rápido e descubra o plano ideal para seu negócio.
@@ -103,7 +103,7 @@ const SolutionsSection = () => {
                 onClick={() => handleCTA('discover', '/descubra-seu-plano')}
                 className="w-full bg-brand-gold text-brand-black hover:bg-brand-gold/90 font-semibold"
               >
-                🚀 Descubra seu Serviço Ideal
+                Descubra seu Serviço Ideal
               </Button>
             </CardContent>
           </Card>
