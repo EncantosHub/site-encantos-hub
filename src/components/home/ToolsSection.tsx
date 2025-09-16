@@ -8,8 +8,7 @@ const ToolsSection = () => {
   
   const tools = [
     { text: "Diagnóstico GMN", link: "/ferramentas/diagnostico-gmn", description: "Analise completa do seu Google Meu Negócio" },
-    { text: "Gerador de Mensagens", link: "/ferramentas/gerador-mensagens-avaliacoes", description: "Crie mensagens personalizadas para solicitar avaliações" },
-    { text: "Validador de SEO", link: null, comingSoon: true, description: "Verifique a otimização do seu site (Em breve)" }
+    { text: "Gerador de Mensagens", link: "/ferramentas/gerador-mensagens-avaliacoes", description: "Crie mensagens personalizadas para solicitar avaliações" }
   ];
 
   const handleToolClick = (tool: any) => {
@@ -56,11 +55,6 @@ const ToolsSection = () => {
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {tool.description}
                 </p>
-                {tool.comingSoon && (
-                  <span className="inline-block mt-2 text-xs bg-brand-gold/10 text-brand-gold px-2 py-1 rounded-full">
-                    Em breve
-                  </span>
-                )}
               </CardContent>
             </Card>
           ))}
