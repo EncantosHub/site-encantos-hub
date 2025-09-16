@@ -71,6 +71,78 @@ export type Database = {
         }
         Relationships: []
       }
+      descubra_plano_leads: {
+        Row: {
+          abrangencia: string
+          created_at: string
+          email: string
+          expectativa: string
+          faturamento: string
+          ferramentas_instaladas: string[] | null
+          funcoes_internas: string[] | null
+          gestao_site: string
+          id: string
+          investimento_anterior: string
+          link_recomendacao: string
+          link_site: string | null
+          localizacao: string
+          mensagem_recomendacao: string
+          nome_empresa: string
+          segmento: string
+          servico_recomendado: string
+          time_marketing: string
+          titulo_recomendacao: string
+          unidades: string
+          updated_at: string
+        }
+        Insert: {
+          abrangencia: string
+          created_at?: string
+          email: string
+          expectativa: string
+          faturamento: string
+          ferramentas_instaladas?: string[] | null
+          funcoes_internas?: string[] | null
+          gestao_site: string
+          id?: string
+          investimento_anterior: string
+          link_recomendacao: string
+          link_site?: string | null
+          localizacao: string
+          mensagem_recomendacao: string
+          nome_empresa: string
+          segmento: string
+          servico_recomendado: string
+          time_marketing: string
+          titulo_recomendacao: string
+          unidades: string
+          updated_at?: string
+        }
+        Update: {
+          abrangencia?: string
+          created_at?: string
+          email?: string
+          expectativa?: string
+          faturamento?: string
+          ferramentas_instaladas?: string[] | null
+          funcoes_internas?: string[] | null
+          gestao_site?: string
+          id?: string
+          investimento_anterior?: string
+          link_recomendacao?: string
+          link_site?: string | null
+          localizacao?: string
+          mensagem_recomendacao?: string
+          nome_empresa?: string
+          segmento?: string
+          servico_recomendado?: string
+          time_marketing?: string
+          titulo_recomendacao?: string
+          unidades?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       gerador_avaliacoes_leads: {
         Row: {
           created_at: string

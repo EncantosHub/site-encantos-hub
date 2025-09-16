@@ -12,6 +12,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { CheckCircle, MessageCircle, ArrowLeft } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
 import { useNavigate } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   nomeEmpresa: z.string().min(2, "Nome da empresa é obrigatório"),
@@ -123,10 +125,47 @@ const DescubraSeuPlano = () => {
     };
   };
 
-  const onSubmit = (data: FormData) => {
-    const result = getRecommendation(data);
-    setRecommendation(result);
-    setCurrentStep(3);
+  const onSubmit = async (data: FormData) => {
+    try {
+      const result = getRecommendation(data);
+      
+      // Save to Supabase
+      const { error } = await supabase
+        .from('descubra_plano_leads')
+        .insert({
+          nome_empresa: data.nomeEmpresa,
+          link_site: data.linkSite || null,
+          email: data.email,
+          segmento: data.segmento,
+          localizacao: data.localizacao,
+          unidades: data.unidades,
+          abrangencia: data.abrangencia,
+          time_marketing: data.timeMarketing,
+          funcoes_internas: data.funcoesInternas,
+          gestao_site: data.gestaoSite,
+          ferramentas_instaladas: data.ferramentas,
+          investimento_anterior: data.investimentoAnterior,
+          faturamento: data.faturamento,
+          expectativa: data.expectativa,
+          servico_recomendado: result.service,
+          titulo_recomendacao: result.title,
+          mensagem_recomendacao: result.message,
+          link_recomendacao: result.link
+        });
+
+      if (error) {
+        console.error('Erro ao salvar dados:', error);
+        toast.error('Erro ao processar sua solicitação. Tente novamente.');
+        return;
+      }
+
+      setRecommendation(result);
+      setCurrentStep(3);
+      toast.success('Recomendação gerada com sucesso!');
+    } catch (error) {
+      console.error('Erro:', error);
+      toast.error('Erro ao processar sua solicitação. Tente novamente.');
+    }
   };
 
   const handleArrayField = (fieldName: keyof FormData, value: string) => {
