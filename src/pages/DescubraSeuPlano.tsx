@@ -210,6 +210,7 @@ const DescubraSeuPlano = () => {
               <SelectItem value="Mais de 5">Mais de 5</SelectItem>
             </SelectContent>
           </Select>
+          {errors.unidades && <p className="text-sm text-red-500 mt-1">{errors.unidades.message}</p>}
         </div>
 
         <div>
@@ -224,6 +225,7 @@ const DescubraSeuPlano = () => {
               <SelectItem value="Internacional">Internacional</SelectItem>
             </SelectContent>
           </Select>
+          {errors.abrangencia && <p className="text-sm text-red-500 mt-1">{errors.abrangencia.message}</p>}
         </div>
 
         <div>
@@ -239,6 +241,7 @@ const DescubraSeuPlano = () => {
               <SelectItem value="Equipe completa">Equipe completa</SelectItem>
             </SelectContent>
           </Select>
+          {errors.timeMarketing && <p className="text-sm text-red-500 mt-1">{errors.timeMarketing.message}</p>}
         </div>
 
         <div>
@@ -270,6 +273,7 @@ const DescubraSeuPlano = () => {
               <SelectItem value="Não tem CMS">Não tem CMS</SelectItem>
             </SelectContent>
           </Select>
+          {errors.gestaoSite && <p className="text-sm text-red-500 mt-1">{errors.gestaoSite.message}</p>}
         </div>
 
         <div>
@@ -301,6 +305,7 @@ const DescubraSeuPlano = () => {
               <SelectItem value="Não">Não</SelectItem>
             </SelectContent>
           </Select>
+          {errors.investimentoAnterior && <p className="text-sm text-red-500 mt-1">{errors.investimentoAnterior.message}</p>}
         </div>
 
         <div>
@@ -316,6 +321,7 @@ const DescubraSeuPlano = () => {
               <SelectItem value="+1M">+ R$ 1M</SelectItem>
             </SelectContent>
           </Select>
+          {errors.faturamento && <p className="text-sm text-red-500 mt-1">{errors.faturamento.message}</p>}
         </div>
 
         <div>
@@ -331,6 +337,7 @@ const DescubraSeuPlano = () => {
               <SelectItem value="Tudo junto">Tudo junto</SelectItem>
             </SelectContent>
           </Select>
+          {errors.expectativa && <p className="text-sm text-red-500 mt-1">{errors.expectativa.message}</p>}
         </div>
       </div>
 
