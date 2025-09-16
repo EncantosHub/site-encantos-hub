@@ -38,7 +38,7 @@ const SolutionsSection = () => {
     link: "/servicos/consultoria"
   }];
   const handleCTA = (type: string, link?: string) => {
-    if (type === "detalhes" && link) {
+    if ((type === "detalhes" || type === "discover") && link) {
       navigate(link);
       setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
     }
@@ -87,6 +87,26 @@ const SolutionsSection = () => {
                 </CardContent>
               </Card>;
         })}
+        </div>
+        
+        {/* CTA Descobrir Serviço Ideal */}
+        <div className="text-center mt-12">
+          <Card className="max-w-md mx-auto border-2 border-primary/20 bg-gradient-to-br from-background to-primary/5">
+            <CardContent className="p-6">
+              <h3 className="text-xl font-semibold mb-3">
+                Não sabe qual serviço escolher?
+              </h3>
+              <p className="text-muted-foreground mb-4">
+                Responda um quiz rápido e descubra o plano ideal para seu negócio.
+              </p>
+              <Button 
+                onClick={() => handleCTA('discover', '/descubra-seu-plano')}
+                className="w-full"
+              >
+                Descubra seu Serviço Ideal
+              </Button>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>;

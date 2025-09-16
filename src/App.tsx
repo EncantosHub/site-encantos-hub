@@ -13,6 +13,7 @@ import GestaoCompleta from "./pages/GestaoCompleta";
 import GestaoEssencial from "./pages/GestaoEssencial";
 import GestaoLocal from "./pages/GestaoLocal";
 import ConsultoriaEstrategica from "./pages/ConsultoriaEstrategica";
+import DescubraSeuPlano from "./pages/DescubraSeuPlano";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/servicos/gestao-essencial" element={<GestaoEssencial />} />
           <Route path="/servicos/gestao-local" element={<GestaoLocal />} />
           <Route path="/servicos/consultoria" element={<ConsultoriaEstrategica />} />
+          <Route path="/descubra-seu-plano" element={<DescubraSeuPlano />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
