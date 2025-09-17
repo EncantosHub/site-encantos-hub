@@ -31,7 +31,7 @@ const SolutionsSection = () => {
   }, {
     icon: MapPin,
     title: "Gestão Local",
-    description: "Presença digital estratégica para negócios regionais. Voltado para pequenas empresas que desejam ser encontradas por clientes próximos. Avaliamos o perfil e momento do seu negócio para indicar a melhor estratégia local: Google Meu Negócio, criação de site, parcerias com sites regionais e gestão de reputação.",
+    description: "Presença digital estratégica para negócios regionais. Voltado para pequenas empresas que desejam ser encontradas por clientes próximos. Definimos a melhor estratégia local com foco em Google Meu Negócio, site e reputação digital.",
     bullets: [
       "Diagnóstico do cenário local",
       "Definição de canais prioritários (GMN, site, parceiros)",
@@ -43,7 +43,7 @@ const SolutionsSection = () => {
   }, {
     icon: Users,
     title: "Consultoria Estratégica",
-    description: "Sessões avulsas de SEO e marketing digital. Para empreendedores que buscam orientação prática antes de contratar um plano de gestão contínua.",
+    description: "Sessões avulsas de SEO e marketing digital para empreendedores. Ideal para quem busca orientação prática e personalizada antes de contratar um plano de gestão contínua.",
     bullets: [
       "Sessão online de 1h30",
       "Auditoria inicial do site",
