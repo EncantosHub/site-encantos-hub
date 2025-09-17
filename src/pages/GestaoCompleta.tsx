@@ -8,16 +8,16 @@ import { useSEO } from "@/hooks/useSEO";
 const GestaoCompleta = () => {
   useSEO({
     title: "Gestão Completa de SEO | Encantos Hub",
-    description: "Gestão de SEO personalizada com escopo anual. Resultados sólidos em 12 meses.",
+    description: "SEO completo para empresas e franquias. Diagnóstico, rastreamento, link building e resultados sólidos em 12 meses.",
     canonical: "https://www.encantoshub.com.br/servicos/gestao-completa"
   });
 
   const escopo = [
-    { periodo: "Mês 1", atividade: "Diagnóstico completo + plano de ação" },
-    { periodo: "Meses 2–3", atividade: "Rastreamento e indexação (foco em impressões)" },
-    { periodo: "Meses 4–6", atividade: "Otimização de cliques e CTR" },
-    { periodo: "Meses 7–9", atividade: "Link building e autoridade" },
-    { periodo: "Meses 10–12", atividade: "Projetos avançados e consolidação" }
+    { periodo: "Mês 1", titulo: "Diagnóstico e plano de ação", atividade: "Diagnóstico completo + plano de ação estratégico personalizado" },
+    { periodo: "Meses 2–3", titulo: "Rastreamento e indexação", atividade: "Rastreamento e indexação (foco em impressões)" },
+    { periodo: "Meses 4–6", titulo: "Cliques e CTR", atividade: "Otimização de cliques e CTR" },
+    { periodo: "Meses 7–9", titulo: "Link building e autoridade", atividade: "Link building e construção de autoridade" },
+    { periodo: "Meses 10–12", titulo: "Consolidação de métricas", atividade: "Projetos avançados e consolidação de métricas" }
   ];
 
   return (
@@ -26,13 +26,23 @@ const GestaoCompleta = () => {
       <main className="pt-20">
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-12">
+            <article className="max-w-4xl mx-auto">
+              <header className="text-center mb-12">
                 <h1 className="text-4xl lg:text-5xl font-bold text-brand-black mb-6">
                   Gestão Completa e Personalizada
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
                   Crescimento sólido, estratégico e sustentável para empresas e franquias.
+                </p>
+              </header>
+
+              <section className="mb-12">
+                <h2 className="text-3xl font-bold text-brand-black mb-6 text-center">Para quem é</h2>
+                <p className="text-lg text-muted-foreground text-center mb-8">
+                  Ideal para <strong>empresas de médio e grande porte</strong> e <strong>franquias</strong> que precisam de 
+                  uma gestão de SEO estratégica e personalizada. Se você já tem presença digital estabelecida e quer 
+                  resultados sólidos, este é o serviço ideal. Para empresas que estão começando, recomendamos nossa 
+                  <a href="/servicos/gestao-essencial" className="text-brand-gold hover:underline font-semibold"> Gestão Essencial</a>.
                 </p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
@@ -63,33 +73,51 @@ const GestaoCompleta = () => {
                     </CardContent>
                   </Card>
                 </div>
-              </div>
+              </section>
 
-              <Card className="mb-12">
-                <CardContent className="p-8">
-                  <h2 className="text-3xl font-bold text-brand-black mb-8 text-center">
-                    Escopo do Projeto
-                  </h2>
-                  
-                  <div className="space-y-6">
-                    {escopo.map((item, index) => (
-                      <div key={index} className="flex items-start space-x-4 p-4 rounded-lg bg-brand-gold/5 border border-brand-gold/10">
-                        <div className="bg-brand-gold/20 rounded-full p-2 flex-shrink-0">
-                          <span className="text-brand-gold font-bold text-sm">{index + 1}</span>
+              <section className="mb-12">
+                <Card>
+                  <CardContent className="p-8">
+                    <h2 className="text-3xl font-bold text-brand-black mb-8 text-center">
+                      Escopo anual
+                    </h2>
+                    
+                    <div className="space-y-6">
+                      {escopo.map((item, index) => (
+                        <div key={index} className="flex items-start space-x-4 p-4 rounded-lg bg-brand-gold/5 border border-brand-gold/10">
+                          <div className="bg-brand-gold/20 rounded-full p-2 flex-shrink-0">
+                            <span className="text-brand-gold font-bold text-sm">{index + 1}</span>
+                          </div>
+                          <div>
+                            <h3 className="font-semibold text-brand-black mb-1">{item.periodo} – {item.titulo}</h3>
+                            <p className="text-muted-foreground">{item.atividade}</p>
+                          </div>
                         </div>
-                        <div>
-                          <h3 className="font-semibold text-brand-black mb-1">{item.periodo}</h3>
-                          <p className="text-muted-foreground">{item.atividade}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </section>
 
-              <div className="text-center">
+              <section className="mb-12">
+                <h2 className="text-3xl font-bold text-brand-black mb-6 text-center">Contrato e Valor</h2>
+
+                <div className="text-center mb-8">
+                  <p className="text-lg text-muted-foreground mb-4">
+                    <strong>Contrato:</strong> 12 meses para resultados sólidos e sustentáveis
+                  </p>
+                  <p className="text-lg text-muted-foreground">
+                    <strong>Investimento:</strong> A partir de R$ 3.000/mês
+                  </p>
+                </div>
+              </section>
+
+              <section className="text-center">
+                <h2 className="text-3xl font-bold text-brand-black mb-6">Próximos passos</h2>
                 <p className="text-muted-foreground mb-6">
-                  Pronto para dar o próximo passo no seu crescimento digital?
+                  Pronto para dar o próximo passo no seu crescimento digital? 
+                  <a href="/descubra-seu-plano" className="text-brand-gold hover:underline font-semibold"> Descubra qual serviço é ideal</a> para sua empresa 
+                  ou solicite uma proposta personalizada diretamente.
                 </p>
                 <Button 
                   onClick={() => window.open("https://wa.me/5511964721143?text=Gostaria de saber mais sobre a Gestão Completa de SEO", "_blank")}
@@ -98,8 +126,8 @@ const GestaoCompleta = () => {
                 >
                   Solicitar Proposta
                 </Button>
-              </div>
-            </div>
+              </section>
+            </article>
           </div>
         </section>
       </main>

@@ -7,8 +7,8 @@ import { useSEO } from "@/hooks/useSEO";
 
 const ConsultoriaEstrategica = () => {
   useSEO({
-    title: "Consultoria Estratégica em SEO | Encantos Hub",
-    description: "Sessões avulsas online de 1h30 para diagnóstico e plano de ação.",
+    title: "Consultoria em SEO Estratégico | Encantos Hub",
+    description: "Sessões avulsas online de 1h30 para diagnóstico e plano de ação imediato.",
     canonical: "https://www.encantoshub.com.br/servicos/consultoria"
   });
 
@@ -27,8 +27,8 @@ const ConsultoriaEstrategica = () => {
       <main className="pt-20">
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-12">
+            <article className="max-w-4xl mx-auto">
+              <header className="text-center mb-12">
                 <div className="bg-brand-gold/10 w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-6">
                   <Video className="w-8 h-8 text-brand-gold" />
                 </div>
@@ -38,8 +38,21 @@ const ConsultoriaEstrategica = () => {
                 <p className="text-xl text-muted-foreground mb-8">
                   Direcionamento rápido e personalizado para seu negócio.
                 </p>
+              </header>
+
+              <section className="mb-12">
+                <h2 className="text-3xl font-bold text-brand-black mb-6 text-center">Para quem é</h2>
+                <p className="text-lg text-muted-foreground text-center mb-8">
+                  Ideal para <strong>empreendedores</strong> e <strong>gestores</strong> que precisam de orientação rápida e estratégica 
+                  para resolver dúvidas pontuais sobre SEO. Se após a sessão você quiser um plano de longo prazo, 
+                  conheça nossa <a href="/servicos/gestao-essencial" className="text-brand-gold hover:underline font-semibold">Gestão Essencial</a>.
+                </p>
+              </section>
+
+              <section className="mb-12">
+                <h2 className="text-3xl font-bold text-brand-black mb-6 text-center">Como funciona a sessão</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                   <Card className="border-brand-gold/20">
                     <CardContent className="p-6 text-center">
                       <DollarSign className="w-8 h-8 text-brand-gold mx-auto mb-3" />
@@ -67,41 +80,50 @@ const ConsultoriaEstrategica = () => {
                     </CardContent>
                   </Card>
                 </div>
-              </div>
+              </section>
 
-              <Card className="mb-12">
-                <CardContent className="p-8">
-                  <h2 className="text-3xl font-bold text-brand-black mb-8 text-center">
-                    O que está incluso
-                  </h2>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {inclusos.map((item, index) => (
-                      <div key={index} className="flex items-start space-x-3 p-4 rounded-lg bg-brand-gold/5 border border-brand-gold/10">
-                        <CheckCircle className="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5" />
-                        <p className="text-muted-foreground">{item}</p>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+              <section className="mb-12">
+                <Card>
+                  <CardContent className="p-8">
+                    <h2 className="text-3xl font-bold text-brand-black mb-8 text-center">
+                      O que entregamos
+                    </h2>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {inclusos.map((item, index) => (
+                        <div key={index} className="flex items-start space-x-3 p-4 rounded-lg bg-brand-gold/5 border border-brand-gold/10">
+                          <CheckCircle className="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5" />
+                          <p className="text-muted-foreground">{item}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </section>
 
-              <Card className="mb-12 bg-brand-gold/5 border-brand-gold/20">
-                <CardContent className="p-8 text-center">
-                  <h3 className="text-2xl font-bold text-brand-black mb-4">
-                    Detalhe Importante
-                  </h3>
-                  <p className="text-muted-foreground text-lg leading-relaxed">
-                    Se após a primeira sessão o cliente desejar, pode ser contratado um 
-                    <span className="font-semibold text-brand-gold"> plano estratégico anual</span>, 
-                    mas isso só é definido depois da sessão inicial.
-                  </p>
-                </CardContent>
-              </Card>
+              <section className="mb-12">
+                <h2 className="text-3xl font-bold text-brand-black mb-6 text-center">Contrato e Valor</h2>
 
-              <div className="text-center">
+                <Card className="bg-brand-gold/5 border-brand-gold/20">
+                  <CardContent className="p-8 text-center">
+                    <h3 className="text-2xl font-bold text-brand-black mb-4">
+                      Detalhe Importante
+                    </h3>
+                    <p className="text-muted-foreground text-lg leading-relaxed">
+                      Se após a primeira sessão o cliente desejar, pode ser contratado um 
+                      <span className="font-semibold text-brand-gold"> plano estratégico anual</span>, 
+                      mas isso só é definido depois da sessão inicial.
+                    </p>
+                  </CardContent>
+                </Card>
+              </section>
+
+              <section className="text-center">
+                <h2 className="text-3xl font-bold text-brand-black mb-6">Próximos passos</h2>
                 <p className="text-muted-foreground mb-6">
-                  Pronto para esclarecer suas dúvidas e definir os próximos passos?
+                  Pronto para esclarecer suas dúvidas e definir os próximos passos? 
+                  <a href="/descubra-seu-plano" className="text-brand-gold hover:underline font-semibold">Descubra qual serviço é ideal</a> para você 
+                  ou agende sua consultoria estratégica agora.
                 </p>
                 <Button 
                   onClick={() => window.open("https://wa.me/5511964721143?text=Gostaria de agendar uma Consultoria Estratégica", "_blank")}
@@ -110,8 +132,8 @@ const ConsultoriaEstrategica = () => {
                 >
                   Agendar Consultoria
                 </Button>
-              </div>
-            </div>
+              </section>
+            </article>
           </div>
         </section>
       </main>
