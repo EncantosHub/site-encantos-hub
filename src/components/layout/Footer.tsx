@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, Instagram, Linkedin, Youtube } from "lucide-react";
+import { Button } from "@/components/ui/button";
 const Footer = () => {
   return <footer className="bg-brand-black text-brand-white py-12">
       <div className="container mx-auto px-4">
@@ -69,11 +70,26 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-gray-400 text-sm">
-            © 2024 EncantosHub. Todos os direitos reservados.
-          </p>
+        {/* CTA Global */}
+        <div className="border-t border-gray-800 mt-8 pt-8">
+          <div className="text-center mb-8">
+            <h3 className="text-xl font-semibold text-brand-gold mb-4">
+              Pronto para crescer de forma leve e sustentável?
+            </h3>
+            <Button 
+              onClick={() => window.open('https://wa.me/5511964721143?text=Olá! Gostaria de solicitar um orçamento personalizado para minha empresa&utm_source=footer&utm_medium=cta&utm_campaign=orcamento_global', '_blank')}
+              className="bg-brand-gold text-brand-black hover:bg-brand-gold/90 font-semibold px-6 py-2"
+            >
+              Solicitar Orçamento
+            </Button>
+          </div>
+          
+          {/* Copyright */}
+          <div className="text-center">
+            <p className="text-gray-400 text-sm">
+              © 2024 EncantosHub. Todos os direitos reservados.
+            </p>
+          </div>
         </div>
       </div>
     </footer>;

@@ -410,18 +410,22 @@ const DescubraSeuPlano = () => {
           
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 
-              onClick={() => window.open('https://wa.me/5511999999999', '_blank')}
-              className="flex-1"
+              onClick={() => {
+                const service = recommendation?.service || 'descubra_plano';
+                const message = `Quero este plano: ${recommendation?.title}! Gostaria de mais informações e um orçamento personalizado.`;
+                window.open(`https://wa.me/5511964721143?text=${encodeURIComponent(message)}&utm_source=${service}&utm_medium=resultado&utm_campaign=contratacao`, '_blank');
+              }}
+              className="flex-1 bg-brand-gold hover:bg-brand-gold/90 text-brand-black font-semibold"
             >
               <MessageCircle className="w-4 h-4 mr-2" />
-              Falar no WhatsApp
+              Quero este plano – Falar no WhatsApp
             </Button>
             <Button 
               variant="outline" 
-              onClick={() => navigate(recommendation?.link || '/')}
-              className="flex-1"
+              onClick={() => navigate('/')}
+              className="flex-1 border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-black"
             >
-              Ver Detalhes do Serviço
+              Ver todos os serviços
             </Button>
           </div>
         </CardContent>

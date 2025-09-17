@@ -89,24 +89,36 @@ const SolutionsSection = () => {
         })}
         </div>
         
-        {/* CTA Descobrir Serviço Ideal */}
-        <div className="text-center mt-12">
-          <Card className="max-w-md mx-auto border-2 border-brand-gold/30 bg-gradient-to-br from-brand-gold/5 to-brand-gold/10 shadow-gold">
-            <CardContent className="p-6">
-              <h3 className="text-xl font-semibold mb-3 text-brand-black">
-                Não sabe qual serviço escolher?
-              </h3>
-              <p className="text-muted-foreground mb-4">
-                Responda um quiz rápido e descubra o plano ideal para seu negócio.
-              </p>
+        {/* CTAs Globais */}
+        <div className="text-center mt-16">
+          <div className="max-w-2xl mx-auto space-y-6">
+            <h3 className="text-2xl font-bold text-brand-black mb-6">
+              Pronto para começar sua jornada digital?
+            </h3>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                onClick={() => window.open('https://wa.me/5511964721143?text=Olá! Gostaria de solicitar um orçamento personalizado para minha empresa&utm_source=home&utm_medium=cta&utm_campaign=orcamento', '_blank')}
+                size="lg"
+                className="bg-brand-gold text-brand-black hover:bg-brand-gold/90 font-semibold px-8 py-3"
+              >
+                Solicitar Orçamento
+              </Button>
+              
               <Button 
                 onClick={() => handleCTA('discover', '/descubra-seu-plano')}
-                className="w-full bg-brand-gold text-brand-black hover:bg-brand-gold/90 font-semibold"
+                variant="outline"
+                size="lg"
+                className="border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-black font-semibold px-8 py-3"
               >
                 Descubra seu Serviço Ideal
               </Button>
-            </CardContent>
-          </Card>
+            </div>
+            
+            <p className="text-sm text-muted-foreground">
+              Conheça nossos planos ou solicite uma proposta personalizada
+            </p>
+          </div>
         </div>
       </div>
     </section>;

@@ -120,18 +120,33 @@ const ConsultoriaEstrategica = () => {
 
               <section className="text-center">
                 <h2 className="text-3xl font-bold text-brand-black mb-6">Próximos passos</h2>
-                <p className="text-muted-foreground mb-6">
+                <p className="text-muted-foreground mb-8">
                   Pronto para esclarecer suas dúvidas e definir os próximos passos? 
-                  <a href="/descubra-seu-plano" className="text-brand-gold hover:underline font-semibold">Descubra qual serviço é ideal</a> para você 
-                  ou agende sua consultoria estratégica agora.
+                  Agende sua consultoria estratégica ou descubra se este é o serviço ideal para você.
                 </p>
-                <Button 
-                  onClick={() => window.open("https://wa.me/5511964721143?text=Gostaria de agendar uma Consultoria Estratégica", "_blank")}
-                  size="lg"
-                  className="bg-brand-gold hover:bg-brand-gold/90 text-brand-black"
-                >
-                  Agendar Consultoria
-                </Button>
+                
+                <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto mb-4">
+                  <Button 
+                    onClick={() => window.open("https://wa.me/5511964721143?text=Gostaria de agendar uma Consultoria Estratégica&utm_source=consultoria&utm_medium=cta&utm_campaign=agendamento", "_blank")}
+                    size="lg"
+                    className="bg-brand-gold hover:bg-brand-gold/90 text-brand-black font-semibold flex-1"
+                  >
+                    Agendar Consultoria
+                  </Button>
+                  
+                  <Button 
+                    variant="outline"
+                    onClick={() => window.location.href = "/descubra-seu-plano"}
+                    size="lg"
+                    className="border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-black font-semibold flex-1"
+                  >
+                    Ainda em dúvida? Descubra seu Serviço Ideal
+                  </Button>
+                </div>
+                
+                <p className="text-xs text-muted-foreground max-w-lg mx-auto">
+                  Todos os planos são contratos anuais, mas este serviço pode ser a porta de entrada para evoluir ao longo do tempo.
+                </p>
               </section>
             </article>
           </div>
