@@ -7,33 +7,49 @@ const SolutionsSection = () => {
   const solutions = [{
     icon: Search,
     title: "Gestão Completa",
-    description: "Crescimento sólido, estratégico e sustentável para empresas e franquias.",
-    valor: "a partir de R$ 3.000/mês",
-    contrato: "12 meses",
+    description: "Gestão de SEO para sites e grandes marcas. Serviço personalizado para empresas que buscam aumentar sua visibilidade orgânica no Google e fortalecer presença digital de longo prazo.",
+    bullets: [
+      "Diagnóstico completo",
+      "Plano estratégico semestral", 
+      "Gestão de conteúdo, técnica e backlinks",
+      "Relatórios e reuniões de alinhamento"
+    ],
     cta: "detalhes",
     link: "/servicos/gestao-completa"
   }, {
     icon: Building2,
     title: "Gestão Essencial",
-    description: "Evolução consistente com investimento acessível para PME's.",
-    valor: "a partir de R$ 1.500/mês",
-    contrato: "12 meses",
+    description: "SEO acessível para pequenas e médias empresas. Ideal para negócios que desejam evoluir sua presença online de forma consistente, com foco em performance e análise de dados.",
+    bullets: [
+      "Configuração de ferramentas web analíticas",
+      "Otimização de páginas e conteúdos",
+      "Monitoramento de impressões, cliques e CTR", 
+      "Relatórios simplificados de evolução"
+    ],
     cta: "detalhes",
     link: "/servicos/gestao-essencial"
   }, {
     icon: MapPin,
     title: "Gestão Local",
-    description: "Destaque nas buscas locais e Google Meu Negócio.",
-    valor: "Setup R$ 600 + R$ 300/mês",
-    contrato: "12 meses",
+    description: "Presença digital estratégica para negócios regionais. Voltado para pequenas empresas que desejam ser encontradas por clientes próximos. Avaliamos o perfil e momento do seu negócio para indicar a melhor estratégia local: Google Meu Negócio, criação de site, parcerias com sites regionais e gestão de reputação.",
+    bullets: [
+      "Diagnóstico do cenário local",
+      "Definição de canais prioritários (GMN, site, parceiros)",
+      "Estratégia de avaliações e reputação digital",
+      "Acompanhamento e otimização contínua"
+    ],
     cta: "detalhes",
     link: "/servicos/gestao-local"
   }, {
     icon: Users,
     title: "Consultoria Estratégica",
-    description: "Direcionamento rápido e personalizado para seu negócio.",
-    valor: "R$ 300/sessão",
-    contrato: "Sessão avulsa (1h30)",
+    description: "Sessões avulsas de SEO e marketing digital. Para empreendedores que buscam orientação prática antes de contratar um plano de gestão contínua.",
+    bullets: [
+      "Sessão online de 1h30",
+      "Auditoria inicial do site",
+      "Sugestão de plano estratégico personalizado",
+      "Direcionamento de próximos passos"
+    ],
     cta: "detalhes",
     link: "/servicos/consultoria"
   }];
@@ -69,16 +85,14 @@ const SolutionsSection = () => {
                     {solution.description}
                   </p>
                   
-                  <div className="mb-6 space-y-3">
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-muted-foreground">Valor:</span>
-                      <span className="font-semibold text-brand-gold">{solution.valor}</span>
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-muted-foreground">Contrato:</span>
-                      <span className="font-semibold text-brand-black">{solution.contrato}</span>
-                    </div>
-                  </div>
+                  <ul className="mb-6 space-y-2">
+                    {solution.bullets.map((bullet, bulletIndex) => (
+                      <li key={bulletIndex} className="flex items-start text-sm text-muted-foreground">
+                        <span className="w-1.5 h-1.5 bg-brand-gold rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
                   
                   <Button onClick={() => handleCTA(solution.cta, solution.link)} variant="outline" className="w-full group-hover:bg-brand-gold group-hover:text-brand-black group-hover:border-brand-gold transition-all">
                     Ver mais detalhes
