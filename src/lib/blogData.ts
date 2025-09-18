@@ -11,80 +11,6 @@ export interface BlogPost {
 }
 export const blogPosts: BlogPost[] = [
   {
-    slug: "perfil-google-meu-negocio",
-    title: "Google Meu Negócio: esteja visível nas buscas do Google",
-    summary: "Saiba por que o Google Meu Negócio é essencial para atrair clientes e ser encontrado no Google. Veja como se destacar com um perfil atualizado!",
-    date: "2025-01-15",
-    category: "GMN",
-    thumbnail: "/images/blog/google-meu-negocio-perfil.jpg",
-    author: "Paloma Nogueira",
-    authorLinkedIn: "https://linkedin.com/in/paloma-nogueira",
-    content: `
-      <p>Estar visível no Google não é apenas uma vantagem, mas uma necessidade para qualquer empresa que deseja ser encontrada por potenciais clientes. O Google Meu Negócio — atualmente chamado de <strong>Perfil da Empresa no Google</strong> — é a principal porta de entrada para negócios locais, permitindo que sua marca apareça em pesquisas e no Google Maps de forma estratégica e relevante.</p>
-
-      <h2>Por que sua empresa precisa estar no Google?</h2>
-      <p>Enquanto perfis em redes sociais como Instagram e Facebook são excelentes para gerar desejo, criar conexão e engajamento, o Google é o espaço da necessidade.</p>
-      
-      <p>Quando alguém pesquisa por produtos ou serviços na plataforma, existe uma intenção clara de compra ou contratação — e isso aumenta consideravelmente as chances de transformar buscas em clientes reais.</p>
-      
-      <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin: 30px 0;">
-        <div style="flex: 1; min-width: 250px;">
-          <p style="background: #f8f9fa; padding: 20px; border-left: 4px solid #4285f4; margin: 0;"><strong>👉 Em outras palavras:</strong> estar no Google significa aparecer no momento exato em que seu cliente está pronto para agir.</p>
-        </div>
-        <div style="flex: 1; min-width: 300px;">
-          <img src="/images/blog/google-maps-busca-local.jpg" alt="Busca local no Google Maps" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
-        </div>
-      </div>
-
-      <h2>Qual a diferença do Google Meu Negócio para perfis de redes sociais?</h2>
-      <ul>
-        <li><strong>Redes sociais:</strong> despertam interesse e ajudam a construir relacionamento e comunidade em torno da sua marca.</li>
-        <li><strong>Google Meu Negócio:</strong> conecta a necessidade imediata do cliente à solução que sua empresa oferece.</li>
-      </ul>
-      
-      <p>Enquanto Instagram e Facebook inspiram, o Google Meu Negócio direciona. Ele concentra informações práticas como telefone, WhatsApp, site, avaliações e rotas no Google Maps — tornando-se uma ponte direta para a conversão.</p>
-
-      <h2>Vantagens de ter um perfil no Google Meu Negócio</h2>
-      <p>Cadastrar sua empresa garante muito mais do que visibilidade. Confira os principais benefícios:</p>
-      
-      <ul>
-        <li><strong>📞 Canais diretos de contato:</strong> telefone, WhatsApp, site e links para redes sociais.</li>
-        <li><strong>📍 Presença no Google Maps:</strong> clientes locais encontram sua empresa com facilidade.</li>
-        <li><strong>⭐ Mais destaque nas buscas locais:</strong> apareça no "pacote local", que surge antes dos resultados orgânicos.</li>
-        <li><strong>💡 Centralização de informações:</strong> tudo em um só lugar, facilitando a vida do consumidor.</li>
-      </ul>
-      
-      <p>O perfil funciona como um cartão de visitas digital, disponível 24 horas por dia para gerar oportunidades.</p>
-
-      <h2>Como manter seu perfil eficiente</h2>
-      <p>Criar o cadastro é só o primeiro passo. Para garantir bons resultados, mantenha o perfil atualizado:</p>
-      
-      <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin: 30px 0;">
-        <div style="flex: 1; min-width: 300px;">
-          <img src="/images/blog/atualizacao-perfil-gmn.jpg" alt="Atualização do perfil no Google Meu Negócio" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
-        </div>
-        <div style="flex: 1; min-width: 250px;">
-          <ul>
-            <li><strong>🔄 Atualize horários de funcionamento,</strong> inclusive em feriados.</li>
-            <li><strong>📸 Publique fotos recentes</strong> e de qualidade.</li>
-            <li><strong>📝 Liste produtos e serviços oferecidos</strong> de forma clara.</li>
-            <li><strong>💬 Responda às avaliações e comentários</strong> para mostrar atenção ao cliente.</li>
-          </ul>
-        </div>
-      </div>
-      
-      <p>Essas práticas aumentam a credibilidade e ajudam no posicionamento nas buscas locais.</p>
-
-      <h2>Conclusão</h2>
-      <p>O Google Meu Negócio não substitui as redes sociais — ele complementa sua estratégia digital.
-      Enquanto as redes sociais criam relacionamento e engajamento, o Google conecta sua empresa a clientes que já estão prontos para comprar.</p>
-      
-      <p style="background: #fff3cd; padding: 20px; border-left: 4px solid #ffc107; margin: 20px 0;"><strong>👉 Se você ainda não cadastrou sua empresa,</strong> está deixando de aproveitar uma das ferramentas mais poderosas para atrair clientes e fortalecer sua presença online.</p>
-      
-      <p>Quer atrair mais clientes da sua região? A gestão estratégica do seu perfil no Google Meu Negócio faz toda a diferença! Com nosso <a href="/servicos/gestao-local" style="color: #667eea; font-weight: bold; text-decoration: underline;">Serviço de Gestão Local</a>, sua empresa ganha visibilidade nas buscas, mais avaliações positivas e presença forte na sua área de atuação.</p>
-    `
-  },
-  {
   slug: "importancia-presenca-digital",
   title: "Importância da presença digital para aparecer no Google",
   summary: "Descubra por que investir na presença digital é essencial e como o Google Meu Negócio pode ser o primeiro passo para atrair clientes e crescer online.",
@@ -1033,7 +959,80 @@ O post deve ser informativo, destacar os benefícios e ser atraente para o públ
     </div>
   `
 },
-  
+{
+    slug: "perfil-google-meu-negocio",
+    title: "Google Meu Negócio: esteja visível nas buscas do Google",
+    summary: "Saiba por que o Google Meu Negócio é essencial para atrair clientes e ser encontrado no Google. Veja como se destacar com um perfil atualizado!",
+    date: "2025-01-15",
+    category: "GMN",
+    thumbnail: "/images/blog/google-meu-negocio-perfil.jpg",
+    author: "Paloma Nogueira",
+    authorLinkedIn: "https://linkedin.com/in/paloma-nogueira",
+    content: `
+      <p>Estar visível no Google não é apenas uma vantagem, mas uma necessidade para qualquer empresa que deseja ser encontrada por potenciais clientes. O Google Meu Negócio — atualmente chamado de <strong>Perfil da Empresa no Google</strong> — é a principal porta de entrada para negócios locais, permitindo que sua marca apareça em pesquisas e no Google Maps de forma estratégica e relevante.</p>
+
+      <h2>Por que sua empresa precisa estar no Google?</h2>
+      <p>Enquanto perfis em redes sociais como Instagram e Facebook são excelentes para gerar desejo, criar conexão e engajamento, o Google é o espaço da necessidade.</p>
+      
+      <p>Quando alguém pesquisa por produtos ou serviços na plataforma, existe uma intenção clara de compra ou contratação — e isso aumenta consideravelmente as chances de transformar buscas em clientes reais.</p>
+      
+      <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin: 30px 0;">
+        <div style="flex: 1; min-width: 250px;">
+          <p style="background: #f8f9fa; padding: 20px; border-left: 4px solid #4285f4; margin: 0;"><strong>👉 Em outras palavras:</strong> estar no Google significa aparecer no momento exato em que seu cliente está pronto para agir.</p>
+        </div>
+        <div style="flex: 1; min-width: 300px;">
+          <img src="/images/blog/google-maps-busca-local.jpg" alt="Busca local no Google Maps" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+        </div>
+      </div>
+
+      <h2>Qual a diferença do Google Meu Negócio para perfis de redes sociais?</h2>
+      <ul>
+        <li><strong>Redes sociais:</strong> despertam interesse e ajudam a construir relacionamento e comunidade em torno da sua marca.</li>
+        <li><strong>Google Meu Negócio:</strong> conecta a necessidade imediata do cliente à solução que sua empresa oferece.</li>
+      </ul>
+      
+      <p>Enquanto Instagram e Facebook inspiram, o Google Meu Negócio direciona. Ele concentra informações práticas como telefone, WhatsApp, site, avaliações e rotas no Google Maps — tornando-se uma ponte direta para a conversão.</p>
+
+      <h2>Vantagens de ter um perfil no Google Meu Negócio</h2>
+      <p>Cadastrar sua empresa garante muito mais do que visibilidade. Confira os principais benefícios:</p>
+      
+      <ul>
+        <li><strong>📞 Canais diretos de contato:</strong> telefone, WhatsApp, site e links para redes sociais.</li>
+        <li><strong>📍 Presença no Google Maps:</strong> clientes locais encontram sua empresa com facilidade.</li>
+        <li><strong>⭐ Mais destaque nas buscas locais:</strong> apareça no "pacote local", que surge antes dos resultados orgânicos.</li>
+        <li><strong>💡 Centralização de informações:</strong> tudo em um só lugar, facilitando a vida do consumidor.</li>
+      </ul>
+      
+      <p>O perfil funciona como um cartão de visitas digital, disponível 24 horas por dia para gerar oportunidades.</p>
+
+      <h2>Como manter seu perfil eficiente</h2>
+      <p>Criar o cadastro é só o primeiro passo. Para garantir bons resultados, mantenha o perfil atualizado:</p>
+      
+      <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin: 30px 0;">
+        <div style="flex: 1; min-width: 300px;">
+          <img src="/images/blog/atualizacao-perfil-gmn.jpg" alt="Atualização do perfil no Google Meu Negócio" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+        </div>
+        <div style="flex: 1; min-width: 250px;">
+          <ul>
+            <li><strong>🔄 Atualize horários de funcionamento,</strong> inclusive em feriados.</li>
+            <li><strong>📸 Publique fotos recentes</strong> e de qualidade.</li>
+            <li><strong>📝 Liste produtos e serviços oferecidos</strong> de forma clara.</li>
+            <li><strong>💬 Responda às avaliações e comentários</strong> para mostrar atenção ao cliente.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <p>Essas práticas aumentam a credibilidade e ajudam no posicionamento nas buscas locais.</p>
+
+      <h2>Conclusão</h2>
+      <p>O Google Meu Negócio não substitui as redes sociais — ele complementa sua estratégia digital.
+      Enquanto as redes sociais criam relacionamento e engajamento, o Google conecta sua empresa a clientes que já estão prontos para comprar.</p>
+      
+      <p style="background: #fff3cd; padding: 20px; border-left: 4px solid #ffc107; margin: 20px 0;"><strong>👉 Se você ainda não cadastrou sua empresa,</strong> está deixando de aproveitar uma das ferramentas mais poderosas para atrair clientes e fortalecer sua presença online.</p>
+      
+      <p>Quer atrair mais clientes da sua região? A gestão estratégica do seu perfil no Google Meu Negócio faz toda a diferença! Com nosso <a href="/servicos/gestao-local" style="color: #667eea; font-weight: bold; text-decoration: underline;">Serviço de Gestão Local</a>, sua empresa ganha visibilidade nas buscas, mais avaliações positivas e presença forte na sua área de atuação.</p>
+    `
+  }, 
 ];
 
 export const categories = ["Todos", "SEO", "Marketing", "Ferramentas", "GMN", "Conteúdo", "Análise"];
