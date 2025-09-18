@@ -961,9 +961,9 @@ O post deve ser informativo, destacar os benefícios e ser atraente para o públ
 },
 {
     slug: "perfil-google-meu-negocio",
-    title: "Google Meu Negócio: esteja visível nas buscas do Google",
-    summary: "Saiba por que o Google Meu Negócio é essencial para atrair clientes e ser encontrado no Google. Veja como se destacar com um perfil atualizado!",
-    date: "2025-01-15",
+    title: "Por que cadastrar empresa no google? Diferença com redes sociais",
+    summary: "Saiba por que o Google Meu Negócio é essencial para atrair clientes e ser encontrado no Google. Veja como se destacar com um perfil atualizado e a diferença com as redes sociais!",
+    date: "2025-10-18",
     category: "GMN",
     thumbnail: "/images/blog/google-meu-negocio-perfil.jpg",
     author: "Paloma Nogueira",
