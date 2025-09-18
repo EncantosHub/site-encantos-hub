@@ -6,6 +6,7 @@ const path = require('path');
 
 // Simular os blogPosts (em um projeto real, você importaria do módulo)
 const blogPosts = [
+  { slug: "perfil-google-meu-negocio", date: "2025-01-15" },
   { slug: "importancia-presenca-digital", date: "2025-08-12" },
   { slug: "qrcode-avaliacoes", date: "2025-08-12" },
   { slug: "guia-hiperlink", date: "2025-08-12" },
