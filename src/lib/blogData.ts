@@ -80,6 +80,25 @@ export const blogPosts: BlogPost[] = [
       Enquanto as redes sociais criam relacionamento e engajamento, o Google conecta sua empresa a clientes que já estão prontos para comprar.</p>
       
       <p style="background: #fff3cd; padding: 20px; border-left: 4px solid #ffc107; margin: 20px 0;"><strong>👉 Se você ainda não cadastrou sua empresa,</strong> está deixando de aproveitar uma das ferramentas mais poderosas para atrair clientes e fortalecer sua presença online.</p>
+      
+      <h2>Precisa de ajuda para otimizar sua presença local?</h2>
+      <p>Configurar e manter um perfil no Google Meu Negócio pode parecer simples, mas para obter resultados realmente eficazes, é importante seguir as melhores práticas e estratégias específicas para seu segmento.</p>
+      
+      <p>Nosso serviço de <strong>Gestão Local</strong> foi desenvolvido especialmente para pequenas empresas que querem ser encontradas por clientes da região. Fazemos uma análise completa do seu cenário local e criamos uma estratégia personalizada que pode incluir:</p>
+      
+      <ul>
+        <li>Configuração e otimização completa do Google Meu Negócio</li>
+        <li>Estratégia para aumentar avaliações positivas</li>
+        <li>Gestão de reputação digital</li>
+        <li>Análise de concorrência local</li>
+        <li>Relatórios de performance e acompanhamento</li>
+      </ul>
+      
+      <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin: 30px 0;">
+        <h3 style="color: white; margin-bottom: 15px;">Quer dominar as buscas locais?</h3>
+        <p style="margin-bottom: 20px;">Conheça nossa Gestão Local e descubra como aparecer em primeiro lugar quando seus clientes procurarem por seus serviços na região.</p>
+        <a href="/servicos/gestao-local" style="background: white; color: #667eea; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-block;">Saiba mais sobre Gestão Local</a>
+      </div>
     `
   },
   {
