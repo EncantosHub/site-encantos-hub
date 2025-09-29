@@ -422,10 +422,10 @@ const DescubraSeuPlano = () => {
             </Button>
             <Button 
               variant="outline" 
-              onClick={() => navigate('/')}
+              onClick={() => navigate(recommendation?.link || '/')}
               className="flex-1 border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-black"
             >
-              Ver todos os serviços
+              Ver detalhes do serviço
             </Button>
           </div>
         </CardContent>
